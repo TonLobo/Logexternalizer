@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="e99bdb22-822c-4991-b7e9-dc673f7b72fd" activeEnvironment="Default" name="MNI TRT2 consultas HOMOLOGAÇÃO" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

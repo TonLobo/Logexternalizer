@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="7259549f-9ddf-41e0-abf6-f1073e8d4b2b" activeEnvironment="Default" name="Publicações SADescoberto" resourceRoot="" soapui-version="5.8.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="c53c32d3-8519-4f9d-a709-86fd9412a1c5" wsaVersion="NONE" name="PublicacaoWSServiceSoapBinding" type="wsdl" bindingName="{http://wspub.pj.saj.softplan.com.br/}PublicacaoWSServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="https://santoantoniodescoberto.sajcloud.com.br/wspubWeb/services/PublicacaoWS?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://santoantoniodescoberto.sajcloud.com.br/wspubWeb/services/PublicacaoWS?wsdl"><con:part><con:url>https://santoantoniodescoberto.sajcloud.com.br/wspubWeb/services/PublicacaoWS?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="PublicacaoWSService" targetNamespace="http://wspub.pj.saj.softplan.com.br/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://wspub.pj.saj.softplan.com.br/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://wspub.pj.saj.softplan.com.br/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="efetuarLogon" type="tns:efetuarLogon"/>
+      <xs:element name="efetuarLogonResponse" type="tns:efetuarLogonResponse"/>
+      <xs:element name="enviarPublicacoes" type="tns:enviarPublicacoes"/>
+      <xs:element name="enviarPublicacoesResponse" type="tns:enviarPublicacoesResponse"/>
+      <xs:element name="enviarPublicacoesString" type="tns:enviarPublicacoesString"/>
+      <xs:element name="enviarPublicacoesStringResponse" type="tns:enviarPublicacoesStringResponse"/>
+      <xs:element name="finalizaEnvioDiario" type="tns:finalizaEnvioDiario"/>
+      <xs:element name="finalizaEnvioDiarioResponse" type="tns:finalizaEnvioDiarioResponse"/>
+      <xs:complexType name="enviarPublicacoes">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bytes" type="xs:base64Binary"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="enviarPublicacoesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:base64Binary"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="efetuarLogon">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="userId" type="xs:string"/>
+          <xs:element minOccurs="0" name="senha" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="efetuarLogonResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:base64Binary"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="finalizaEnvioDiario">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="finalizaEnvioDiarioResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="enviarPublicacoesString">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="string64" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="enviarPublicacoesStringResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:base64Binary"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="enviarPublicacoesResponse">
+    <wsdl:part element="tns:enviarPublicacoesResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finalizaEnvioDiario">
+    <wsdl:part element="tns:finalizaEnvioDiario" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="enviarPublicacoesStringResponse">
+    <wsdl:part element="tns:enviarPublicacoesStringResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="enviarPublicacoesString">
+    <wsdl:part element="tns:enviarPublicacoesString" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="enviarPublicacoes">
+    <wsdl:part element="tns:enviarPublicacoes" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="efetuarLogon">
+    <wsdl:part element="tns:efetuarLogon" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="efetuarLogonResponse">
+    <wsdl:part element="tns:efetuarLogonResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finalizaEnvioDiarioResponse">
+    <wsdl:part element="tns:finalizaEnvioDiarioResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="PublicacaoWS">
+    <wsdl:operation name="enviarPublicacoes">
+      <wsdl:input message="tns:enviarPublicacoes" name="enviarPublicacoes"></wsdl:input>
+      <wsdl:output message="tns:enviarPublicacoesResponse" name="enviarPublicacoesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="efetuarLogon">
+      <wsdl:input message="tns:efetuarLogon" name="efetuarLogon"></wsdl:input>
+      <wsdl:output message="tns:efetuarLogonResponse" name="efetuarLogonResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="finalizaEnvioDiario">
+      <wsdl:input message="tns:finalizaEnvioDiario" name="finalizaEnvioDiario"></wsdl:input>
+      <wsdl:output message="tns:finalizaEnvioDiarioResponse" name="finalizaEnvioDiarioResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enviarPublicacoesString">
+      <wsdl:input message="tns:enviarPublicacoesString" name="enviarPublicacoesString"></wsdl:input>
+      <wsdl:output message="tns:enviarPublicacoesStringResponse" name="enviarPublicacoesStringResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PublicacaoWSServiceSoapBinding" type="tns:PublicacaoWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="enviarPublicacoes">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="enviarPublicacoes">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="enviarPublicacoesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="efetuarLogon">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="efetuarLogon">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="efetuarLogonResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="finalizaEnvioDiario">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="finalizaEnvioDiario">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="finalizaEnvioDiarioResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enviarPublicacoesString">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="enviarPublicacoesString">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="enviarPublicacoesStringResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PublicacaoWSService">
+    <wsdl:port binding="tns:PublicacaoWSServiceSoapBinding" name="PublicacaoWSPort">
+      <soap:address location="https://santoantoniodescoberto.sajcloud.com.br/wspubWeb/services/PublicacaoWS"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://santoantoniodescoberto.sajcloud.com.br/wspubWeb/services/PublicacaoWS</con:endpoint></con:endpoints><con:operation id="648364ef-2d42-4d1a-ad94-f8252d5e4563" isOneWay="false" action="" name="efetuarLogon" bindingOperationName="efetuarLogon" type="Request-Response" outputName="efetuarLogonResponse" inputName="efetuarLogon" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c9b69054-110f-4a47-b308-60bbc733d916" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://santoantoniodescoberto.sajcloud.com.br/wspubWeb/services/PublicacaoWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsp="http://wspub.pj.saj.softplan.com.br/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <wsp:efetuarLogon>
+         <userId>PUBWS</userId>
+         <senha>ebg8flnd</senha>
+      </wsp:efetuarLogon>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wspub.pj.saj.softplan.com.br/PublicacaoWS/efetuarLogon"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="9e1a0ec5-8a2d-4f14-8d8e-71be1c9b6924" isOneWay="false" action="" name="enviarPublicacoes" bindingOperationName="enviarPublicacoes" type="Request-Response" outputName="enviarPublicacoesResponse" inputName="enviarPublicacoes" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="66eb3b0e-5547-41ea-9fbc-59d49b0da5d0" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://santoantoniodescoberto.sajcloud.com.br/wspubWeb/services/PublicacaoWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsp="http://wspub.pj.saj.softplan.com.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wsp:enviarPublicacoes>\r
+         <!--Optional:-->\r
+         <bytes>cid:1184160333300</bytes>\r
+      </wsp:enviarPublicacoes>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wspub.pj.saj.softplan.com.br/PublicacaoWS/enviarPublicacoes"/></con:call></con:operation><con:operation id="38fde873-4fb5-4853-addd-60354009df6b" isOneWay="false" action="" name="enviarPublicacoesString" bindingOperationName="enviarPublicacoesString" type="Request-Response" outputName="enviarPublicacoesStringResponse" inputName="enviarPublicacoesString" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f2c5d7f9-0083-4a1a-a6b5-3812ccad4c25" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://santoantoniodescoberto.sajcloud.com.br/wspubWeb/services/PublicacaoWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsp="http://wspub.pj.saj.softplan.com.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wsp:enviarPublicacoesString>\r
+         <!--Optional:-->\r
+         <string64>?</string64>\r
+      </wsp:enviarPublicacoesString>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wspub.pj.saj.softplan.com.br/PublicacaoWS/enviarPublicacoesString"/></con:call></con:operation><con:operation id="45202c86-8bbc-4bc7-bd4b-314fc194fbd7" isOneWay="false" action="" name="finalizaEnvioDiario" bindingOperationName="finalizaEnvioDiario" type="Request-Response" outputName="finalizaEnvioDiarioResponse" inputName="finalizaEnvioDiario" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="85c314b8-efff-4ef4-a303-461a5f13162e" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://santoantoniodescoberto.sajcloud.com.br/wspubWeb/services/PublicacaoWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsp="http://wspub.pj.saj.softplan.com.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wsp:finalizaEnvioDiario/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wspub.pj.saj.softplan.com.br/PublicacaoWS/finalizaEnvioDiario"/></con:call></con:operation></con:interface><con:testSuite id="d3acc346-2ce8-434d-b5e7-ab34c8c55ff4" name="PublicacaoWSServiceSoapBinding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="ff253d8d-fe71-431a-9f5b-e2b4a336b213" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="efetuarLogon TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="981a8be3-4272-4f54-81d5-0d85943d5088" name="efetuarLogon"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PublicacaoWSServiceSoapBinding</con:interface><con:operation>efetuarLogon</con:operation><con:request name="efetuarLogon" id="1e903398-9893-4553-be20-37cc56c860e1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://santoantoniodescoberto.sajcloud.com.br/wspubWeb/services/PublicacaoWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsp="http://wspub.pj.saj.softplan.com.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wsp:efetuarLogon>\r
+         <!--Optional:-->\r
+         <userId>?</userId>\r
+         <!--Optional:-->\r
+         <senha>?</senha>\r
+      </wsp:efetuarLogon>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://wspub.pj.saj.softplan.com.br/PublicacaoWS/efetuarLogon"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="f1b92ece-3289-4064-9ef3-d205432aaf14" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="enviarPublicacoes TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="fe3ee73d-08f5-4a7d-bc4d-73b9b2a0472c" name="enviarPublicacoes"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PublicacaoWSServiceSoapBinding</con:interface><con:operation>enviarPublicacoes</con:operation><con:request name="enviarPublicacoes" id="f3e9b199-ef9b-4b59-b675-7719d3398013"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://santoantoniodescoberto.sajcloud.com.br/wspubWeb/services/PublicacaoWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsp="http://wspub.pj.saj.softplan.com.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wsp:enviarPublicacoes>\r
+         <!--Optional:-->\r
+         <bytes>cid:861659493247</bytes>\r
+      </wsp:enviarPublicacoes>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://wspub.pj.saj.softplan.com.br/PublicacaoWS/enviarPublicacoes"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="c57513db-c2b2-4d07-9eac-515e6a03b683" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="enviarPublicacoesString TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="854ab6dc-081a-41c3-a47d-ad11c755f5b4" name="enviarPublicacoesString"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PublicacaoWSServiceSoapBinding</con:interface><con:operation>enviarPublicacoesString</con:operation><con:request name="enviarPublicacoesString" id="a009d705-7de8-4a31-be1b-8920a0e9769f"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://santoantoniodescoberto.sajcloud.com.br/wspubWeb/services/PublicacaoWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsp="http://wspub.pj.saj.softplan.com.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wsp:enviarPublicacoesString>\r
+         <!--Optional:-->\r
+         <string64>?</string64>\r
+      </wsp:enviarPublicacoesString>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://wspub.pj.saj.softplan.com.br/PublicacaoWS/enviarPublicacoesString"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="93750b0b-13db-4d40-8237-4c0c06657407" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="finalizaEnvioDiario TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="f3ee6f54-89fc-46dc-9a9a-e78c2e060789" name="finalizaEnvioDiario"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PublicacaoWSServiceSoapBinding</con:interface><con:operation>finalizaEnvioDiario</con:operation><con:request name="finalizaEnvioDiario" id="79483d04-df3d-4523-8a03-84f18fa9d6b9"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://santoantoniodescoberto.sajcloud.com.br/wspubWeb/services/PublicacaoWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsp="http://wspub.pj.saj.softplan.com.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wsp:finalizaEnvioDiario/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://wspub.pj.saj.softplan.com.br/PublicacaoWS/finalizaEnvioDiario"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

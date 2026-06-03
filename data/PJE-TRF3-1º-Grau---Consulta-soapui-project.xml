@@ -1,0 +1,869 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="7adb3080-e82b-4b65-9899-029df6da99b3" activeEnvironment="Default" name="PJE TRF3 1º Grau - Consulta" resourceRoot="" soapui-version="5.8.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="be30c629-8b2a-42d9-8b45-bde4733092eb" wsaVersion="NONE" name="ConsultaPJeServiceSoapBinding" type="wsdl" bindingName="{http://ws.pje.cnj.jus.br/}ConsultaPJeServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="https://mni1g.trf3.jus.br/pje/ConsultaPJe?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://mni1g.trf3.jus.br/pje/ConsultaPJe?wsdl"><con:part><con:url>https://mni1g.trf3.jus.br/pje/ConsultaPJe?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ConsultaPJeService" targetNamespace="http://ws.pje.cnj.jus.br/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ws.pje.cnj.jus.br/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://ws.pje.cnj.jus.br/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="consultarAssuntosJudiciais" type="tns:consultarAssuntosJudiciais"/>
+      <xs:element name="consultarAssuntosJudiciaisResponse" type="tns:consultarAssuntosJudiciaisResponse"/>
+      <xs:element name="consultarClassesJudiciais" type="tns:consultarClassesJudiciais"/>
+      <xs:element name="consultarClassesJudiciaisResponse" type="tns:consultarClassesJudiciaisResponse"/>
+      <xs:element name="consultarCompetencias" type="tns:consultarCompetencias"/>
+      <xs:element name="consultarCompetenciasResponse" type="tns:consultarCompetenciasResponse"/>
+      <xs:element name="consultarJurisdicoes" type="tns:consultarJurisdicoes"/>
+      <xs:element name="consultarJurisdicoesResponse" type="tns:consultarJurisdicoesResponse"/>
+      <xs:element name="consultarOrgaosJulgadores" type="tns:consultarOrgaosJulgadores"/>
+      <xs:element name="consultarOrgaosJulgadoresColegiados" type="tns:consultarOrgaosJulgadoresColegiados"/>
+      <xs:element name="consultarOrgaosJulgadoresColegiadosResponse" type="tns:consultarOrgaosJulgadoresColegiadosResponse"/>
+      <xs:element name="consultarOrgaosJulgadoresResponse" type="tns:consultarOrgaosJulgadoresResponse"/>
+      <xs:element name="consultarPapeis" type="tns:consultarPapeis"/>
+      <xs:element name="consultarPapeisResponse" type="tns:consultarPapeisResponse"/>
+      <xs:element name="consultarPrioridadeProcessoResponse" type="tns:consultarPrioridadeProcessoResponse"/>
+      <xs:element name="consultarProcessosPorProcessoReferencia" type="tns:consultarProcessosPorProcessoReferencia"/>
+      <xs:element name="consultarProcessosPorProcessoReferenciaDistribuidosApos" type="tns:consultarProcessosPorProcessoReferenciaDistribuidosApos"/>
+      <xs:element name="consultarProcessosPorProcessoReferenciaDistribuidosAposResponse" type="tns:consultarProcessosPorProcessoReferenciaDistribuidosAposResponse"/>
+      <xs:element name="consultarProcessosPorProcessoReferenciaResponse" type="tns:consultarProcessosPorProcessoReferenciaResponse"/>
+      <xs:element name="consultarSalasAudiencia" type="tns:consultarSalasAudienciaOrgaoJulgador"/>
+      <xs:element name="consultarSalasAudienciaResponse" type="tns:consultarSalasAudienciaOrgaoJulgadorResponse"/>
+      <xs:element name="consultarTiposAudiencia" type="tns:consultarTiposAudiencia"/>
+      <xs:element name="consultarTiposAudienciaResponse" type="tns:consultarTiposAudienciaResponse"/>
+      <xs:element name="consultarTiposDocumentoProcessual" type="tns:consultarTiposDocumentoProcessual"/>
+      <xs:element name="consultarTiposDocumentoProcessualResponse" type="tns:consultarTiposDocumentoProcessualResponse"/>
+      <xs:element name="consultarTodosTiposDocumentoProcessual" type="tns:consultarTodosTiposDocumentoProcessual"/>
+      <xs:element name="consultarTodosTiposDocumentoProcessualResponse" type="tns:consultarTodosTiposDocumentoProcessualResponse"/>
+      <xs:element name="recuperarInformacoesFluxo" type="tns:recuperarInformacoesFluxo"/>
+      <xs:element name="recuperarInformacoesFluxoResponse" type="tns:recuperarInformacoesFluxoResponse"/>
+      <xs:element name="verificarAcessoProcessoPorCPF" type="tns:verificarAcessoProcessoPorCPF"/>
+      <xs:element name="verificarAcessoProcessoPorCPFResponse" type="tns:verificarAcessoProcessoPorCPFResponse"/>
+      <xs:complexType name="consultarClassesJudiciais">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:jurisdicao"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="jurisdicao">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="descricao" type="xs:string"/>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultarClassesJudiciaisResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:classeJudicial"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="classeJudicial">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codigo" type="xs:string"/>
+          <xs:element minOccurs="0" name="descricao" type="xs:string"/>
+          <xs:element minOccurs="0" name="recursal" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="exigePoloPassivo" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="remessaInstancia" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="tipoPartePoloPassivo" type="tns:tipoParte"/>
+          <xs:element minOccurs="0" name="tipoPartePoloAtivo" type="tns:tipoParte"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tipoParte">
+        <xs:sequence>
+          <xs:element name="idTipoParte" type="xs:int"/>
+          <xs:element minOccurs="0" name="descTipoParte" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultarJurisdicoes">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="consultarJurisdicoesResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:jurisdicao"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultarTiposAudiencia">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="consultarTiposAudienciaResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:tipoAudiencia"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tipoAudiencia">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="descricao" type="xs:string"/>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultarProcessoReferencia">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="numeroProcesso" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultarProcessoReferenciaResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="recuperarInformacoesFluxo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:classeJudicial"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="recuperarInformacoesFluxoResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:fluxo"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="fluxo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codClasseJudicial" type="xs:string"/>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+          <xs:element minOccurs="0" name="xml" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultarProcessosPorProcessoReferenciaDistribuidosApos">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="numeroProcessoReferencia" type="xs:string"/>
+          <xs:element minOccurs="0" name="dataAnsiReferenciaDistribuicao" type="xs:string"/>
+          <xs:element minOccurs="0" name="filtroCodigoClassesJudiciais" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultarProcessosPorProcessoReferenciaDistribuidosAposResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultarSalasAudienciaOrgaoJulgador">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="orgaoJulgador" type="tns:orgaoJulgador"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="orgaoJulgador">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="descricao" type="xs:string"/>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="cargosJudiciais" nillable="true" type="tns:cargoJudicial"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="cargoJudicial">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+          <xs:element minOccurs="0" name="descricao" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultarSalasAudienciaOrgaoJulgadorResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:salaAudiencia"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="salaAudiencia">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+          <xs:element minOccurs="0" name="ignoraFeriado" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="nome" type="xs:string"/>
+          <xs:element minOccurs="0" name="orgaoJulgador" type="tns:orgaoJulgador"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="salaHorarioList" nillable="true" type="tns:salaHorario"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="tipoAudienciaList" nillable="true" type="tns:tipoAudiencia"/>
+          <xs:element minOccurs="0" name="tipoSala" type="tns:salaEnum"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="salaHorario">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="diaSemama" type="tns:diaSemanaEnum"/>
+          <xs:element minOccurs="0" name="horaFinal" type="xs:dateTime"/>
+          <xs:element minOccurs="0" name="horaInicial" type="xs:dateTime"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultarPapeis">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultarPapeisResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:papel"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="papel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="identificador" type="xs:string"/>
+          <xs:element minOccurs="0" name="nome" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultarTodosTiposDocumentoProcessual">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="consultarTodosTiposDocumentoProcessualResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:tipoDocumentoProcessual"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tipoDocumentoProcessual">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codigo" type="xs:string"/>
+          <xs:element minOccurs="0" name="descricao" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultarPrioridadeProcesso">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="consultarPrioridadeProcessoResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:prioridadeProcesso"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="prioridadeProcesso">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="descricao" type="xs:string"/>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultarTiposDocumentoProcessual">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultarTiposDocumentoProcessualResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:tipoDocumentoProcessual"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultarOrgaosJulgadores">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="consultarOrgaosJulgadoresResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:orgaoJulgador"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultarAssuntosJudiciais">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:jurisdicao"/>
+          <xs:element minOccurs="0" name="arg1" type="tns:classeJudicial"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultarAssuntosJudiciaisResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:assuntoJudicial"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="assuntoJudicial">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codigo" type="xs:string"/>
+          <xs:element minOccurs="0" name="descricao" type="xs:string"/>
+          <xs:element minOccurs="0" name="complementar" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultarProcessosPorProcessoReferencia">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="numeroProcessoReferencia" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultarProcessosPorProcessoReferenciaResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultarOrgaosJulgadoresColegiados">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="consultarOrgaosJulgadoresColegiadosResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:orgaoJulgadorColegiado"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="orgaoJulgadorColegiado">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="descricao" type="xs:string"/>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="verificarAcessoProcessoPorCPF">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="numeroProcesso" type="xs:string"/>
+          <xs:element minOccurs="0" name="cpf" type="xs:string"/>
+          <xs:element minOccurs="0" name="usuarioWebService" type="xs:string"/>
+          <xs:element minOccurs="0" name="senhaWebService" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="verificarAcessoProcessoPorCPFResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:verificarAcessoProcessoPorCPFResult"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="verificarAcessoProcessoPorCPFResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="sucesso" type="xs:boolean"/>
+          <xs:element minOccurs="0" name="mensagem" type="xs:string"/>
+          <xs:element minOccurs="0" name="possuiAcesso" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultarCompetencias">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:jurisdicao"/>
+          <xs:element minOccurs="0" name="arg1" type="tns:classeJudicial"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="arg2" nillable="true" type="tns:assuntoJudicial"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultarCompetenciasResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:competencia"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="competencia">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="descricao" type="xs:string"/>
+          <xs:element minOccurs="0" name="id" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="diaSemanaEnum">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="DOMINGO"/>
+          <xs:enumeration value="SEGUNDA"/>
+          <xs:enumeration value="TERCA"/>
+          <xs:enumeration value="QUARTA"/>
+          <xs:enumeration value="QUINTA"/>
+          <xs:enumeration value="SEXTA"/>
+          <xs:enumeration value="SABADO"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="salaEnum">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="A"/>
+          <xs:enumeration value="S"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="consultarProcessoReferencia" nillable="true" type="tns:consultarProcessoReferencia"/>
+      <xs:element name="consultarProcessoReferenciaResponse" nillable="true" type="tns:consultarProcessoReferenciaResponse"/>
+      <xs:element name="consultarPrioridadeProcesso" nillable="true" type="tns:consultarPrioridadeProcesso"/>
+      <xs:element name="consultarClassesJudiciaisRemessa" nillable="true" type="tns:consultarClassesJudiciais"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="consultarJurisdicoes">
+    <wsdl:part element="tns:consultarJurisdicoes" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarProcessoReferencia">
+    <wsdl:part element="tns:consultarProcessoReferencia" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarTiposDocumentoProcessualResponse">
+    <wsdl:part element="tns:consultarTiposDocumentoProcessualResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarProcessoReferenciaResponse">
+    <wsdl:part element="tns:consultarProcessoReferenciaResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarProcessosPorProcessoReferenciaDistribuidosApos">
+    <wsdl:part element="tns:consultarProcessosPorProcessoReferenciaDistribuidosApos" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarOrgaosJulgadoresColegiadosResponse">
+    <wsdl:part element="tns:consultarOrgaosJulgadoresColegiadosResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarPapeis">
+    <wsdl:part element="tns:consultarPapeis" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarClassesJudiciaisRemessaResponse">
+    <wsdl:part element="tns:consultarClassesJudiciaisResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarJurisdicoesResponse">
+    <wsdl:part element="tns:consultarJurisdicoesResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarProcessosPorProcessoReferenciaDistribuidosAposResponse">
+    <wsdl:part element="tns:consultarProcessosPorProcessoReferenciaDistribuidosAposResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarTodosTiposDocumentoProcessual">
+    <wsdl:part element="tns:consultarTodosTiposDocumentoProcessual" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarPrioridadeProcesso">
+    <wsdl:part element="tns:consultarPrioridadeProcesso" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarOrgaosJulgadoresResponse">
+    <wsdl:part element="tns:consultarOrgaosJulgadoresResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarClassesJudiciaisResponse">
+    <wsdl:part element="tns:consultarClassesJudiciaisResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarTodosTiposDocumentoProcessualResponse">
+    <wsdl:part element="tns:consultarTodosTiposDocumentoProcessualResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="recuperarInformacoesFluxoResponse">
+    <wsdl:part element="tns:recuperarInformacoesFluxoResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarCompetenciasResponse">
+    <wsdl:part element="tns:consultarCompetenciasResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarClassesJudiciaisRemessa">
+    <wsdl:part element="tns:consultarClassesJudiciaisRemessa" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarOrgaosJulgadoresColegiados">
+    <wsdl:part element="tns:consultarOrgaosJulgadoresColegiados" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarCompetencias">
+    <wsdl:part element="tns:consultarCompetencias" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarClassesJudiciais">
+    <wsdl:part element="tns:consultarClassesJudiciais" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarTiposAudiencia">
+    <wsdl:part element="tns:consultarTiposAudiencia" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="recuperarInformacoesFluxo">
+    <wsdl:part element="tns:recuperarInformacoesFluxo" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarSalasAudienciaResponse">
+    <wsdl:part element="tns:consultarSalasAudienciaResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="verificarAcessoProcessoPorCPFResponse">
+    <wsdl:part element="tns:verificarAcessoProcessoPorCPFResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarAssuntosJudiciaisResponse">
+    <wsdl:part element="tns:consultarAssuntosJudiciaisResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarSalasAudiencia">
+    <wsdl:part element="tns:consultarSalasAudiencia" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarPapeisResponse">
+    <wsdl:part element="tns:consultarPapeisResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarTiposDocumentoProcessual">
+    <wsdl:part element="tns:consultarTiposDocumentoProcessual" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarPrioridadeProcessoResponse">
+    <wsdl:part element="tns:consultarPrioridadeProcessoResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarOrgaosJulgadores">
+    <wsdl:part element="tns:consultarOrgaosJulgadores" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarAssuntosJudiciais">
+    <wsdl:part element="tns:consultarAssuntosJudiciais" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarTiposAudienciaResponse">
+    <wsdl:part element="tns:consultarTiposAudienciaResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarProcessosPorProcessoReferencia">
+    <wsdl:part element="tns:consultarProcessosPorProcessoReferencia" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="verificarAcessoProcessoPorCPF">
+    <wsdl:part element="tns:verificarAcessoProcessoPorCPF" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarProcessosPorProcessoReferenciaResponse">
+    <wsdl:part element="tns:consultarProcessosPorProcessoReferenciaResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ConsultaPJe">
+    <wsdl:operation name="consultarClassesJudiciais">
+      <wsdl:input message="tns:consultarClassesJudiciais" name="consultarClassesJudiciais"></wsdl:input>
+      <wsdl:output message="tns:consultarClassesJudiciaisResponse" name="consultarClassesJudiciaisResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarJurisdicoes">
+      <wsdl:input message="tns:consultarJurisdicoes" name="consultarJurisdicoes"></wsdl:input>
+      <wsdl:output message="tns:consultarJurisdicoesResponse" name="consultarJurisdicoesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposAudiencia">
+      <wsdl:input message="tns:consultarTiposAudiencia" name="consultarTiposAudiencia"></wsdl:input>
+      <wsdl:output message="tns:consultarTiposAudienciaResponse" name="consultarTiposAudienciaResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarProcessoReferencia">
+      <wsdl:input message="tns:consultarProcessoReferencia" name="consultarProcessoReferencia"></wsdl:input>
+      <wsdl:output message="tns:consultarProcessoReferenciaResponse" name="consultarProcessoReferenciaResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="recuperarInformacoesFluxo">
+      <wsdl:input message="tns:recuperarInformacoesFluxo" name="recuperarInformacoesFluxo"></wsdl:input>
+      <wsdl:output message="tns:recuperarInformacoesFluxoResponse" name="recuperarInformacoesFluxoResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarProcessosPorProcessoReferenciaDistribuidosApos">
+      <wsdl:input message="tns:consultarProcessosPorProcessoReferenciaDistribuidosApos" name="consultarProcessosPorProcessoReferenciaDistribuidosApos"></wsdl:input>
+      <wsdl:output message="tns:consultarProcessosPorProcessoReferenciaDistribuidosAposResponse" name="consultarProcessosPorProcessoReferenciaDistribuidosAposResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarSalasAudiencia">
+      <wsdl:input message="tns:consultarSalasAudiencia" name="consultarSalasAudiencia"></wsdl:input>
+      <wsdl:output message="tns:consultarSalasAudienciaResponse" name="consultarSalasAudienciaResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarPapeis">
+      <wsdl:input message="tns:consultarPapeis" name="consultarPapeis"></wsdl:input>
+      <wsdl:output message="tns:consultarPapeisResponse" name="consultarPapeisResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTodosTiposDocumentoProcessual">
+      <wsdl:input message="tns:consultarTodosTiposDocumentoProcessual" name="consultarTodosTiposDocumentoProcessual"></wsdl:input>
+      <wsdl:output message="tns:consultarTodosTiposDocumentoProcessualResponse" name="consultarTodosTiposDocumentoProcessualResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarPrioridadeProcesso">
+      <wsdl:input message="tns:consultarPrioridadeProcesso" name="consultarPrioridadeProcesso"></wsdl:input>
+      <wsdl:output message="tns:consultarPrioridadeProcessoResponse" name="consultarPrioridadeProcessoResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposDocumentoProcessual">
+      <wsdl:input message="tns:consultarTiposDocumentoProcessual" name="consultarTiposDocumentoProcessual"></wsdl:input>
+      <wsdl:output message="tns:consultarTiposDocumentoProcessualResponse" name="consultarTiposDocumentoProcessualResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarOrgaosJulgadores">
+      <wsdl:input message="tns:consultarOrgaosJulgadores" name="consultarOrgaosJulgadores"></wsdl:input>
+      <wsdl:output message="tns:consultarOrgaosJulgadoresResponse" name="consultarOrgaosJulgadoresResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarAssuntosJudiciais">
+      <wsdl:input message="tns:consultarAssuntosJudiciais" name="consultarAssuntosJudiciais"></wsdl:input>
+      <wsdl:output message="tns:consultarAssuntosJudiciaisResponse" name="consultarAssuntosJudiciaisResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarClassesJudiciaisRemessa">
+      <wsdl:input message="tns:consultarClassesJudiciaisRemessa" name="consultarClassesJudiciaisRemessa"></wsdl:input>
+      <wsdl:output message="tns:consultarClassesJudiciaisRemessaResponse" name="consultarClassesJudiciaisRemessaResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarProcessosPorProcessoReferencia">
+      <wsdl:input message="tns:consultarProcessosPorProcessoReferencia" name="consultarProcessosPorProcessoReferencia"></wsdl:input>
+      <wsdl:output message="tns:consultarProcessosPorProcessoReferenciaResponse" name="consultarProcessosPorProcessoReferenciaResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarOrgaosJulgadoresColegiados">
+      <wsdl:input message="tns:consultarOrgaosJulgadoresColegiados" name="consultarOrgaosJulgadoresColegiados"></wsdl:input>
+      <wsdl:output message="tns:consultarOrgaosJulgadoresColegiadosResponse" name="consultarOrgaosJulgadoresColegiadosResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificarAcessoProcessoPorCPF">
+      <wsdl:input message="tns:verificarAcessoProcessoPorCPF" name="verificarAcessoProcessoPorCPF"></wsdl:input>
+      <wsdl:output message="tns:verificarAcessoProcessoPorCPFResponse" name="verificarAcessoProcessoPorCPFResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarCompetencias">
+      <wsdl:input message="tns:consultarCompetencias" name="consultarCompetencias"></wsdl:input>
+      <wsdl:output message="tns:consultarCompetenciasResponse" name="consultarCompetenciasResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConsultaPJeServiceSoapBinding" type="tns:ConsultaPJe">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="consultarClassesJudiciais">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="consultarClassesJudiciais">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultarClassesJudiciaisResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarJurisdicoes">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="consultarJurisdicoes">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultarJurisdicoesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposAudiencia">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="consultarTiposAudiencia">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultarTiposAudienciaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarProcessoReferencia">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="consultarProcessoReferencia">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultarProcessoReferenciaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="recuperarInformacoesFluxo">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="recuperarInformacoesFluxo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="recuperarInformacoesFluxoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarProcessosPorProcessoReferenciaDistribuidosApos">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="consultarProcessosPorProcessoReferenciaDistribuidosApos">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultarProcessosPorProcessoReferenciaDistribuidosAposResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarSalasAudiencia">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="consultarSalasAudiencia">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultarSalasAudienciaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarPapeis">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="consultarPapeis">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultarPapeisResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTodosTiposDocumentoProcessual">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="consultarTodosTiposDocumentoProcessual">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultarTodosTiposDocumentoProcessualResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarPrioridadeProcesso">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="consultarPrioridadeProcesso">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultarPrioridadeProcessoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTiposDocumentoProcessual">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="consultarTiposDocumentoProcessual">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultarTiposDocumentoProcessualResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarOrgaosJulgadores">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="consultarOrgaosJulgadores">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultarOrgaosJulgadoresResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarAssuntosJudiciais">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="consultarAssuntosJudiciais">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultarAssuntosJudiciaisResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarClassesJudiciaisRemessa">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="consultarClassesJudiciaisRemessa">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultarClassesJudiciaisRemessaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarProcessosPorProcessoReferencia">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="consultarProcessosPorProcessoReferencia">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultarProcessosPorProcessoReferenciaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarOrgaosJulgadoresColegiados">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="consultarOrgaosJulgadoresColegiados">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultarOrgaosJulgadoresColegiadosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="verificarAcessoProcessoPorCPF">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="verificarAcessoProcessoPorCPF">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="verificarAcessoProcessoPorCPFResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarCompetencias">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="consultarCompetencias">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultarCompetenciasResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConsultaPJeService">
+    <wsdl:port binding="tns:ConsultaPJeServiceSoapBinding" name="ConsultaPJePort">
+      <soap:address location="https://mni1g.trf3.jus.br/pje/ConsultaPJe"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://mni1g.trf3.jus.br/pje/ConsultaPJe</con:endpoint></con:endpoints><con:operation id="2e0c625a-f569-4b8d-8ef5-02fd6f2de050" isOneWay="false" action="" name="consultarAssuntosJudiciais" bindingOperationName="consultarAssuntosJudiciais" type="Request-Response" outputName="consultarAssuntosJudiciaisResponse" inputName="consultarAssuntosJudiciais" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5e31b3da-28fb-4837-8d23-5645693357ed" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://mni1g.trf3.jus.br/pje/ConsultaPJe</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.pje.cnj.jus.br/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:consultarAssuntosJudiciais>
+         <arg0>
+            <id>6301</id>
+         </arg0>
+         <arg1>
+            <codigo>436</codigo>
+         </arg1>
+      </ws:consultarAssuntosJudiciais>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.pje.cnj.jus.br/ConsultaPJe/consultarAssuntosJudiciais"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="cf785e96-2e27-427d-b002-f1c21df00666" isOneWay="false" action="" name="consultarClassesJudiciais" bindingOperationName="consultarClassesJudiciais" type="Request-Response" outputName="consultarClassesJudiciaisResponse" inputName="consultarClassesJudiciais" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="dc8e1fb3-4fa8-441e-9eb1-6142a7feff74" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://mni1g.trf3.jus.br/pje/ConsultaPJe</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.pje.cnj.jus.br/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:consultarClassesJudiciais>
+         <arg0>
+            <id>6140</id>
+         </arg0>
+      </ws:consultarClassesJudiciais>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.pje.cnj.jus.br/ConsultaPJe/consultarClassesJudiciais"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="562b3b27-a922-43db-ac9b-7ed0ee48948c" isOneWay="false" action="" name="consultarClassesJudiciaisRemessa" bindingOperationName="consultarClassesJudiciaisRemessa" type="Request-Response" outputName="consultarClassesJudiciaisRemessaResponse" inputName="consultarClassesJudiciaisRemessa" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f77051e3-0d99-44bc-806f-e4498a1d71b7" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://mni1g.trf3.jus.br/pje/ConsultaPJe</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.pje.cnj.jus.br/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:consultarClassesJudiciaisRemessa>
+         <arg0>
+            <id>6140</id>
+         </arg0>
+      </ws:consultarClassesJudiciaisRemessa>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.pje.cnj.jus.br/ConsultaPJe/consultarClassesJudiciaisRemessa"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="eac9a1b3-0969-48b1-a1bc-f0c334304ca7" isOneWay="false" action="" name="consultarCompetencias" bindingOperationName="consultarCompetencias" type="Request-Response" outputName="consultarCompetenciasResponse" inputName="consultarCompetencias" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4b62de18-27c9-45d8-9f96-0fde2f358e08" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://mni1g.trf3.jus.br/pje/ConsultaPJe</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.pje.cnj.jus.br/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ws:consultarCompetencias>
+         <arg0>
+            <id>6182</id>
+         </arg0>
+         <arg1>
+            <codigo>1116</codigo>
+         </arg1>
+      </ws:consultarCompetencias>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.pje.cnj.jus.br/ConsultaPJe/consultarCompetencias"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="1359feb9-8fa9-482e-8886-531a371379bb" isOneWay="false" action="" name="consultarJurisdicoes" bindingOperationName="consultarJurisdicoes" type="Request-Response" outputName="consultarJurisdicoesResponse" inputName="consultarJurisdicoes" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="18bbacb7-73b1-48d1-9c87-2cc430c1a43e" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://mni1g.trf3.jus.br/pje/ConsultaPJe</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.pje.cnj.jus.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:consultarJurisdicoes/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.pje.cnj.jus.br/ConsultaPJe/consultarJurisdicoes"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="212d5bd9-b10a-46ff-a332-26f905ee3a33" isOneWay="false" action="" name="consultarOrgaosJulgadores" bindingOperationName="consultarOrgaosJulgadores" type="Request-Response" outputName="consultarOrgaosJulgadoresResponse" inputName="consultarOrgaosJulgadores" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="23ffb1c9-41b1-4cd6-a3d4-175bf9721a04" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://mni1g.trf3.jus.br/pje/ConsultaPJe</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.pje.cnj.jus.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:consultarOrgaosJulgadores/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.pje.cnj.jus.br/ConsultaPJe/consultarOrgaosJulgadores"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="fc6e9e5d-e7f9-4d1e-abc0-91462aaaec7f" isOneWay="false" action="" name="consultarOrgaosJulgadoresColegiados" bindingOperationName="consultarOrgaosJulgadoresColegiados" type="Request-Response" outputName="consultarOrgaosJulgadoresColegiadosResponse" inputName="consultarOrgaosJulgadoresColegiados" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5c0067a8-24ca-4485-9846-ba696533c541" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://mni1g.trf3.jus.br/pje/ConsultaPJe</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.pje.cnj.jus.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:consultarOrgaosJulgadoresColegiados/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.pje.cnj.jus.br/ConsultaPJe/consultarOrgaosJulgadoresColegiados"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="fb70c8b7-3a7f-47e2-ad70-a028fa04e68e" isOneWay="false" action="" name="consultarPapeis" bindingOperationName="consultarPapeis" type="Request-Response" outputName="consultarPapeisResponse" inputName="consultarPapeis" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="dcc57e52-c104-4ab1-8b47-ea50703c4ee7" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://mni1g.trf3.jus.br/pje/ConsultaPJe</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.pje.cnj.jus.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:consultarPapeis>\r
+         <!--Optional:-->\r
+         <arg0>30181606810</arg0>\r
+      </ws:consultarPapeis>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.pje.cnj.jus.br/ConsultaPJe/consultarPapeis"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="a310ab31-1d07-4c87-a514-05f7385ef9ce" isOneWay="false" action="" name="consultarPrioridadeProcesso" bindingOperationName="consultarPrioridadeProcesso" type="Request-Response" outputName="consultarPrioridadeProcessoResponse" inputName="consultarPrioridadeProcesso" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e5b66ab4-6555-407b-bf75-a6bb6fdd67a8" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://mni1g.trf3.jus.br/pje/ConsultaPJe</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.pje.cnj.jus.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:consultarPrioridadeProcesso/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.pje.cnj.jus.br/ConsultaPJe/consultarPrioridadeProcesso"/></con:call></con:operation><con:operation id="89112d0e-235f-462d-a046-b238f14d1896" isOneWay="false" action="" name="consultarProcessoReferencia" bindingOperationName="consultarProcessoReferencia" type="Request-Response" outputName="consultarProcessoReferenciaResponse" inputName="consultarProcessoReferencia" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3994dc3c-09bf-4ee7-a866-ee5211aa5a44" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://mni1g.trf3.jus.br/pje/ConsultaPJe</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.pje.cnj.jus.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:consultarProcessoReferencia>\r
+         <!--Optional:-->\r
+         <numeroProcesso>?</numeroProcesso>\r
+      </ws:consultarProcessoReferencia>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.pje.cnj.jus.br/ConsultaPJe/consultarProcessoReferencia"/></con:call></con:operation><con:operation id="f66e77df-e6da-45fd-a6e9-16a6a4b5ae15" isOneWay="false" action="" name="consultarProcessosPorProcessoReferencia" bindingOperationName="consultarProcessosPorProcessoReferencia" type="Request-Response" outputName="consultarProcessosPorProcessoReferenciaResponse" inputName="consultarProcessosPorProcessoReferencia" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="fd3e4c32-2bad-4528-b26c-a987f2479959" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://mni1g.trf3.jus.br/pje/ConsultaPJe</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.pje.cnj.jus.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:consultarProcessosPorProcessoReferencia>\r
+         <!--Optional:-->\r
+         <numeroProcessoReferencia>?</numeroProcessoReferencia>\r
+      </ws:consultarProcessosPorProcessoReferencia>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.pje.cnj.jus.br/ConsultaPJe/consultarProcessosPorProcessoReferencia"/></con:call></con:operation><con:operation id="6d2d9d5b-16f4-411a-84f0-ab4072511a15" isOneWay="false" action="" name="consultarProcessosPorProcessoReferenciaDistribuidosApos" bindingOperationName="consultarProcessosPorProcessoReferenciaDistribuidosApos" type="Request-Response" outputName="consultarProcessosPorProcessoReferenciaDistribuidosAposResponse" inputName="consultarProcessosPorProcessoReferenciaDistribuidosApos" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c845c571-cd68-4841-a018-28a20c8a145d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://mni1g.trf3.jus.br/pje/ConsultaPJe</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.pje.cnj.jus.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:consultarProcessosPorProcessoReferenciaDistribuidosApos>\r
+         <!--Optional:-->\r
+         <numeroProcessoReferencia>?</numeroProcessoReferencia>\r
+         <!--Optional:-->\r
+         <dataAnsiReferenciaDistribuicao>?</dataAnsiReferenciaDistribuicao>\r
+         <!--Optional:-->\r
+         <filtroCodigoClassesJudiciais>?</filtroCodigoClassesJudiciais>\r
+      </ws:consultarProcessosPorProcessoReferenciaDistribuidosApos>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.pje.cnj.jus.br/ConsultaPJe/consultarProcessosPorProcessoReferenciaDistribuidosApos"/></con:call></con:operation><con:operation id="c0c6a87d-f3bb-481f-a226-781b2ace6399" isOneWay="false" action="" name="consultarSalasAudiencia" bindingOperationName="consultarSalasAudiencia" type="Request-Response" outputName="consultarSalasAudienciaResponse" inputName="consultarSalasAudiencia" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1e8cda91-5a3a-4a77-ab36-f70ee7ca4fbd" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://mni1g.trf3.jus.br/pje/ConsultaPJe</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.pje.cnj.jus.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:consultarSalasAudiencia>\r
+         <!--Optional:-->\r
+         <orgaoJulgador>\r
+            <!--Optional:-->\r
+            <descricao>?</descricao>\r
+            <!--Optional:-->\r
+            <id>?</id>\r
+            <!--Zero or more repetitions:-->\r
+            <cargosJudiciais>\r
+               <!--Optional:-->\r
+               <id>?</id>\r
+               <!--Optional:-->\r
+               <descricao>?</descricao>\r
+            </cargosJudiciais>\r
+         </orgaoJulgador>\r
+      </ws:consultarSalasAudiencia>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.pje.cnj.jus.br/ConsultaPJe/consultarSalasAudiencia"/></con:call></con:operation><con:operation id="d63709c0-f890-43ac-90eb-eb6509b5675e" isOneWay="false" action="" name="consultarTiposAudiencia" bindingOperationName="consultarTiposAudiencia" type="Request-Response" outputName="consultarTiposAudienciaResponse" inputName="consultarTiposAudiencia" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8636a485-724f-439a-8eb4-2db49a73c499" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://mni1g.trf3.jus.br/pje/ConsultaPJe</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.pje.cnj.jus.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:consultarTiposAudiencia/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.pje.cnj.jus.br/ConsultaPJe/consultarTiposAudiencia"/></con:call></con:operation><con:operation id="f5edc6d2-2679-4023-95fd-7c20a98296ff" isOneWay="false" action="" name="consultarTiposDocumentoProcessual" bindingOperationName="consultarTiposDocumentoProcessual" type="Request-Response" outputName="consultarTiposDocumentoProcessualResponse" inputName="consultarTiposDocumentoProcessual" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="91783268-f537-42ae-b2fb-1fe20c95af76" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://mni1g.trf3.jus.br/pje/ConsultaPJe</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.pje.cnj.jus.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:consultarTiposDocumentoProcessual>\r
+         <!--Optional:-->\r
+         <arg0>?</arg0>\r
+      </ws:consultarTiposDocumentoProcessual>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.pje.cnj.jus.br/ConsultaPJe/consultarTiposDocumentoProcessual"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="75431296-f080-46b4-b19c-2d9d16b58212" isOneWay="false" action="" name="consultarTodosTiposDocumentoProcessual" bindingOperationName="consultarTodosTiposDocumentoProcessual" type="Request-Response" outputName="consultarTodosTiposDocumentoProcessualResponse" inputName="consultarTodosTiposDocumentoProcessual" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c751ccf8-84df-481f-b4b3-898c761ec389" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://mni1g.trf3.jus.br/pje/ConsultaPJe</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.pje.cnj.jus.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:consultarTodosTiposDocumentoProcessual/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.pje.cnj.jus.br/ConsultaPJe/consultarTodosTiposDocumentoProcessual"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="438fb92e-6bc0-4453-98e7-2e0e598dd2e7" isOneWay="false" action="" name="recuperarInformacoesFluxo" bindingOperationName="recuperarInformacoesFluxo" type="Request-Response" outputName="recuperarInformacoesFluxoResponse" inputName="recuperarInformacoesFluxo" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3ae293cb-bb26-4d8d-8410-ffa273a199d4" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://mni1g.trf3.jus.br/pje/ConsultaPJe</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.pje.cnj.jus.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:recuperarInformacoesFluxo>\r
+         <!--Optional:-->\r
+         <arg0>\r
+            <!--Optional:-->\r
+            <codigo>?</codigo>\r
+            <!--Optional:-->\r
+            <descricao>?</descricao>\r
+            <!--Optional:-->\r
+            <recursal>?</recursal>\r
+            <!--Optional:-->\r
+            <exigePoloPassivo>?</exigePoloPassivo>\r
+            <!--Optional:-->\r
+            <remessaInstancia>?</remessaInstancia>\r
+            <!--Optional:-->\r
+            <tipoPartePoloPassivo>\r
+               <idTipoParte>?</idTipoParte>\r
+               <!--Optional:-->\r
+               <descTipoParte>?</descTipoParte>\r
+            </tipoPartePoloPassivo>\r
+            <!--Optional:-->\r
+            <tipoPartePoloAtivo>\r
+               <idTipoParte>?</idTipoParte>\r
+               <!--Optional:-->\r
+               <descTipoParte>?</descTipoParte>\r
+            </tipoPartePoloAtivo>\r
+         </arg0>\r
+      </ws:recuperarInformacoesFluxo>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.pje.cnj.jus.br/ConsultaPJe/recuperarInformacoesFluxo"/></con:call></con:operation><con:operation id="8435f3f6-8def-400f-827d-782a8c2e933e" isOneWay="false" action="" name="verificarAcessoProcessoPorCPF" bindingOperationName="verificarAcessoProcessoPorCPF" type="Request-Response" outputName="verificarAcessoProcessoPorCPFResponse" inputName="verificarAcessoProcessoPorCPF" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="41d69b68-7cf9-46f6-88d8-a705ac5d2c84" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://mni1g.trf3.jus.br/pje/ConsultaPJe</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.pje.cnj.jus.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:verificarAcessoProcessoPorCPF>\r
+         <!--Optional:-->\r
+         <numeroProcesso>?</numeroProcesso>\r
+         <!--Optional:-->\r
+         <cpf>?</cpf>\r
+         <!--Optional:-->\r
+         <usuarioWebService>?</usuarioWebService>\r
+         <!--Optional:-->\r
+         <senhaWebService>?</senhaWebService>\r
+      </ws:verificarAcessoProcessoPorCPF>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.pje.cnj.jus.br/ConsultaPJe/verificarAcessoProcessoPorCPF"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

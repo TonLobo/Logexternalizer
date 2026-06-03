@@ -1,0 +1,2212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="ab92b2de-b38d-4352-a893-a7927607e12a" activeEnvironment="Default" name="ESAJ TJSP - 1° Grau" resourceRoot="" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="343c07c8-70df-4a09-b9f2-a12c7880e146" wsaVersion="NONE" name="ServicoPJHttpBinding" type="wsdl" bindingName="{ServicoPJ}ServicoPJHttpBinding" soapVersion="1_1" anonymous="optional" definition="https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ?wsdl"><con:part><con:url>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ServicoPJ" targetNamespace="ServicoPJ" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="ServicoPJ" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="ServicoPJ" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xmime="http://www.w3.org/2005/05/xmlmime">
+      <xs:import namespace="http://www.w3.org/2005/05/xmlmime"/>
+      <xs:element name="ConfirmaLogon">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ConfirmaLogonResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ConfirmacaoLeituraCitacaoAutoConfirmado">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ConfirmacaoLeituraCitacaoAutoConfirmadoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ConfirmacaoLeituraIntimacaoAutoConfirmado">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ConfirmacaoLeituraIntimacaoAutoConfirmadoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ConsultaNumeroProcesso">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ConsultaNumeroProcessoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ConsultaPeticao">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ConsultaPeticaoMTOM">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ConsultaPeticaoMTOMResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:base64Binary" xmime:expectedContentTypes="application/octet-stream"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ConsultaPeticaoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitaListaCitacoesAguardandoCiencia">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitaListaCitacoesAguardandoCienciaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitaListaCitacoesAutoConfirmada">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitaListaCitacoesAutoConfirmadaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitaListaCitacoesRecebidas">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitaListaCitacoesRecebidasResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitaListaIntimacaoAutoConfirmada">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitaListaIntimacaoAutoConfirmadaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitaListaIntimacoesAguardandoCiencia">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitaListaIntimacoesAguardandoCienciaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitaListaIntimacoesRecebidas">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitaListaIntimacoesRecebidasResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitaLogon">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitaLogonResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitacaoCitacaoAto">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+            <xs:element name="in1" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitacaoCitacaoAtoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitacaoCitacaoAutoConfirmada">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitacaoCitacaoAutoConfirmadaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitacaoCitacaoCiencia">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+            <xs:element name="in1" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitacaoCitacaoCienciaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitacaoDadosDistribuicao">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitacaoDadosDistribuicaoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitacaoIntimacaoAto">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+            <xs:element name="in1" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitacaoIntimacaoAtoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitacaoIntimacaoAutoConfirmada">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitacaoIntimacaoAutoConfirmadaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitacaoIntimacaoCiencia">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+            <xs:element name="in1" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitacaoIntimacaoCienciaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitacaoQtdIntimacoes">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SolicitacaoQtdIntimacoesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ajuizar">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+            <xs:element name="in1" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ajuizarMTOM">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+            <xs:element name="in1" nillable="true" type="xs:base64Binary" xmime:expectedContentTypes="application/octet-stream"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ajuizarMTOMResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ajuizarResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="confirmaLogon">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="confirmaLogonResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAreasCompetenciasClassesEAssuntos">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAreasCompetenciasClassesEAssuntosResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAreasCompetenciasEClasses">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAreasCompetenciasEClassesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAssuntos">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:int"/>
+            <xs:element name="in1" nillable="true" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getAssuntosResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getCategoriasEClasses">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getCategoriasEClassesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getClasseTpParte">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getClasseTpParteResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getComarcas">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getComarcasResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDadosProcesso">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDadosProcessoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDistritosPoliciais">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDistritosPoliciaisResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getForosEVaras">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getForosEVarasResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getMovimentacoesProcesso">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getMovimentacoesProcessoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getTiposDiversas">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getTiposDiversasResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getTiposDocDelegacia">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getTiposDocDelegaciaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getTiposDocDigital">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:int"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getTiposDocDigitalResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getTodosAssuntos">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getTodosAssuntosResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="logon">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+            <xs:element name="in1" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="logonResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="obterDocumentoAnexoAoAto">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="obterDocumentoAnexoAoAtoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="obterNumeroSajDoProcesso">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="obterNumeroSajDoProcessoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="obterNumeroUnificadoDoProcesso">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="obterNumeroUnificadoDoProcessoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="peticionarIntermediaria">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+            <xs:element name="in1" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="peticionarIntermediariaDiversa">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+            <xs:element name="in1" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="peticionarIntermediariaDiversaMTOM">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+            <xs:element name="in1" nillable="true" type="xs:base64Binary" xmime:expectedContentTypes="application/octet-stream"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="peticionarIntermediariaDiversaMTOMResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="peticionarIntermediariaDiversaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="peticionarIntermediariaMTOM">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+            <xs:element name="in1" nillable="true" type="xs:base64Binary" xmime:expectedContentTypes="application/octet-stream"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="peticionarIntermediariaMTOMResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="peticionarIntermediariaResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="solicitaLogon">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="solicitaLogonResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="solicitacaoDocCienciaAto">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="in0" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="solicitacaoDocCienciaAtoResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="out" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="logon">
+    <wsdl:part element="tns:logon" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="confirmaLogon">
+    <wsdl:part element="tns:confirmaLogon" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitaListaCitacoesAutoConfirmada">
+    <wsdl:part element="tns:SolicitaListaCitacoesAutoConfirmada" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitacaoDadosDistribuicao">
+    <wsdl:part element="tns:SolicitacaoDadosDistribuicao" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="peticionarIntermediariaMTOMResponse">
+    <wsdl:part element="tns:peticionarIntermediariaMTOMResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConsultaNumeroProcesso">
+    <wsdl:part element="tns:ConsultaNumeroProcesso" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConsultaPeticaoMTOMResponse">
+    <wsdl:part element="tns:ConsultaPeticaoMTOMResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitaListaIntimacoesAguardandoCiencia">
+    <wsdl:part element="tns:SolicitaListaIntimacoesAguardandoCiencia" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ajuizarMTOM">
+    <wsdl:part element="tns:ajuizarMTOM" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="peticionarIntermediariaDiversaMTOM">
+    <wsdl:part element="tns:peticionarIntermediariaDiversaMTOM" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitacaoCitacaoCienciaResponse">
+    <wsdl:part element="tns:SolicitacaoCitacaoCienciaResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAreasCompetenciasEClasses">
+    <wsdl:part element="tns:getAreasCompetenciasEClasses" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="obterNumeroUnificadoDoProcesso">
+    <wsdl:part element="tns:obterNumeroUnificadoDoProcesso" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitaListaCitacoesAguardandoCiencia">
+    <wsdl:part element="tns:SolicitaListaCitacoesAguardandoCiencia" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitaListaCitacoesAguardandoCienciaResponse">
+    <wsdl:part element="tns:SolicitaListaCitacoesAguardandoCienciaResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitaListaCitacoesRecebidasResponse">
+    <wsdl:part element="tns:SolicitaListaCitacoesRecebidasResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ajuizarMTOMResponse">
+    <wsdl:part element="tns:ajuizarMTOMResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAreasCompetenciasEClassesResponse">
+    <wsdl:part element="tns:getAreasCompetenciasEClassesResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitacaoIntimacaoAto">
+    <wsdl:part element="tns:SolicitacaoIntimacaoAto" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitaListaCitacoesRecebidas">
+    <wsdl:part element="tns:SolicitaListaCitacoesRecebidas" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitaLogon">
+    <wsdl:part element="tns:SolicitaLogon" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitacaoDadosDistribuicaoResponse">
+    <wsdl:part element="tns:SolicitacaoDadosDistribuicaoResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConfirmacaoLeituraIntimacaoAutoConfirmado">
+    <wsdl:part element="tns:ConfirmacaoLeituraIntimacaoAutoConfirmado" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="peticionarIntermediariaDiversaResponse">
+    <wsdl:part element="tns:peticionarIntermediariaDiversaResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitaListaIntimacoesRecebidasResponse">
+    <wsdl:part element="tns:SolicitaListaIntimacoesRecebidasResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="obterNumeroUnificadoDoProcessoResponse">
+    <wsdl:part element="tns:obterNumeroUnificadoDoProcessoResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="logonResponse">
+    <wsdl:part element="tns:logonResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConfirmacaoLeituraCitacaoAutoConfirmado">
+    <wsdl:part element="tns:ConfirmacaoLeituraCitacaoAutoConfirmado" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCategoriasEClassesResponse">
+    <wsdl:part element="tns:getCategoriasEClassesResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getClasseTpParte">
+    <wsdl:part element="tns:getClasseTpParte" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitacaoCitacaoAto">
+    <wsdl:part element="tns:SolicitacaoCitacaoAto" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitaLogonResponse">
+    <wsdl:part element="tns:SolicitaLogonResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitacaoIntimacaoAtoResponse">
+    <wsdl:part element="tns:SolicitacaoIntimacaoAtoResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDiversasResponse">
+    <wsdl:part element="tns:getTiposDiversasResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConsultaNumeroProcessoResponse">
+    <wsdl:part element="tns:ConsultaNumeroProcessoResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitacaoCitacaoAtoResponse">
+    <wsdl:part element="tns:SolicitacaoCitacaoAtoResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConsultaPeticaoResponse">
+    <wsdl:part element="tns:ConsultaPeticaoResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCategoriasEClasses">
+    <wsdl:part element="tns:getCategoriasEClasses" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDistritosPoliciaisResponse">
+    <wsdl:part element="tns:getDistritosPoliciaisResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="obterDocumentoAnexoAoAtoResponse">
+    <wsdl:part element="tns:obterDocumentoAnexoAoAtoResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getForosEVaras">
+    <wsdl:part element="tns:getForosEVaras" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="peticionarIntermediaria">
+    <wsdl:part element="tns:peticionarIntermediaria" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitaListaCitacoesAutoConfirmadaResponse">
+    <wsdl:part element="tns:SolicitaListaCitacoesAutoConfirmadaResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getClasseTpParteResponse">
+    <wsdl:part element="tns:getClasseTpParteResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitacaoIntimacaoAutoConfirmadaResponse">
+    <wsdl:part element="tns:SolicitacaoIntimacaoAutoConfirmadaResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTodosAssuntos">
+    <wsdl:part element="tns:getTodosAssuntos" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitaListaIntimacoesAguardandoCienciaResponse">
+    <wsdl:part element="tns:SolicitaListaIntimacoesAguardandoCienciaResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConfirmacaoLeituraCitacaoAutoConfirmadoResponse">
+    <wsdl:part element="tns:ConfirmacaoLeituraCitacaoAutoConfirmadoResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="peticionarIntermediariaDiversa">
+    <wsdl:part element="tns:peticionarIntermediariaDiversa" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitaListaIntimacoesRecebidas">
+    <wsdl:part element="tns:SolicitaListaIntimacoesRecebidas" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConfirmacaoLeituraIntimacaoAutoConfirmadoResponse">
+    <wsdl:part element="tns:ConfirmacaoLeituraIntimacaoAutoConfirmadoResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ajuizar">
+    <wsdl:part element="tns:ajuizar" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAssuntos">
+    <wsdl:part element="tns:getAssuntos" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDiversas">
+    <wsdl:part element="tns:getTiposDiversas" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDadosProcesso">
+    <wsdl:part element="tns:getDadosProcesso" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getComarcas">
+    <wsdl:part element="tns:getComarcas" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDocDelegaciaResponse">
+    <wsdl:part element="tns:getTiposDocDelegaciaResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitacaoCitacaoAutoConfirmadaResponse">
+    <wsdl:part element="tns:SolicitacaoCitacaoAutoConfirmadaResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConsultaPeticaoMTOM">
+    <wsdl:part element="tns:ConsultaPeticaoMTOM" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getComarcasResponse">
+    <wsdl:part element="tns:getComarcasResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDistritosPoliciais">
+    <wsdl:part element="tns:getDistritosPoliciais" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getDadosProcessoResponse">
+    <wsdl:part element="tns:getDadosProcessoResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitaListaIntimacaoAutoConfirmada">
+    <wsdl:part element="tns:SolicitaListaIntimacaoAutoConfirmada" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitacaoIntimacaoCiencia">
+    <wsdl:part element="tns:SolicitacaoIntimacaoCiencia" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAssuntosResponse">
+    <wsdl:part element="tns:getAssuntosResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMovimentacoesProcesso">
+    <wsdl:part element="tns:getMovimentacoesProcesso" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="solicitacaoDocCienciaAto">
+    <wsdl:part element="tns:solicitacaoDocCienciaAto" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="peticionarIntermediariaResponse">
+    <wsdl:part element="tns:peticionarIntermediariaResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDocDigital">
+    <wsdl:part element="tns:getTiposDocDigital" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMovimentacoesProcessoResponse">
+    <wsdl:part element="tns:getMovimentacoesProcessoResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDocDelegacia">
+    <wsdl:part element="tns:getTiposDocDelegacia" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="confirmaLogonResponse">
+    <wsdl:part element="tns:confirmaLogonResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitacaoIntimacaoCienciaResponse">
+    <wsdl:part element="tns:SolicitacaoIntimacaoCienciaResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="obterNumeroSajDoProcesso">
+    <wsdl:part element="tns:obterNumeroSajDoProcesso" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitacaoCitacaoCiencia">
+    <wsdl:part element="tns:SolicitacaoCitacaoCiencia" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitaListaIntimacaoAutoConfirmadaResponse">
+    <wsdl:part element="tns:SolicitaListaIntimacaoAutoConfirmadaResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="peticionarIntermediariaMTOM">
+    <wsdl:part element="tns:peticionarIntermediariaMTOM" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitacaoIntimacaoAutoConfirmada">
+    <wsdl:part element="tns:SolicitacaoIntimacaoAutoConfirmada" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="obterNumeroSajDoProcessoResponse">
+    <wsdl:part element="tns:obterNumeroSajDoProcessoResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="obterDocumentoAnexoAoAto">
+    <wsdl:part element="tns:obterDocumentoAnexoAoAto" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitacaoQtdIntimacoes">
+    <wsdl:part element="tns:SolicitacaoQtdIntimacoes" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitacaoCitacaoAutoConfirmada">
+    <wsdl:part element="tns:SolicitacaoCitacaoAutoConfirmada" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTodosAssuntosResponse">
+    <wsdl:part element="tns:getTodosAssuntosResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDocDigitalResponse">
+    <wsdl:part element="tns:getTiposDocDigitalResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ConsultaPeticao">
+    <wsdl:part element="tns:ConsultaPeticao" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getForosEVarasResponse">
+    <wsdl:part element="tns:getForosEVarasResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAreasCompetenciasClassesEAssuntos">
+    <wsdl:part element="tns:getAreasCompetenciasClassesEAssuntos" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="peticionarIntermediariaDiversaMTOMResponse">
+    <wsdl:part element="tns:peticionarIntermediariaDiversaMTOMResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ajuizarResponse">
+    <wsdl:part element="tns:ajuizarResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="solicitacaoDocCienciaAtoResponse">
+    <wsdl:part element="tns:solicitacaoDocCienciaAtoResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="SolicitacaoQtdIntimacoesResponse">
+    <wsdl:part element="tns:SolicitacaoQtdIntimacoesResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getAreasCompetenciasClassesEAssuntosResponse">
+    <wsdl:part element="tns:getAreasCompetenciasClassesEAssuntosResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ServicoPJPortType">
+    <wsdl:operation name="logon">
+      <wsdl:input message="tns:logon" name="logon"></wsdl:input>
+      <wsdl:output message="tns:logonResponse" name="logonResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitaListaIntimacoesRecebidas">
+      <wsdl:input message="tns:SolicitaListaIntimacoesRecebidas" name="SolicitaListaIntimacoesRecebidas"></wsdl:input>
+      <wsdl:output message="tns:SolicitaListaIntimacoesRecebidasResponse" name="SolicitaListaIntimacoesRecebidasResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="confirmaLogon">
+      <wsdl:input message="tns:confirmaLogon" name="confirmaLogon"></wsdl:input>
+      <wsdl:output message="tns:confirmaLogonResponse" name="confirmaLogonResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitaListaCitacoesAutoConfirmada">
+      <wsdl:input message="tns:SolicitaListaCitacoesAutoConfirmada" name="SolicitaListaCitacoesAutoConfirmada"></wsdl:input>
+      <wsdl:output message="tns:SolicitaListaCitacoesAutoConfirmadaResponse" name="SolicitaListaCitacoesAutoConfirmadaResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitacaoDadosDistribuicao">
+      <wsdl:input message="tns:SolicitacaoDadosDistribuicao" name="SolicitacaoDadosDistribuicao"></wsdl:input>
+      <wsdl:output message="tns:SolicitacaoDadosDistribuicaoResponse" name="SolicitacaoDadosDistribuicaoResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ajuizar">
+      <wsdl:input message="tns:ajuizar" name="ajuizar"></wsdl:input>
+      <wsdl:output message="tns:ajuizarResponse" name="ajuizarResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAssuntos">
+      <wsdl:input message="tns:getAssuntos" name="getAssuntos"></wsdl:input>
+      <wsdl:output message="tns:getAssuntosResponse" name="getAssuntosResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDiversas">
+      <wsdl:input message="tns:getTiposDiversas" name="getTiposDiversas"></wsdl:input>
+      <wsdl:output message="tns:getTiposDiversasResponse" name="getTiposDiversasResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDadosProcesso">
+      <wsdl:input message="tns:getDadosProcesso" name="getDadosProcesso"></wsdl:input>
+      <wsdl:output message="tns:getDadosProcessoResponse" name="getDadosProcessoResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaNumeroProcesso">
+      <wsdl:input message="tns:ConsultaNumeroProcesso" name="ConsultaNumeroProcesso"></wsdl:input>
+      <wsdl:output message="tns:ConsultaNumeroProcessoResponse" name="ConsultaNumeroProcessoResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitaListaIntimacoesAguardandoCiencia">
+      <wsdl:input message="tns:SolicitaListaIntimacoesAguardandoCiencia" name="SolicitaListaIntimacoesAguardandoCiencia"></wsdl:input>
+      <wsdl:output message="tns:SolicitaListaIntimacoesAguardandoCienciaResponse" name="SolicitaListaIntimacoesAguardandoCienciaResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ajuizarMTOM">
+      <wsdl:input message="tns:ajuizarMTOM" name="ajuizarMTOM"></wsdl:input>
+      <wsdl:output message="tns:ajuizarMTOMResponse" name="ajuizarMTOMResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getComarcas">
+      <wsdl:input message="tns:getComarcas" name="getComarcas"></wsdl:input>
+      <wsdl:output message="tns:getComarcasResponse" name="getComarcasResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="peticionarIntermediariaDiversaMTOM">
+      <wsdl:input message="tns:peticionarIntermediariaDiversaMTOM" name="peticionarIntermediariaDiversaMTOM"></wsdl:input>
+      <wsdl:output message="tns:peticionarIntermediariaDiversaMTOMResponse" name="peticionarIntermediariaDiversaMTOMResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAreasCompetenciasEClasses">
+      <wsdl:input message="tns:getAreasCompetenciasEClasses" name="getAreasCompetenciasEClasses"></wsdl:input>
+      <wsdl:output message="tns:getAreasCompetenciasEClassesResponse" name="getAreasCompetenciasEClassesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPeticaoMTOM">
+      <wsdl:input message="tns:ConsultaPeticaoMTOM" name="ConsultaPeticaoMTOM"></wsdl:input>
+      <wsdl:output message="tns:ConsultaPeticaoMTOMResponse" name="ConsultaPeticaoMTOMResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obterNumeroUnificadoDoProcesso">
+      <wsdl:input message="tns:obterNumeroUnificadoDoProcesso" name="obterNumeroUnificadoDoProcesso"></wsdl:input>
+      <wsdl:output message="tns:obterNumeroUnificadoDoProcessoResponse" name="obterNumeroUnificadoDoProcessoResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDistritosPoliciais">
+      <wsdl:input message="tns:getDistritosPoliciais" name="getDistritosPoliciais"></wsdl:input>
+      <wsdl:output message="tns:getDistritosPoliciaisResponse" name="getDistritosPoliciaisResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitaListaCitacoesAguardandoCiencia">
+      <wsdl:input message="tns:SolicitaListaCitacoesAguardandoCiencia" name="SolicitaListaCitacoesAguardandoCiencia"></wsdl:input>
+      <wsdl:output message="tns:SolicitaListaCitacoesAguardandoCienciaResponse" name="SolicitaListaCitacoesAguardandoCienciaResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitacaoIntimacaoAto">
+      <wsdl:input message="tns:SolicitacaoIntimacaoAto" name="SolicitacaoIntimacaoAto"></wsdl:input>
+      <wsdl:output message="tns:SolicitacaoIntimacaoAtoResponse" name="SolicitacaoIntimacaoAtoResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitaListaCitacoesRecebidas">
+      <wsdl:input message="tns:SolicitaListaCitacoesRecebidas" name="SolicitaListaCitacoesRecebidas"></wsdl:input>
+      <wsdl:output message="tns:SolicitaListaCitacoesRecebidasResponse" name="SolicitaListaCitacoesRecebidasResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitaListaIntimacaoAutoConfirmada">
+      <wsdl:input message="tns:SolicitaListaIntimacaoAutoConfirmada" name="SolicitaListaIntimacaoAutoConfirmada"></wsdl:input>
+      <wsdl:output message="tns:SolicitaListaIntimacaoAutoConfirmadaResponse" name="SolicitaListaIntimacaoAutoConfirmadaResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitaLogon">
+      <wsdl:input message="tns:SolicitaLogon" name="SolicitaLogon"></wsdl:input>
+      <wsdl:output message="tns:SolicitaLogonResponse" name="SolicitaLogonResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitacaoIntimacaoCiencia">
+      <wsdl:input message="tns:SolicitacaoIntimacaoCiencia" name="SolicitacaoIntimacaoCiencia"></wsdl:input>
+      <wsdl:output message="tns:SolicitacaoIntimacaoCienciaResponse" name="SolicitacaoIntimacaoCienciaResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmacaoLeituraIntimacaoAutoConfirmado">
+      <wsdl:input message="tns:ConfirmacaoLeituraIntimacaoAutoConfirmado" name="ConfirmacaoLeituraIntimacaoAutoConfirmado"></wsdl:input>
+      <wsdl:output message="tns:ConfirmacaoLeituraIntimacaoAutoConfirmadoResponse" name="ConfirmacaoLeituraIntimacaoAutoConfirmadoResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMovimentacoesProcesso">
+      <wsdl:input message="tns:getMovimentacoesProcesso" name="getMovimentacoesProcesso"></wsdl:input>
+      <wsdl:output message="tns:getMovimentacoesProcessoResponse" name="getMovimentacoesProcessoResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="solicitacaoDocCienciaAto">
+      <wsdl:input message="tns:solicitacaoDocCienciaAto" name="solicitacaoDocCienciaAto"></wsdl:input>
+      <wsdl:output message="tns:solicitacaoDocCienciaAtoResponse" name="solicitacaoDocCienciaAtoResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDocDigital">
+      <wsdl:input message="tns:getTiposDocDigital" name="getTiposDocDigital"></wsdl:input>
+      <wsdl:output message="tns:getTiposDocDigitalResponse" name="getTiposDocDigitalResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmacaoLeituraCitacaoAutoConfirmado">
+      <wsdl:input message="tns:ConfirmacaoLeituraCitacaoAutoConfirmado" name="ConfirmacaoLeituraCitacaoAutoConfirmado"></wsdl:input>
+      <wsdl:output message="tns:ConfirmacaoLeituraCitacaoAutoConfirmadoResponse" name="ConfirmacaoLeituraCitacaoAutoConfirmadoResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClasseTpParte">
+      <wsdl:input message="tns:getClasseTpParte" name="getClasseTpParte"></wsdl:input>
+      <wsdl:output message="tns:getClasseTpParteResponse" name="getClasseTpParteResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDocDelegacia">
+      <wsdl:input message="tns:getTiposDocDelegacia" name="getTiposDocDelegacia"></wsdl:input>
+      <wsdl:output message="tns:getTiposDocDelegaciaResponse" name="getTiposDocDelegaciaResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obterNumeroSajDoProcesso">
+      <wsdl:input message="tns:obterNumeroSajDoProcesso" name="obterNumeroSajDoProcesso"></wsdl:input>
+      <wsdl:output message="tns:obterNumeroSajDoProcessoResponse" name="obterNumeroSajDoProcessoResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitacaoCitacaoCiencia">
+      <wsdl:input message="tns:SolicitacaoCitacaoCiencia" name="SolicitacaoCitacaoCiencia"></wsdl:input>
+      <wsdl:output message="tns:SolicitacaoCitacaoCienciaResponse" name="SolicitacaoCitacaoCienciaResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitacaoCitacaoAto">
+      <wsdl:input message="tns:SolicitacaoCitacaoAto" name="SolicitacaoCitacaoAto"></wsdl:input>
+      <wsdl:output message="tns:SolicitacaoCitacaoAtoResponse" name="SolicitacaoCitacaoAtoResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="peticionarIntermediariaMTOM">
+      <wsdl:input message="tns:peticionarIntermediariaMTOM" name="peticionarIntermediariaMTOM"></wsdl:input>
+      <wsdl:output message="tns:peticionarIntermediariaMTOMResponse" name="peticionarIntermediariaMTOMResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitacaoIntimacaoAutoConfirmada">
+      <wsdl:input message="tns:SolicitacaoIntimacaoAutoConfirmada" name="SolicitacaoIntimacaoAutoConfirmada"></wsdl:input>
+      <wsdl:output message="tns:SolicitacaoIntimacaoAutoConfirmadaResponse" name="SolicitacaoIntimacaoAutoConfirmadaResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obterDocumentoAnexoAoAto">
+      <wsdl:input message="tns:obterDocumentoAnexoAoAto" name="obterDocumentoAnexoAoAto"></wsdl:input>
+      <wsdl:output message="tns:obterDocumentoAnexoAoAtoResponse" name="obterDocumentoAnexoAoAtoResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitacaoQtdIntimacoes">
+      <wsdl:input message="tns:SolicitacaoQtdIntimacoes" name="SolicitacaoQtdIntimacoes"></wsdl:input>
+      <wsdl:output message="tns:SolicitacaoQtdIntimacoesResponse" name="SolicitacaoQtdIntimacoesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitacaoCitacaoAutoConfirmada">
+      <wsdl:input message="tns:SolicitacaoCitacaoAutoConfirmada" name="SolicitacaoCitacaoAutoConfirmada"></wsdl:input>
+      <wsdl:output message="tns:SolicitacaoCitacaoAutoConfirmadaResponse" name="SolicitacaoCitacaoAutoConfirmadaResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCategoriasEClasses">
+      <wsdl:input message="tns:getCategoriasEClasses" name="getCategoriasEClasses"></wsdl:input>
+      <wsdl:output message="tns:getCategoriasEClassesResponse" name="getCategoriasEClassesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPeticao">
+      <wsdl:input message="tns:ConsultaPeticao" name="ConsultaPeticao"></wsdl:input>
+      <wsdl:output message="tns:ConsultaPeticaoResponse" name="ConsultaPeticaoResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getForosEVaras">
+      <wsdl:input message="tns:getForosEVaras" name="getForosEVaras"></wsdl:input>
+      <wsdl:output message="tns:getForosEVarasResponse" name="getForosEVarasResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAreasCompetenciasClassesEAssuntos">
+      <wsdl:input message="tns:getAreasCompetenciasClassesEAssuntos" name="getAreasCompetenciasClassesEAssuntos"></wsdl:input>
+      <wsdl:output message="tns:getAreasCompetenciasClassesEAssuntosResponse" name="getAreasCompetenciasClassesEAssuntosResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="peticionarIntermediaria">
+      <wsdl:input message="tns:peticionarIntermediaria" name="peticionarIntermediaria"></wsdl:input>
+      <wsdl:output message="tns:peticionarIntermediariaResponse" name="peticionarIntermediariaResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTodosAssuntos">
+      <wsdl:input message="tns:getTodosAssuntos" name="getTodosAssuntos"></wsdl:input>
+      <wsdl:output message="tns:getTodosAssuntosResponse" name="getTodosAssuntosResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="peticionarIntermediariaDiversa">
+      <wsdl:input message="tns:peticionarIntermediariaDiversa" name="peticionarIntermediariaDiversa"></wsdl:input>
+      <wsdl:output message="tns:peticionarIntermediariaDiversaResponse" name="peticionarIntermediariaDiversaResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicoPJHttpBinding" type="tns:ServicoPJPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="logon">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="logon">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="logonResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitaListaIntimacoesRecebidas">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="SolicitaListaIntimacoesRecebidas">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SolicitaListaIntimacoesRecebidasResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="confirmaLogon">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="confirmaLogon">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="confirmaLogonResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitaListaCitacoesAutoConfirmada">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="SolicitaListaCitacoesAutoConfirmada">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SolicitaListaCitacoesAutoConfirmadaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitacaoDadosDistribuicao">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="SolicitacaoDadosDistribuicao">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SolicitacaoDadosDistribuicaoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ajuizar">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="ajuizar">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ajuizarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAssuntos">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAssuntos">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAssuntosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDiversas">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTiposDiversas">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTiposDiversasResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDadosProcesso">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getDadosProcesso">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDadosProcessoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaNumeroProcesso">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="ConsultaNumeroProcesso">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ConsultaNumeroProcessoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitaListaIntimacoesAguardandoCiencia">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="SolicitaListaIntimacoesAguardandoCiencia">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SolicitaListaIntimacoesAguardandoCienciaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ajuizarMTOM">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="ajuizarMTOM">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ajuizarMTOMResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getComarcas">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getComarcas">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getComarcasResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="peticionarIntermediariaDiversaMTOM">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="peticionarIntermediariaDiversaMTOM">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="peticionarIntermediariaDiversaMTOMResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAreasCompetenciasEClasses">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAreasCompetenciasEClasses">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAreasCompetenciasEClassesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPeticaoMTOM">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="ConsultaPeticaoMTOM">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ConsultaPeticaoMTOMResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obterNumeroUnificadoDoProcesso">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="obterNumeroUnificadoDoProcesso">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="obterNumeroUnificadoDoProcessoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDistritosPoliciais">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getDistritosPoliciais">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDistritosPoliciaisResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitaListaCitacoesAguardandoCiencia">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="SolicitaListaCitacoesAguardandoCiencia">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SolicitaListaCitacoesAguardandoCienciaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitacaoIntimacaoAto">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="SolicitacaoIntimacaoAto">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SolicitacaoIntimacaoAtoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitaListaCitacoesRecebidas">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="SolicitaListaCitacoesRecebidas">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SolicitaListaCitacoesRecebidasResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitaListaIntimacaoAutoConfirmada">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="SolicitaListaIntimacaoAutoConfirmada">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SolicitaListaIntimacaoAutoConfirmadaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitaLogon">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="SolicitaLogon">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SolicitaLogonResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitacaoIntimacaoCiencia">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="SolicitacaoIntimacaoCiencia">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SolicitacaoIntimacaoCienciaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmacaoLeituraIntimacaoAutoConfirmado">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="ConfirmacaoLeituraIntimacaoAutoConfirmado">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ConfirmacaoLeituraIntimacaoAutoConfirmadoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMovimentacoesProcesso">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getMovimentacoesProcesso">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getMovimentacoesProcessoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="solicitacaoDocCienciaAto">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="solicitacaoDocCienciaAto">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="solicitacaoDocCienciaAtoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDocDigital">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTiposDocDigital">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTiposDocDigitalResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmacaoLeituraCitacaoAutoConfirmado">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="ConfirmacaoLeituraCitacaoAutoConfirmado">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ConfirmacaoLeituraCitacaoAutoConfirmadoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClasseTpParte">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getClasseTpParte">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getClasseTpParteResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDocDelegacia">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTiposDocDelegacia">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTiposDocDelegaciaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obterNumeroSajDoProcesso">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="obterNumeroSajDoProcesso">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="obterNumeroSajDoProcessoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitacaoCitacaoCiencia">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="SolicitacaoCitacaoCiencia">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SolicitacaoCitacaoCienciaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitacaoCitacaoAto">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="SolicitacaoCitacaoAto">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SolicitacaoCitacaoAtoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="peticionarIntermediariaMTOM">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="peticionarIntermediariaMTOM">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="peticionarIntermediariaMTOMResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitacaoIntimacaoAutoConfirmada">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="SolicitacaoIntimacaoAutoConfirmada">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SolicitacaoIntimacaoAutoConfirmadaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obterDocumentoAnexoAoAto">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="obterDocumentoAnexoAoAto">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="obterDocumentoAnexoAoAtoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitacaoQtdIntimacoes">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="SolicitacaoQtdIntimacoes">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SolicitacaoQtdIntimacoesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SolicitacaoCitacaoAutoConfirmada">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="SolicitacaoCitacaoAutoConfirmada">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SolicitacaoCitacaoAutoConfirmadaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCategoriasEClasses">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getCategoriasEClasses">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCategoriasEClassesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPeticao">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="ConsultaPeticao">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="ConsultaPeticaoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getForosEVaras">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getForosEVaras">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getForosEVarasResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAreasCompetenciasClassesEAssuntos">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getAreasCompetenciasClassesEAssuntos">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getAreasCompetenciasClassesEAssuntosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="peticionarIntermediaria">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="peticionarIntermediaria">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="peticionarIntermediariaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTodosAssuntos">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTodosAssuntos">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTodosAssuntosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="peticionarIntermediariaDiversa">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="peticionarIntermediariaDiversa">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="peticionarIntermediariaDiversaResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicoPJ">
+    <wsdl:port binding="tns:ServicoPJHttpBinding" name="ServicoPJHttpPort">
+      <soap:address location="https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint></con:endpoints><con:operation id="f09167c6-ceb5-4ef6-a2a6-fbd3ca507673" isOneWay="false" action="" name="ajuizar" bindingOperationName="ajuizar" type="Request-Response" outputName="ajuizarResponse" inputName="ajuizar" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7c1550a5-ca67-4e94-9b26-a8175ccae4fb" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:ajuizar>\r
+         <ser:in0>?</ser:in0>\r
+         <ser:in1>?</ser:in1>\r
+      </ser:ajuizar>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/ajuizar"/></con:call></con:operation><con:operation id="b1a7d918-4b22-4f3f-96d9-ae547babf217" isOneWay="false" action="" name="ajuizarMTOM" bindingOperationName="ajuizarMTOM" type="Request-Response" outputName="ajuizarMTOMResponse" inputName="ajuizarMTOM" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f7f20af5-cfef-4e9a-8489-3b639d9534f4" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:ajuizarMTOM>\r
+         <ser:in0>?</ser:in0>\r
+         <ser:in1>cid:1574202738119</ser:in1>\r
+      </ser:ajuizarMTOM>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/ajuizarMTOM"/></con:call></con:operation><con:operation id="aedc9edb-48c9-443b-a6ff-dd62ba704bb7" isOneWay="false" action="" name="ConfirmacaoLeituraCitacaoAutoConfirmado" bindingOperationName="ConfirmacaoLeituraCitacaoAutoConfirmado" type="Request-Response" outputName="ConfirmacaoLeituraCitacaoAutoConfirmadoResponse" inputName="ConfirmacaoLeituraCitacaoAutoConfirmado" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="acda908e-8da7-48b3-9d50-5ff2aee0206f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:ConfirmacaoLeituraCitacaoAutoConfirmado>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:ConfirmacaoLeituraCitacaoAutoConfirmado>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/ConfirmacaoLeituraCitacaoAutoConfirmado"/></con:call></con:operation><con:operation id="f7579804-d3b0-4eeb-8476-5ad8c1a307f4" isOneWay="false" action="" name="ConfirmacaoLeituraIntimacaoAutoConfirmado" bindingOperationName="ConfirmacaoLeituraIntimacaoAutoConfirmado" type="Request-Response" outputName="ConfirmacaoLeituraIntimacaoAutoConfirmadoResponse" inputName="ConfirmacaoLeituraIntimacaoAutoConfirmado" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c3df53bb-60cb-49dd-a375-3c92de9a7e76" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:ConfirmacaoLeituraIntimacaoAutoConfirmado>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:ConfirmacaoLeituraIntimacaoAutoConfirmado>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/ConfirmacaoLeituraIntimacaoAutoConfirmado"/></con:call></con:operation><con:operation id="4c1bd31d-2991-46e0-8705-f67731d62151" isOneWay="false" action="" name="confirmaLogon" bindingOperationName="confirmaLogon" type="Request-Response" outputName="confirmaLogonResponse" inputName="confirmaLogon" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="24cd26bc-8fa9-446b-89b8-b2e9edf5bb4c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:confirmaLogon>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:confirmaLogon>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/confirmaLogon"/></con:call></con:operation><con:operation id="e0826fd8-bacf-4589-8912-8e003f8503c9" isOneWay="false" action="" name="ConsultaNumeroProcesso" bindingOperationName="ConsultaNumeroProcesso" type="Request-Response" outputName="ConsultaNumeroProcessoResponse" inputName="ConsultaNumeroProcesso" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="12c5ab61-8d8c-4317-b2e4-4c55c4effed5" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:ConsultaNumeroProcesso>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:ConsultaNumeroProcesso>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/ConsultaNumeroProcesso"/></con:call></con:operation><con:operation id="6a70fb9a-da00-42f3-a1be-97061121faa4" isOneWay="false" action="" name="ConsultaPeticao" bindingOperationName="ConsultaPeticao" type="Request-Response" outputName="ConsultaPeticaoResponse" inputName="ConsultaPeticao" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2a9fe712-2777-4f4c-a5f6-34a4be34aa8f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:ConsultaPeticao>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:ConsultaPeticao>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/ConsultaPeticao"/></con:call></con:operation><con:operation id="1c3c0a3b-41ec-4cbf-b1fc-16a58c1ce4be" isOneWay="false" action="" name="ConsultaPeticaoMTOM" bindingOperationName="ConsultaPeticaoMTOM" type="Request-Response" outputName="ConsultaPeticaoMTOMResponse" inputName="ConsultaPeticaoMTOM" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5137cabc-dde7-4ffe-a06a-a6204f2c2e74" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:ConsultaPeticaoMTOM>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:ConsultaPeticaoMTOM>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/ConsultaPeticaoMTOM"/></con:call></con:operation><con:operation id="edd2e544-4a1f-4ada-bec2-0ed95868052d" isOneWay="false" action="" name="getAreasCompetenciasClassesEAssuntos" bindingOperationName="getAreasCompetenciasClassesEAssuntos" type="Request-Response" outputName="getAreasCompetenciasClassesEAssuntosResponse" inputName="getAreasCompetenciasClassesEAssuntos" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1f7bc1df-7025-424a-8ae2-59dd35803305" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getAreasCompetenciasClassesEAssuntos>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:getAreasCompetenciasClassesEAssuntos>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/getAreasCompetenciasClassesEAssuntos"/></con:call></con:operation><con:operation id="bf1b04e8-3098-40f0-81a9-6e794917b62a" isOneWay="false" action="" name="getAreasCompetenciasEClasses" bindingOperationName="getAreasCompetenciasEClasses" type="Request-Response" outputName="getAreasCompetenciasEClassesResponse" inputName="getAreasCompetenciasEClasses" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f36f79ed-75d5-4eb1-b4a6-3bd0e706f89c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getAreasCompetenciasEClasses>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:getAreasCompetenciasEClasses>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/getAreasCompetenciasEClasses"/></con:call></con:operation><con:operation id="a73a6cf6-5400-4427-852b-392b944abdf4" isOneWay="false" action="" name="getAssuntos" bindingOperationName="getAssuntos" type="Request-Response" outputName="getAssuntosResponse" inputName="getAssuntos" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a3ef8123-70fa-40ad-8715-06911c2b3549" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getAssuntos>\r
+         <ser:in0>?</ser:in0>\r
+         <ser:in1>?</ser:in1>\r
+      </ser:getAssuntos>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/getAssuntos"/></con:call></con:operation><con:operation id="79b48d91-4c74-488e-aff4-29c8e830d13c" isOneWay="false" action="" name="getCategoriasEClasses" bindingOperationName="getCategoriasEClasses" type="Request-Response" outputName="getCategoriasEClassesResponse" inputName="getCategoriasEClasses" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="040804e4-7f87-4621-8027-6a150046d3e3" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getCategoriasEClasses/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/getCategoriasEClasses"/></con:call></con:operation><con:operation id="7dd836fd-893a-4b2c-9756-ada80bec1a63" isOneWay="false" action="" name="getClasseTpParte" bindingOperationName="getClasseTpParte" type="Request-Response" outputName="getClasseTpParteResponse" inputName="getClasseTpParte" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8c74a0d1-4a8b-40cf-af3e-3d8ed7b2744d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getClasseTpParte/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/getClasseTpParte"/></con:call></con:operation><con:operation id="5c93b8a7-2b37-47fc-a533-f1e8c6128afb" isOneWay="false" action="" name="getComarcas" bindingOperationName="getComarcas" type="Request-Response" outputName="getComarcasResponse" inputName="getComarcas" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0cc11487-5a77-436b-abde-818eacb4f26a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getComarcas/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/getComarcas"/></con:call></con:operation><con:operation id="ea4d21d6-5c25-4f3b-8a34-9de1a1cc6cf5" isOneWay="false" action="" name="getDadosProcesso" bindingOperationName="getDadosProcesso" type="Request-Response" outputName="getDadosProcessoResponse" inputName="getDadosProcesso" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b8e9c49c-2544-44ff-ab67-a4fe09f38e7a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getDadosProcesso>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:getDadosProcesso>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/getDadosProcesso"/></con:call></con:operation><con:operation id="7ccca5f1-5d2e-4dec-bb12-c56769bb3b48" isOneWay="false" action="" name="getDistritosPoliciais" bindingOperationName="getDistritosPoliciais" type="Request-Response" outputName="getDistritosPoliciaisResponse" inputName="getDistritosPoliciais" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1ed1a2cd-611f-4925-94cb-bd81209b43cb" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getDistritosPoliciais/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/getDistritosPoliciais"/></con:call></con:operation><con:operation id="8746c825-cd90-43b9-bfb7-e5af6726cca7" isOneWay="false" action="" name="getForosEVaras" bindingOperationName="getForosEVaras" type="Request-Response" outputName="getForosEVarasResponse" inputName="getForosEVaras" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="14bd0bbd-6788-46aa-bdf3-3818420edd42" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getForosEVaras/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/getForosEVaras"/></con:call></con:operation><con:operation id="bd34213e-1172-4fc3-9f03-deca9f5207aa" isOneWay="false" action="" name="getMovimentacoesProcesso" bindingOperationName="getMovimentacoesProcesso" type="Request-Response" outputName="getMovimentacoesProcessoResponse" inputName="getMovimentacoesProcesso" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="847f8709-3a98-4fcd-b4af-8995ec751292" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getMovimentacoesProcesso>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:getMovimentacoesProcesso>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/getMovimentacoesProcesso"/></con:call></con:operation><con:operation id="30f97e5b-132b-4b48-a03e-92217cc944a0" isOneWay="false" action="" name="getTiposDiversas" bindingOperationName="getTiposDiversas" type="Request-Response" outputName="getTiposDiversasResponse" inputName="getTiposDiversas" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3a9f9944-8a77-48f1-b800-18f9a9fb2031" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getTiposDiversas/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/getTiposDiversas"/></con:call></con:operation><con:operation id="2c838b38-40e0-4c3c-abfc-f14db0533772" isOneWay="false" action="" name="getTiposDocDelegacia" bindingOperationName="getTiposDocDelegacia" type="Request-Response" outputName="getTiposDocDelegaciaResponse" inputName="getTiposDocDelegacia" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6148d3bd-a7b2-4287-b14d-c4309e85d1e2" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getTiposDocDelegacia/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/getTiposDocDelegacia"/></con:call></con:operation><con:operation id="fb44a9b3-2c94-4d3c-95d0-cd24858d04fb" isOneWay="false" action="" name="getTiposDocDigital" bindingOperationName="getTiposDocDigital" type="Request-Response" outputName="getTiposDocDigitalResponse" inputName="getTiposDocDigital" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a6ec01f7-39f1-494b-a635-ae08bc87cb85" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getTiposDocDigital>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:getTiposDocDigital>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/getTiposDocDigital"/></con:call></con:operation><con:operation id="517b9dcc-4c4d-45ae-bcaf-ff38c3ca7c5b" isOneWay="false" action="" name="getTodosAssuntos" bindingOperationName="getTodosAssuntos" type="Request-Response" outputName="getTodosAssuntosResponse" inputName="getTodosAssuntos" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3b1217a2-981c-46db-b699-cfd94d66bc50" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getTodosAssuntos/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/getTodosAssuntos"/></con:call></con:operation><con:operation id="f6a1a1a0-b11e-4b94-bc47-c51f02e5094e" isOneWay="false" action="" name="logon" bindingOperationName="logon" type="Request-Response" outputName="logonResponse" inputName="logon" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7a04b4dd-e1e3-4329-b12f-688bad131211" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:logon>\r
+         <ser:in0>PGESP</ser:in0>\r
+         <ser:in1>SAJ03PGESP</ser:in1>\r
+      </ser:logon>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/logon"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="6f0440ca-1c93-4f54-9f4a-b27b2e5db4de" isOneWay="false" action="" name="obterDocumentoAnexoAoAto" bindingOperationName="obterDocumentoAnexoAoAto" type="Request-Response" outputName="obterDocumentoAnexoAoAtoResponse" inputName="obterDocumentoAnexoAoAto" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3b20dc2e-780c-4262-8c4a-b98edbf3bdf2" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:obterDocumentoAnexoAoAto>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:obterDocumentoAnexoAoAto>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/obterDocumentoAnexoAoAto"/></con:call></con:operation><con:operation id="84e2257a-51d4-41cf-a78e-9d21788110a8" isOneWay="false" action="" name="obterNumeroSajDoProcesso" bindingOperationName="obterNumeroSajDoProcesso" type="Request-Response" outputName="obterNumeroSajDoProcessoResponse" inputName="obterNumeroSajDoProcesso" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4fc3800a-f6b4-4034-bdee-af747da41b29" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:obterNumeroSajDoProcesso>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:obterNumeroSajDoProcesso>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/obterNumeroSajDoProcesso"/></con:call></con:operation><con:operation id="3d37ca19-9d4c-4b9c-a1cd-b9397e340532" isOneWay="false" action="" name="obterNumeroUnificadoDoProcesso" bindingOperationName="obterNumeroUnificadoDoProcesso" type="Request-Response" outputName="obterNumeroUnificadoDoProcessoResponse" inputName="obterNumeroUnificadoDoProcesso" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8427ea93-10d0-4012-a99e-100a88b6018e" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:obterNumeroUnificadoDoProcesso>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:obterNumeroUnificadoDoProcesso>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/obterNumeroUnificadoDoProcesso"/></con:call></con:operation><con:operation id="185c4119-cf38-4075-a77f-f4c6a0309301" isOneWay="false" action="" name="peticionarIntermediaria" bindingOperationName="peticionarIntermediaria" type="Request-Response" outputName="peticionarIntermediariaResponse" inputName="peticionarIntermediaria" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2f77d186-17ce-4206-8436-35776d1e13da" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:peticionarIntermediaria>\r
+         <ser:in0>?</ser:in0>\r
+         <ser:in1>?</ser:in1>\r
+      </ser:peticionarIntermediaria>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/peticionarIntermediaria"/></con:call></con:operation><con:operation id="60224a0d-97a8-4811-a32e-af569383d18d" isOneWay="false" action="" name="peticionarIntermediariaDiversa" bindingOperationName="peticionarIntermediariaDiversa" type="Request-Response" outputName="peticionarIntermediariaDiversaResponse" inputName="peticionarIntermediariaDiversa" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9a3e3168-cec4-4d88-91aa-c8963dd0f891" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:peticionarIntermediariaDiversa>\r
+         <ser:in0>?</ser:in0>\r
+         <ser:in1>?</ser:in1>\r
+      </ser:peticionarIntermediariaDiversa>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/peticionarIntermediariaDiversa"/></con:call></con:operation><con:operation id="b20fc2b8-d7ad-4af9-96da-bd56f8af9763" isOneWay="false" action="" name="peticionarIntermediariaDiversaMTOM" bindingOperationName="peticionarIntermediariaDiversaMTOM" type="Request-Response" outputName="peticionarIntermediariaDiversaMTOMResponse" inputName="peticionarIntermediariaDiversaMTOM" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2e2b7d24-4cc8-4259-8ec0-9cf7742e02e5" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:peticionarIntermediariaDiversaMTOM>\r
+         <ser:in0>?</ser:in0>\r
+         <ser:in1>cid:987000201107</ser:in1>\r
+      </ser:peticionarIntermediariaDiversaMTOM>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/peticionarIntermediariaDiversaMTOM"/></con:call></con:operation><con:operation id="ed36514a-69c0-4309-9bf4-076cc8a454f8" isOneWay="false" action="" name="peticionarIntermediariaMTOM" bindingOperationName="peticionarIntermediariaMTOM" type="Request-Response" outputName="peticionarIntermediariaMTOMResponse" inputName="peticionarIntermediariaMTOM" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="42c2f4e9-bf45-4c24-afaa-9faade89cdb3" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:peticionarIntermediariaMTOM>\r
+         <ser:in0>?</ser:in0>\r
+         <ser:in1>cid:971977373839</ser:in1>\r
+      </ser:peticionarIntermediariaMTOM>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/peticionarIntermediariaMTOM"/></con:call></con:operation><con:operation id="a7dfdb11-4df1-492a-b33b-9af99e7c15fa" isOneWay="false" action="" name="SolicitacaoCitacaoAto" bindingOperationName="SolicitacaoCitacaoAto" type="Request-Response" outputName="SolicitacaoCitacaoAtoResponse" inputName="SolicitacaoCitacaoAto" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4a426aa3-02a5-46dc-b259-6a80124e306d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitacaoCitacaoAto>\r
+         <ser:in0>?</ser:in0>\r
+         <ser:in1>?</ser:in1>\r
+      </ser:SolicitacaoCitacaoAto>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/SolicitacaoCitacaoAto"/></con:call></con:operation><con:operation id="925fb4a1-8187-46d1-bb95-6207a0cb536f" isOneWay="false" action="" name="SolicitacaoCitacaoAutoConfirmada" bindingOperationName="SolicitacaoCitacaoAutoConfirmada" type="Request-Response" outputName="SolicitacaoCitacaoAutoConfirmadaResponse" inputName="SolicitacaoCitacaoAutoConfirmada" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="80487c25-f58b-425c-8a77-947f40a4e6b0" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitacaoCitacaoAutoConfirmada>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:SolicitacaoCitacaoAutoConfirmada>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/SolicitacaoCitacaoAutoConfirmada"/></con:call></con:operation><con:operation id="9bcd57a7-9667-4b19-9a99-279e133a9936" isOneWay="false" action="" name="SolicitacaoCitacaoCiencia" bindingOperationName="SolicitacaoCitacaoCiencia" type="Request-Response" outputName="SolicitacaoCitacaoCienciaResponse" inputName="SolicitacaoCitacaoCiencia" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="51ee5f2a-9b28-4f4c-a132-aa81c9a04474" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitacaoCitacaoCiencia>\r
+         <ser:in0>?</ser:in0>\r
+         <ser:in1>?</ser:in1>\r
+      </ser:SolicitacaoCitacaoCiencia>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/SolicitacaoCitacaoCiencia"/></con:call></con:operation><con:operation id="c95a0385-a909-46d9-8490-ae6a695e8198" isOneWay="false" action="" name="SolicitacaoDadosDistribuicao" bindingOperationName="SolicitacaoDadosDistribuicao" type="Request-Response" outputName="SolicitacaoDadosDistribuicaoResponse" inputName="SolicitacaoDadosDistribuicao" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f499b878-84c4-42bb-919c-9e3fd5af8cd7" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitacaoDadosDistribuicao>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:SolicitacaoDadosDistribuicao>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/SolicitacaoDadosDistribuicao"/></con:call></con:operation><con:operation id="1eb7eed1-a815-43d3-a7ab-68da94d6dc23" isOneWay="false" action="" name="solicitacaoDocCienciaAto" bindingOperationName="solicitacaoDocCienciaAto" type="Request-Response" outputName="solicitacaoDocCienciaAtoResponse" inputName="solicitacaoDocCienciaAto" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a270ca5a-cd06-4109-8efa-3958144b8393" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:solicitacaoDocCienciaAto>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:solicitacaoDocCienciaAto>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/solicitacaoDocCienciaAto"/></con:call></con:operation><con:operation id="822559df-a47b-490a-a5ab-3c2056a12cec" isOneWay="false" action="" name="SolicitacaoIntimacaoAto" bindingOperationName="SolicitacaoIntimacaoAto" type="Request-Response" outputName="SolicitacaoIntimacaoAtoResponse" inputName="SolicitacaoIntimacaoAto" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d9416077-ba0a-4049-8aa1-f879372e9107" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitacaoIntimacaoAto>\r
+         <ser:in0>?</ser:in0>\r
+         <ser:in1>?</ser:in1>\r
+      </ser:SolicitacaoIntimacaoAto>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/SolicitacaoIntimacaoAto"/></con:call></con:operation><con:operation id="2870f58f-cb37-4002-a37f-c124a287cef9" isOneWay="false" action="" name="SolicitacaoIntimacaoAutoConfirmada" bindingOperationName="SolicitacaoIntimacaoAutoConfirmada" type="Request-Response" outputName="SolicitacaoIntimacaoAutoConfirmadaResponse" inputName="SolicitacaoIntimacaoAutoConfirmada" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8c09ecbe-a7f7-46ea-8522-dec3eabbfb75" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitacaoIntimacaoAutoConfirmada>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:SolicitacaoIntimacaoAutoConfirmada>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/SolicitacaoIntimacaoAutoConfirmada"/></con:call></con:operation><con:operation id="0a880a1d-db9b-4240-befc-d48cb7f79ac6" isOneWay="false" action="" name="SolicitacaoIntimacaoCiencia" bindingOperationName="SolicitacaoIntimacaoCiencia" type="Request-Response" outputName="SolicitacaoIntimacaoCienciaResponse" inputName="SolicitacaoIntimacaoCiencia" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b8425534-6b0b-4585-ad65-b49719f8cd3c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitacaoIntimacaoCiencia>\r
+         <ser:in0>?</ser:in0>\r
+         <ser:in1>?</ser:in1>\r
+      </ser:SolicitacaoIntimacaoCiencia>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/SolicitacaoIntimacaoCiencia"/></con:call></con:operation><con:operation id="c43e90a3-fd3d-4f42-aa63-9f57ae9d6ea3" isOneWay="false" action="" name="SolicitacaoQtdIntimacoes" bindingOperationName="SolicitacaoQtdIntimacoes" type="Request-Response" outputName="SolicitacaoQtdIntimacoesResponse" inputName="SolicitacaoQtdIntimacoes" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ff3d1546-6d36-4f72-9e61-f671bd351c9f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitacaoQtdIntimacoes>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:SolicitacaoQtdIntimacoes>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/SolicitacaoQtdIntimacoes"/></con:call></con:operation><con:operation id="205238bb-09c4-4cc1-ac62-e3a062133eba" isOneWay="false" action="" name="SolicitaListaCitacoesAguardandoCiencia" bindingOperationName="SolicitaListaCitacoesAguardandoCiencia" type="Request-Response" outputName="SolicitaListaCitacoesAguardandoCienciaResponse" inputName="SolicitaListaCitacoesAguardandoCiencia" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6e309b9d-5f71-458f-b997-b516a5eed44e" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitaListaCitacoesAguardandoCiencia>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:SolicitaListaCitacoesAguardandoCiencia>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/SolicitaListaCitacoesAguardandoCiencia"/></con:call></con:operation><con:operation id="9f8547a1-5ebf-4854-89c1-481aed2a32a9" isOneWay="false" action="" name="SolicitaListaCitacoesAutoConfirmada" bindingOperationName="SolicitaListaCitacoesAutoConfirmada" type="Request-Response" outputName="SolicitaListaCitacoesAutoConfirmadaResponse" inputName="SolicitaListaCitacoesAutoConfirmada" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5f37703c-47d2-4321-8402-a98c677fa45c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitaListaCitacoesAutoConfirmada>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:SolicitaListaCitacoesAutoConfirmada>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/SolicitaListaCitacoesAutoConfirmada"/></con:call></con:operation><con:operation id="6a255a4b-ff96-4e8d-ac0f-8adb3c9dbb69" isOneWay="false" action="" name="SolicitaListaCitacoesRecebidas" bindingOperationName="SolicitaListaCitacoesRecebidas" type="Request-Response" outputName="SolicitaListaCitacoesRecebidasResponse" inputName="SolicitaListaCitacoesRecebidas" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e96c2a06-4c4d-47d9-a249-0960af324e92" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitaListaCitacoesRecebidas>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:SolicitaListaCitacoesRecebidas>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/SolicitaListaCitacoesRecebidas"/></con:call></con:operation><con:operation id="5da34ef3-27e0-4a73-a2e9-aa87bb023023" isOneWay="false" action="" name="SolicitaListaIntimacaoAutoConfirmada" bindingOperationName="SolicitaListaIntimacaoAutoConfirmada" type="Request-Response" outputName="SolicitaListaIntimacaoAutoConfirmadaResponse" inputName="SolicitaListaIntimacaoAutoConfirmada" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="927cc618-f0d9-4525-9151-456a9ac6d36c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitaListaIntimacaoAutoConfirmada>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:SolicitaListaIntimacaoAutoConfirmada>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/SolicitaListaIntimacaoAutoConfirmada"/></con:call></con:operation><con:operation id="7bfa4731-959e-4d91-adbc-58be9754ba0d" isOneWay="false" action="" name="SolicitaListaIntimacoesAguardandoCiencia" bindingOperationName="SolicitaListaIntimacoesAguardandoCiencia" type="Request-Response" outputName="SolicitaListaIntimacoesAguardandoCienciaResponse" inputName="SolicitaListaIntimacoesAguardandoCiencia" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8d9b80a2-3e3c-458c-81ee-0e9aeacaa2ed" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitaListaIntimacoesAguardandoCiencia>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:SolicitaListaIntimacoesAguardandoCiencia>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/SolicitaListaIntimacoesAguardandoCiencia"/></con:call></con:operation><con:operation id="5f48561c-eee8-4dcc-b1cb-51bd857deee7" isOneWay="false" action="" name="SolicitaListaIntimacoesRecebidas" bindingOperationName="SolicitaListaIntimacoesRecebidas" type="Request-Response" outputName="SolicitaListaIntimacoesRecebidasResponse" inputName="SolicitaListaIntimacoesRecebidas" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="cbaea570-1932-4151-b376-ff5a10aa6776" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitaListaIntimacoesRecebidas>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:SolicitaListaIntimacoesRecebidas>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/SolicitaListaIntimacoesRecebidas"/></con:call></con:operation><con:operation id="21bdc16a-7d2d-482d-8b62-0e1956e5f36e" isOneWay="false" action="" name="SolicitaLogon" bindingOperationName="SolicitaLogon" type="Request-Response" outputName="SolicitaLogonResponse" inputName="SolicitaLogon" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7b778a08-22ba-4a3e-ac3a-1c5406dd50b6" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitaLogon>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:SolicitaLogon>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="ServicoPJ/ServicoPJPortType/SolicitaLogon"/></con:call></con:operation></con:interface><con:testSuite id="87425de1-8c48-421a-84e2-6c5bfe8c58be" name="ServicoPJHttpBinding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="74f21770-c17a-43c3-9453-45ae2b2573c8" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ajuizar TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="b7b4c894-10ce-46c2-ac53-1a476534182e" name="ajuizar"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>ajuizar</con:operation><con:request name="ajuizar" id="5b006df1-e7f1-4644-b0b0-39b289281f74"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:ajuizar>\r
+         <ser:in0>?</ser:in0>\r
+         <ser:in1>?</ser:in1>\r
+      </ser:ajuizar>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/ajuizar"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="6cd82725-e555-475b-acdc-71e3e5bc47e9" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ajuizarMTOM TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="bae8d301-cd06-4972-bbe7-450a3be6333b" name="ajuizarMTOM"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>ajuizarMTOM</con:operation><con:request name="ajuizarMTOM" id="a83c3642-888b-46e3-a3a1-e6f4b4f9112e"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:ajuizarMTOM>\r
+         <ser:in0>?</ser:in0>\r
+         <ser:in1>cid:21716510640</ser:in1>\r
+      </ser:ajuizarMTOM>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/ajuizarMTOM"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="b3e70804-e221-48d6-bfe9-e40d44d19cc1" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ConfirmacaoLeituraCitacaoAutoConfirmado TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="6d3c8277-1988-4b4c-89d4-685a7be7fb72" name="ConfirmacaoLeituraCitacaoAutoConfirmado"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>ConfirmacaoLeituraCitacaoAutoConfirmado</con:operation><con:request name="ConfirmacaoLeituraCitacaoAutoConfirmado" id="dafcc925-3c24-440e-bfa0-3c8f7e7409da"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:ConfirmacaoLeituraCitacaoAutoConfirmado>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:ConfirmacaoLeituraCitacaoAutoConfirmado>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/ConfirmacaoLeituraCitacaoAutoConfirmado"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="02abdb52-8001-4ada-aa33-b8ed588cc6a3" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ConfirmacaoLeituraIntimacaoAutoConfirmado TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="ad586b61-4ff7-4ca5-96ab-a50df57d5dce" name="ConfirmacaoLeituraIntimacaoAutoConfirmado"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>ConfirmacaoLeituraIntimacaoAutoConfirmado</con:operation><con:request name="ConfirmacaoLeituraIntimacaoAutoConfirmado" id="fd380f64-24be-4fd0-89f1-c32f0690e612"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:ConfirmacaoLeituraIntimacaoAutoConfirmado>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:ConfirmacaoLeituraIntimacaoAutoConfirmado>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/ConfirmacaoLeituraIntimacaoAutoConfirmado"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="d66f1793-4701-4b17-89af-2d1e15a7795b" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="confirmaLogon TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="d90438c6-8d00-4053-ae36-666bfb7c1686" name="confirmaLogon"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>confirmaLogon</con:operation><con:request name="confirmaLogon" id="b53aaf81-5587-4ee4-9c9c-95efc311989d"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:confirmaLogon>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:confirmaLogon>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/confirmaLogon"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="1a734b1c-c669-48aa-8559-003cdc55cd19" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ConsultaNumeroProcesso TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="4734378d-df7b-42e8-aea1-68e67c4b1ff4" name="ConsultaNumeroProcesso"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>ConsultaNumeroProcesso</con:operation><con:request name="ConsultaNumeroProcesso" id="96ac67f1-07e2-46fc-bd1e-0b40f7fa06d3"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:ConsultaNumeroProcesso>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:ConsultaNumeroProcesso>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/ConsultaNumeroProcesso"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="0216613a-93a4-418e-a3d4-a756e8bfe456" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ConsultaPeticao TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="fb4ae392-d667-496a-8011-43872e96416f" name="ConsultaPeticao"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>ConsultaPeticao</con:operation><con:request name="ConsultaPeticao" id="9ef29cc5-5ccf-4377-bd32-d457691a4035"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:ConsultaPeticao>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:ConsultaPeticao>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/ConsultaPeticao"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="313f9ba8-707d-4ff9-bc31-613fd31dd9ff" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ConsultaPeticaoMTOM TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="24f885c4-ea6e-41f2-9b88-3a58ffe2d078" name="ConsultaPeticaoMTOM"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>ConsultaPeticaoMTOM</con:operation><con:request name="ConsultaPeticaoMTOM" id="8b6ac8a1-edc6-4eae-832f-cc4d581d142b"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:ConsultaPeticaoMTOM>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:ConsultaPeticaoMTOM>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/ConsultaPeticaoMTOM"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="11b481c3-9b74-4a32-a08c-096f3b220880" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getAreasCompetenciasClassesEAssuntos TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="965e525a-53fd-4937-8a16-ec8b1e0d3006" name="getAreasCompetenciasClassesEAssuntos"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>getAreasCompetenciasClassesEAssuntos</con:operation><con:request name="getAreasCompetenciasClassesEAssuntos" id="3c4dff55-4797-4efe-ab4a-3e2d3537c38f"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getAreasCompetenciasClassesEAssuntos>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:getAreasCompetenciasClassesEAssuntos>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/getAreasCompetenciasClassesEAssuntos"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="cdb02a6c-cc2c-4d7b-9a9d-54400d8e6e0e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getAreasCompetenciasEClasses TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="07970538-f24f-4f72-a846-7a570db4b255" name="getAreasCompetenciasEClasses"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>getAreasCompetenciasEClasses</con:operation><con:request name="getAreasCompetenciasEClasses" id="8663361f-f78b-46a6-9cbe-ec565cf054a0"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getAreasCompetenciasEClasses>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:getAreasCompetenciasEClasses>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/getAreasCompetenciasEClasses"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="7bd8e5d5-d605-4ff1-bfcf-55761d79f5d8" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getAssuntos TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="180d3715-01e3-44b8-85f2-18eca3d7d8e2" name="getAssuntos"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>getAssuntos</con:operation><con:request name="getAssuntos" id="f3fbc393-5c9d-49d8-a586-292b57a0effc"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getAssuntos>\r
+         <ser:in0>?</ser:in0>\r
+         <ser:in1>?</ser:in1>\r
+      </ser:getAssuntos>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/getAssuntos"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="7c99cd36-6aa6-48a0-9dc3-11505b96868a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getCategoriasEClasses TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="f9afa494-9a12-44b8-b4f7-22e2f616b26a" name="getCategoriasEClasses"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>getCategoriasEClasses</con:operation><con:request name="getCategoriasEClasses" id="60ddf4c6-8136-4062-ae9e-5c82a31d1100"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getCategoriasEClasses/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/getCategoriasEClasses"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="4eada322-c53b-447e-b9e6-c3ca219d0d65" failOnError="true" failTestCaseOnErrors="true" keepSession="true" maxResults="0" name="getClasseTpParte TestCase" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:settings/><con:testStep type="request" id="1a5051d2-f63a-4c45-9e85-a80a65e10eb0" name="logon"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>logon</con:operation><con:request name="logon" id="b70214b8-c9a4-46ef-902b-9f40d52ea134"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:logon>\r
+         <ser:in0>PGESP</ser:in0>\r
+         <ser:in1>SAJ03PGESP</ser:in1>\r
+      </ser:logon>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="ServicoPJ/ServicoPJPortType/logon" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="813e97c3-dbc8-4477-87c7-2a98f5d9dee0" name="getClasseTpParte"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>getClasseTpParte</con:operation><con:request name="getClasseTpParte" id="f608a56c-49a7-4a92-ab8b-fe37df23193f"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getClasseTpParte/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="ServicoPJ/ServicoPJPortType/getClasseTpParte" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="e7d86bed-41b2-48d5-88b5-0951b77e81b7" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getComarcas TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="0d72e46a-6e62-4579-b990-758b20f846ff" name="getComarcas"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>getComarcas</con:operation><con:request name="getComarcas" id="e02c36ad-ee48-45b7-9dc9-94f38d145d8b"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getComarcas/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/getComarcas"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="3651f555-a4f0-4b4e-891d-f043fadcc1a3" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getDadosProcesso TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="e98b1190-265a-4b4a-9a82-d6dacbe3d4f0" name="getDadosProcesso"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>getDadosProcesso</con:operation><con:request name="getDadosProcesso" id="9b4ca5a1-5cea-408b-b030-947db4359610"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getDadosProcesso>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:getDadosProcesso>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/getDadosProcesso"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="c9e8c742-cdcf-44b2-b6bf-25e9a4065b26" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getDistritosPoliciais TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="97aad095-7803-4b94-89b6-4197ac1d8774" name="getDistritosPoliciais"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>getDistritosPoliciais</con:operation><con:request name="getDistritosPoliciais" id="27a18b1f-5548-42f4-be16-5de8a1927c49"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getDistritosPoliciais/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/getDistritosPoliciais"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="b878c765-c0b2-49c6-836f-531aee785ede" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getForosEVaras TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="acf446c1-7a29-4472-943a-ed89b6d6b23a" name="getForosEVaras"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>getForosEVaras</con:operation><con:request name="getForosEVaras" id="08337c76-d8af-4f84-ad5f-b13fa5ecacc7"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getForosEVaras/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/getForosEVaras"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="526c2feb-b07e-4b43-85e5-81702c05e796" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getMovimentacoesProcesso TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="47051ff8-9e2a-4cb4-8df0-2b6acd9f0d24" name="getMovimentacoesProcesso"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>getMovimentacoesProcesso</con:operation><con:request name="getMovimentacoesProcesso" id="9d693f89-0fe2-446c-b3c2-a6a395bf2277"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getMovimentacoesProcesso>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:getMovimentacoesProcesso>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/getMovimentacoesProcesso"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="98b05e17-57c9-40c0-8e7a-55813123f4b1" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getTiposDiversas TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="98334de6-9efb-48ee-aa53-07f96f3bbdf5" name="getTiposDiversas"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>getTiposDiversas</con:operation><con:request name="getTiposDiversas" id="98347b6f-35da-48e9-8a92-809dd948bf66"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getTiposDiversas/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/getTiposDiversas"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="3a5b29c2-b240-46aa-b8f1-9a8b283e46aa" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getTiposDocDelegacia TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="22ab2d6e-d537-4871-82d4-4247e416a782" name="getTiposDocDelegacia"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>getTiposDocDelegacia</con:operation><con:request name="getTiposDocDelegacia" id="75ecdda5-c29d-4aad-be80-3bf290175125"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getTiposDocDelegacia/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/getTiposDocDelegacia"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="cc06c039-10df-4280-a671-dda05cd5c997" failOnError="true" failTestCaseOnErrors="true" keepSession="true" maxResults="0" name="getTiposDocDigital TestCase" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:settings/><con:testStep type="request" id="401409bf-1627-42c0-a480-85127a1c607b" name="logon"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>logon</con:operation><con:request name="logon" id="b70214b8-c9a4-46ef-902b-9f40d52ea134"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:logon>\r
+         <ser:in0>PGESP</ser:in0>\r
+         <ser:in1>SAJ03PGESP</ser:in1>\r
+      </ser:logon>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="ServicoPJ/ServicoPJPortType/logon" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" id="7b72362e-5c25-4f00-93f9-67fb0472e4e6" name="getTiposDocDigital"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>getTiposDocDigital</con:operation><con:request name="getTiposDocDigital" id="8bb900f7-8933-47c3-9888-1626110c7db5"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getTiposDocDigital>\r
+         <ser:in0>1116</ser:in0>\r
+      </ser:getTiposDocDigital>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="ServicoPJ/ServicoPJPortType/getTiposDocDigital" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="2a381fc0-7693-4d4c-90a8-1eb661a43cc7" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getTodosAssuntos TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="6bbc80c1-99f9-4929-978e-d464866e7c6f" name="getTodosAssuntos"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>getTodosAssuntos</con:operation><con:request name="getTodosAssuntos" id="7e984c8f-b19d-40c9-a336-8549ea1965a2"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:getTodosAssuntos/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/getTodosAssuntos"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="241ade26-184e-4375-b055-e283118c720f" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="logon TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="efebba4e-03cb-45b2-b64f-f73ecdc891fa" name="logon"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>logon</con:operation><con:request name="logon" id="b70214b8-c9a4-46ef-902b-9f40d52ea134"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:logon>\r
+         <ser:in0>PGESP</ser:in0>\r
+         <ser:in1>SAJ03PGESP</ser:in1>\r
+      </ser:logon>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="ServicoPJ/ServicoPJPortType/logon" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="cc092965-f557-4d25-b954-468e34dc1e2d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="obterDocumentoAnexoAoAto TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="ee06d761-26fe-41c8-a5db-a6ff8b7bc3f8" name="obterDocumentoAnexoAoAto"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>obterDocumentoAnexoAoAto</con:operation><con:request name="obterDocumentoAnexoAoAto" id="a9fd9b0c-81c9-476f-867e-79e044a5d2a2"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:obterDocumentoAnexoAoAto>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:obterDocumentoAnexoAoAto>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/obterDocumentoAnexoAoAto"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="28dac937-1b9f-4877-9cf5-871c36f61ecc" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="obterNumeroSajDoProcesso TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="629739ee-61f1-42be-ab27-fe129d1a1606" name="obterNumeroSajDoProcesso"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>obterNumeroSajDoProcesso</con:operation><con:request name="obterNumeroSajDoProcesso" id="b2373d9b-edd4-4b51-a83e-5cde8b2e49cb"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:obterNumeroSajDoProcesso>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:obterNumeroSajDoProcesso>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/obterNumeroSajDoProcesso"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="a52d5d64-09ee-4b73-9ac5-8e13d1f6dd5b" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="obterNumeroUnificadoDoProcesso TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="da06e8d8-f1da-4d91-8180-18f91847e649" name="obterNumeroUnificadoDoProcesso"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>obterNumeroUnificadoDoProcesso</con:operation><con:request name="obterNumeroUnificadoDoProcesso" id="823d0c52-b0e0-4475-8e9d-738f40cd2598"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:obterNumeroUnificadoDoProcesso>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:obterNumeroUnificadoDoProcesso>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/obterNumeroUnificadoDoProcesso"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="b35c19ec-28f3-4846-9ded-754fa9785801" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="peticionarIntermediaria TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="d0a1f9cc-d90f-4402-bc09-e5de16217093" name="peticionarIntermediaria"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>peticionarIntermediaria</con:operation><con:request name="peticionarIntermediaria" id="639b4c37-f3cf-485c-8780-ec7ab8fdfbc9"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:peticionarIntermediaria>\r
+         <ser:in0>?</ser:in0>\r
+         <ser:in1>?</ser:in1>\r
+      </ser:peticionarIntermediaria>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/peticionarIntermediaria"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="d9be4310-fea0-40cf-9d6f-a839a06a037b" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="peticionarIntermediariaDiversa TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="7b19a14d-8ed8-4998-8b0b-461d3a3c5d22" name="peticionarIntermediariaDiversa"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>peticionarIntermediariaDiversa</con:operation><con:request name="peticionarIntermediariaDiversa" id="9f19f721-57e7-4d33-8da7-122a45459ce0"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:peticionarIntermediariaDiversa>\r
+         <ser:in0>?</ser:in0>\r
+         <ser:in1>?</ser:in1>\r
+      </ser:peticionarIntermediariaDiversa>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/peticionarIntermediariaDiversa"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="9f817cff-0f19-473e-ab03-192107b95008" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="peticionarIntermediariaDiversaMTOM TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="c85ff083-114f-47c7-a374-1e4ddcc55dbb" name="peticionarIntermediariaDiversaMTOM"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>peticionarIntermediariaDiversaMTOM</con:operation><con:request name="peticionarIntermediariaDiversaMTOM" id="c2cd871b-5552-4ab2-ad3a-a18a03419f14"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:peticionarIntermediariaDiversaMTOM>\r
+         <ser:in0>?</ser:in0>\r
+         <ser:in1>cid:54092748466</ser:in1>\r
+      </ser:peticionarIntermediariaDiversaMTOM>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/peticionarIntermediariaDiversaMTOM"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="a0f39318-8393-4868-9f1f-8cbab46acd96" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="peticionarIntermediariaMTOM TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="d802e584-6c4b-48e7-acf7-a1e00f79146b" name="peticionarIntermediariaMTOM"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>peticionarIntermediariaMTOM</con:operation><con:request name="peticionarIntermediariaMTOM" id="695a8e5f-eab1-4fe6-9e27-e44d97df4193"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:peticionarIntermediariaMTOM>\r
+         <ser:in0>?</ser:in0>\r
+         <ser:in1>cid:649213563398</ser:in1>\r
+      </ser:peticionarIntermediariaMTOM>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/peticionarIntermediariaMTOM"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="99db8ae1-1876-47af-9c96-32cbfd42386a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="SolicitacaoCitacaoAto TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="f4e97fad-47c9-4ab4-b46f-620812830245" name="SolicitacaoCitacaoAto"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>SolicitacaoCitacaoAto</con:operation><con:request name="SolicitacaoCitacaoAto" id="b3b63c39-7912-4f83-b129-3387b6def958"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitacaoCitacaoAto>\r
+         <ser:in0>?</ser:in0>\r
+         <ser:in1>?</ser:in1>\r
+      </ser:SolicitacaoCitacaoAto>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/SolicitacaoCitacaoAto"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="7837fa18-27f2-4388-82ae-5a775bcc796e" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="SolicitacaoCitacaoAutoConfirmada TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="17b29566-0d27-4485-882f-2cc510a428c9" name="SolicitacaoCitacaoAutoConfirmada"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>SolicitacaoCitacaoAutoConfirmada</con:operation><con:request name="SolicitacaoCitacaoAutoConfirmada" id="631f0ba7-7bc1-481f-8c2f-10ecba606082"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitacaoCitacaoAutoConfirmada>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:SolicitacaoCitacaoAutoConfirmada>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/SolicitacaoCitacaoAutoConfirmada"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="5ef728f5-1423-43f3-a809-2d2b8f2e26b8" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="SolicitacaoCitacaoCiencia TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="5b0ca504-a23e-44e2-b480-81f9a8bf587c" name="SolicitacaoCitacaoCiencia"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>SolicitacaoCitacaoCiencia</con:operation><con:request name="SolicitacaoCitacaoCiencia" id="a85779de-47ff-476a-abdc-2957282b4810"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitacaoCitacaoCiencia>\r
+         <ser:in0>?</ser:in0>\r
+         <ser:in1>?</ser:in1>\r
+      </ser:SolicitacaoCitacaoCiencia>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/SolicitacaoCitacaoCiencia"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="bb368651-4b54-4179-a49d-b14f6b0d7d16" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="SolicitacaoDadosDistribuicao TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="b8bf6241-353b-4e87-8212-d6c7a409ce6f" name="SolicitacaoDadosDistribuicao"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>SolicitacaoDadosDistribuicao</con:operation><con:request name="SolicitacaoDadosDistribuicao" id="fdfe0454-b25b-458a-ab21-8503aa215140"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitacaoDadosDistribuicao>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:SolicitacaoDadosDistribuicao>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/SolicitacaoDadosDistribuicao"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="64f2eaf0-8a84-471e-bb05-794b15541025" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="solicitacaoDocCienciaAto TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="bc29ea04-afe4-4b2a-9ee5-3945d431423e" name="solicitacaoDocCienciaAto"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>solicitacaoDocCienciaAto</con:operation><con:request name="solicitacaoDocCienciaAto" id="07dc80bc-45a3-43ec-b2fc-dd357f878360"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:solicitacaoDocCienciaAto>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:solicitacaoDocCienciaAto>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/solicitacaoDocCienciaAto"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="71f94367-b574-4a0d-bc9d-fc66a8b03d62" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="SolicitacaoIntimacaoAto TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="5e5e1306-8346-49a8-966d-09da54686065" name="SolicitacaoIntimacaoAto"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>SolicitacaoIntimacaoAto</con:operation><con:request name="SolicitacaoIntimacaoAto" id="edbb627f-cd0f-4df2-be37-25b46168fcbe"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitacaoIntimacaoAto>\r
+         <ser:in0>?</ser:in0>\r
+         <ser:in1>?</ser:in1>\r
+      </ser:SolicitacaoIntimacaoAto>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/SolicitacaoIntimacaoAto"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="249b755e-fef4-4145-a419-ba11a199313c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="SolicitacaoIntimacaoAutoConfirmada TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="1a99ec0a-9ad9-4fc5-bb6a-fc7f8d0ee096" name="SolicitacaoIntimacaoAutoConfirmada"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>SolicitacaoIntimacaoAutoConfirmada</con:operation><con:request name="SolicitacaoIntimacaoAutoConfirmada" id="e4e0e1b2-9e44-41e2-98c9-d47f46f12532"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitacaoIntimacaoAutoConfirmada>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:SolicitacaoIntimacaoAutoConfirmada>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/SolicitacaoIntimacaoAutoConfirmada"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="4c7a5202-cd39-4951-a411-35d2b89dcac3" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="SolicitacaoIntimacaoCiencia TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="107e7aad-7fe0-4027-a987-c69291089e9d" name="SolicitacaoIntimacaoCiencia"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>SolicitacaoIntimacaoCiencia</con:operation><con:request name="SolicitacaoIntimacaoCiencia" id="c5dc33fc-0ccb-4539-a9b1-2b0e8d948cb8"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitacaoIntimacaoCiencia>\r
+         <ser:in0>?</ser:in0>\r
+         <ser:in1>?</ser:in1>\r
+      </ser:SolicitacaoIntimacaoCiencia>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/SolicitacaoIntimacaoCiencia"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="e2d11f38-5ff6-43d5-9b6b-44d5dbf9f890" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="SolicitacaoQtdIntimacoes TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="a866ea38-cf97-49cf-bfe8-4dbf1a24de4e" name="SolicitacaoQtdIntimacoes"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>SolicitacaoQtdIntimacoes</con:operation><con:request name="SolicitacaoQtdIntimacoes" id="81d30762-096b-4df6-9246-8c904c5cb991"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitacaoQtdIntimacoes>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:SolicitacaoQtdIntimacoes>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/SolicitacaoQtdIntimacoes"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="9cf0085a-2741-46b9-9166-c51324894abe" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="SolicitaListaCitacoesAguardandoCiencia TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="a0ac0f7c-08be-4840-81e0-98dd2c403627" name="SolicitaListaCitacoesAguardandoCiencia"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>SolicitaListaCitacoesAguardandoCiencia</con:operation><con:request name="SolicitaListaCitacoesAguardandoCiencia" id="e2c0661f-6fef-4d9e-8e46-a358d00f679f"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitaListaCitacoesAguardandoCiencia>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:SolicitaListaCitacoesAguardandoCiencia>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/SolicitaListaCitacoesAguardandoCiencia"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="8c726250-6d1d-4856-8b31-577acda1b3a9" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="SolicitaListaCitacoesAutoConfirmada TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="fbb05338-7e97-4c74-ae50-8df31c96ba63" name="SolicitaListaCitacoesAutoConfirmada"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>SolicitaListaCitacoesAutoConfirmada</con:operation><con:request name="SolicitaListaCitacoesAutoConfirmada" id="3e84ea85-c241-4dcf-83a5-cf9fc1739172"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitaListaCitacoesAutoConfirmada>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:SolicitaListaCitacoesAutoConfirmada>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/SolicitaListaCitacoesAutoConfirmada"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="e0d317d5-bec5-43ad-835c-5e88c2052177" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="SolicitaListaCitacoesRecebidas TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="54716f50-3b31-430b-9407-47b25a7adc21" name="SolicitaListaCitacoesRecebidas"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>SolicitaListaCitacoesRecebidas</con:operation><con:request name="SolicitaListaCitacoesRecebidas" id="e88964ee-ea58-4b86-b2ba-1cb7004c539d"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitaListaCitacoesRecebidas>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:SolicitaListaCitacoesRecebidas>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/SolicitaListaCitacoesRecebidas"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="e12927c5-3c99-4411-b082-c6b49eb26152" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="SolicitaListaIntimacaoAutoConfirmada TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="7814db1b-ea0a-43c8-b55a-46327393cb0b" name="SolicitaListaIntimacaoAutoConfirmada"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>SolicitaListaIntimacaoAutoConfirmada</con:operation><con:request name="SolicitaListaIntimacaoAutoConfirmada" id="7cf5b956-c2bf-4eb2-aea4-c5dd8f2a4320"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitaListaIntimacaoAutoConfirmada>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:SolicitaListaIntimacaoAutoConfirmada>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/SolicitaListaIntimacaoAutoConfirmada"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="9b15d371-5acb-41d5-859e-0616617e018a" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="SolicitaListaIntimacoesAguardandoCiencia TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="45f98248-bad5-419c-9d5e-b6839df04645" name="SolicitaListaIntimacoesAguardandoCiencia"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>SolicitaListaIntimacoesAguardandoCiencia</con:operation><con:request name="SolicitaListaIntimacoesAguardandoCiencia" id="861d9c25-8372-4e45-b1af-70fff505ed7d"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitaListaIntimacoesAguardandoCiencia>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:SolicitaListaIntimacoesAguardandoCiencia>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/SolicitaListaIntimacoesAguardandoCiencia"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="7b2651a3-2536-45e8-8765-ccb86f67377d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="SolicitaListaIntimacoesRecebidas TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="9c3322ac-02c0-44b8-9181-7cc8552a4e8a" name="SolicitaListaIntimacoesRecebidas"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>SolicitaListaIntimacoesRecebidas</con:operation><con:request name="SolicitaListaIntimacoesRecebidas" id="22f5fe6f-ee2c-4fb3-8b99-a45fc2434e12"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitaListaIntimacoesRecebidas>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:SolicitaListaIntimacoesRecebidas>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/SolicitaListaIntimacoesRecebidas"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="5d5aa218-e48d-4069-8eec-f893ccb8e3c1" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="SolicitaLogon TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="78e02ace-f675-40ca-9276-214862f8ebe2" name="SolicitaLogon"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ServicoPJHttpBinding</con:interface><con:operation>SolicitaLogon</con:operation><con:request name="SolicitaLogon" id="e19c55a8-86b6-4dad-b906-dddfcf879385"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://esaj.tjsp.jus.br/tjws2/services/ServicoPJ</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="ServicoPJ">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:SolicitaLogon>\r
+         <ser:in0>?</ser:in0>\r
+      </ser:SolicitaLogon>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="ServicoPJ/ServicoPJPortType/SolicitaLogon"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

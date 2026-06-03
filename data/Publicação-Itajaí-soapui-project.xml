@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="9eaff2f2-368b-4182-afcb-c2e26acb861e" activeEnvironment="Default" name="Publicação_Itajaí" resourceRoot="" soapui-version="5.8.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="f08b3f72-2b66-41d8-8da7-98204fc78810" wsaVersion="NONE" name="PublicacaoWSServiceSoapBinding" type="wsdl" bindingName="{http://wspub.pj.saj.softplan.com.br/}PublicacaoWSServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="https://itajai.sajcloud.com.br/wspubWeb/services/PublicacaoWS?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://itajai.sajcloud.com.br/wspubWeb/services/PublicacaoWS?wsdl"><con:part><con:url>https://itajai.sajcloud.com.br/wspubWeb/services/PublicacaoWS?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="PublicacaoWSService" targetNamespace="http://wspub.pj.saj.softplan.com.br/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://wspub.pj.saj.softplan.com.br/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://wspub.pj.saj.softplan.com.br/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="efetuarLogon" type="tns:efetuarLogon"/>
+      <xs:element name="efetuarLogonResponse" type="tns:efetuarLogonResponse"/>
+      <xs:element name="enviarPublicacoes" type="tns:enviarPublicacoes"/>
+      <xs:element name="enviarPublicacoesResponse" type="tns:enviarPublicacoesResponse"/>
+      <xs:element name="enviarPublicacoesString" type="tns:enviarPublicacoesString"/>
+      <xs:element name="enviarPublicacoesStringResponse" type="tns:enviarPublicacoesStringResponse"/>
+      <xs:element name="finalizaEnvioDiario" type="tns:finalizaEnvioDiario"/>
+      <xs:element name="finalizaEnvioDiarioResponse" type="tns:finalizaEnvioDiarioResponse"/>
+      <xs:complexType name="enviarPublicacoes">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bytes" type="xs:base64Binary"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="enviarPublicacoesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:base64Binary"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="efetuarLogon">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="userId" type="xs:string"/>
+          <xs:element minOccurs="0" name="senha" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="efetuarLogonResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:base64Binary"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="finalizaEnvioDiario">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="finalizaEnvioDiarioResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="enviarPublicacoesString">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="string64" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="enviarPublicacoesStringResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:base64Binary"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="enviarPublicacoesResponse">
+    <wsdl:part element="tns:enviarPublicacoesResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finalizaEnvioDiario">
+    <wsdl:part element="tns:finalizaEnvioDiario" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="enviarPublicacoesStringResponse">
+    <wsdl:part element="tns:enviarPublicacoesStringResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="enviarPublicacoesString">
+    <wsdl:part element="tns:enviarPublicacoesString" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="enviarPublicacoes">
+    <wsdl:part element="tns:enviarPublicacoes" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="efetuarLogon">
+    <wsdl:part element="tns:efetuarLogon" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="efetuarLogonResponse">
+    <wsdl:part element="tns:efetuarLogonResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="finalizaEnvioDiarioResponse">
+    <wsdl:part element="tns:finalizaEnvioDiarioResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="PublicacaoWS">
+    <wsdl:operation name="enviarPublicacoes">
+      <wsdl:input message="tns:enviarPublicacoes" name="enviarPublicacoes"></wsdl:input>
+      <wsdl:output message="tns:enviarPublicacoesResponse" name="enviarPublicacoesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="efetuarLogon">
+      <wsdl:input message="tns:efetuarLogon" name="efetuarLogon"></wsdl:input>
+      <wsdl:output message="tns:efetuarLogonResponse" name="efetuarLogonResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="finalizaEnvioDiario">
+      <wsdl:input message="tns:finalizaEnvioDiario" name="finalizaEnvioDiario"></wsdl:input>
+      <wsdl:output message="tns:finalizaEnvioDiarioResponse" name="finalizaEnvioDiarioResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enviarPublicacoesString">
+      <wsdl:input message="tns:enviarPublicacoesString" name="enviarPublicacoesString"></wsdl:input>
+      <wsdl:output message="tns:enviarPublicacoesStringResponse" name="enviarPublicacoesStringResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PublicacaoWSServiceSoapBinding" type="tns:PublicacaoWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="enviarPublicacoes">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="enviarPublicacoes">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="enviarPublicacoesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="efetuarLogon">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="efetuarLogon">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="efetuarLogonResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="finalizaEnvioDiario">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="finalizaEnvioDiario">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="finalizaEnvioDiarioResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="enviarPublicacoesString">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="enviarPublicacoesString">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="enviarPublicacoesStringResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PublicacaoWSService">
+    <wsdl:port binding="tns:PublicacaoWSServiceSoapBinding" name="PublicacaoWSPort">
+      <soap:address location="https://itajai.sajcloud.com.br/wspubWeb/services/PublicacaoWS"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://itajai.sajcloud.com.br/wspubWeb/services/PublicacaoWS</con:endpoint></con:endpoints><con:operation id="3e280a59-8cd7-4f3d-8b82-c383f76d64de" isOneWay="false" action="" name="efetuarLogon" bindingOperationName="efetuarLogon" type="Request-Response" outputName="efetuarLogonResponse" inputName="efetuarLogon" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="fdb4bd5b-687e-4833-997a-b23ced7ce097" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://itajai.sajcloud.com.br/wspubWeb/services/PublicacaoWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsp="http://wspub.pj.saj.softplan.com.br">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <wsp1:efetuarLogon xmlns:wsp1="http://wspub.pj.saj.softplan.com.br/">
+         <userId>PUBWS</userId>
+         <senha>itajaipub94</senha>
+      </wsp1:efetuarLogon>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wspub.pj.saj.softplan.com.br/PublicacaoWS/efetuarLogon"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="973a5eea-425e-4925-b18a-a8c59382daf7" isOneWay="false" action="" name="enviarPublicacoes" bindingOperationName="enviarPublicacoes" type="Request-Response" outputName="enviarPublicacoesResponse" inputName="enviarPublicacoes" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6ceb9471-e301-43b2-b4b1-e88825cb30a4" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://itajai.sajcloud.com.br/wspubWeb/services/PublicacaoWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsp="http://wspub.pj.saj.softplan.com.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wsp:enviarPublicacoes>\r
+         <!--Optional:-->\r
+         <bytes>cid:1137924100448</bytes>\r
+      </wsp:enviarPublicacoes>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wspub.pj.saj.softplan.com.br/PublicacaoWS/enviarPublicacoes"/></con:call></con:operation><con:operation id="a4ab6e2e-b8de-4251-a18a-c104f2018dcb" isOneWay="false" action="" name="enviarPublicacoesString" bindingOperationName="enviarPublicacoesString" type="Request-Response" outputName="enviarPublicacoesStringResponse" inputName="enviarPublicacoesString" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="69ecc28f-afb3-4a14-b22e-8206838d081d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://itajai.sajcloud.com.br/wspubWeb/services/PublicacaoWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsp="http://wspub.pj.saj.softplan.com.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wsp:enviarPublicacoesString>\r
+         <!--Optional:-->\r
+         <string64>?</string64>\r
+      </wsp:enviarPublicacoesString>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wspub.pj.saj.softplan.com.br/PublicacaoWS/enviarPublicacoesString"/></con:call></con:operation><con:operation id="d0bdb563-89e2-48ea-a9e8-108cdeff2b96" isOneWay="false" action="" name="finalizaEnvioDiario" bindingOperationName="finalizaEnvioDiario" type="Request-Response" outputName="finalizaEnvioDiarioResponse" inputName="finalizaEnvioDiario" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2d8b9fe4-9f87-4f0e-b16d-6a0bdb5e0487" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://itajai.sajcloud.com.br/wspubWeb/services/PublicacaoWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsp="http://wspub.pj.saj.softplan.com.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wsp:finalizaEnvioDiario/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://wspub.pj.saj.softplan.com.br/PublicacaoWS/finalizaEnvioDiario"/></con:call></con:operation></con:interface><con:testSuite id="aea4ae42-4ae4-4825-967c-df6710ccfcfe" name="PublicacaoWSServiceSoapBinding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="5c98459b-68cd-4eb9-a0e9-40f9c8c09f46" failOnError="true" failTestCaseOnErrors="true" keepSession="true" maxResults="0" name="efetuarLogon TestCase" searchProperties="true" timeout="0" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" amfAuthorisation="false" amfEndpoint="" amfLogin="" amfPassword=""><con:settings/><con:testStep type="request" id="a6be69ef-7332-4488-a7da-f55e928a2c48" name="efetuarLogon"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PublicacaoWSServiceSoapBinding</con:interface><con:operation>efetuarLogon</con:operation><con:request name="efetuarLogon" id="c0ba6be3-2d51-4d9a-9ef9-49d89a72aa89"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://itajai.sajcloud.com.br/wspubWeb/services/PublicacaoWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsp="http://wspub.pj.saj.softplan.com.br">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <wsp1:efetuarLogon xmlns:wsp1="http://wspub.pj.saj.softplan.com.br/">
+         <userId>PUBWS</userId>
+         <senha>itajaipub94</senha>
+      </wsp1:efetuarLogon>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://wspub.pj.saj.softplan.com.br/PublicacaoWS/efetuarLogon" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="a7373148-5cd5-4980-aea9-49fb8efeca12" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="enviarPublicacoes TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="991a4fb3-c61b-48e5-b0b5-b2ca1aee0347" name="enviarPublicacoes"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PublicacaoWSServiceSoapBinding</con:interface><con:operation>enviarPublicacoes</con:operation><con:request name="enviarPublicacoes" id="4b927873-428e-42ae-a0be-f97fc5bc0e99"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://itajai.sajcloud.com.br/wspubWeb/services/PublicacaoWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsp="http://wspub.pj.saj.softplan.com.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wsp:enviarPublicacoes>\r
+         <!--Optional:-->\r
+         <bytes>cid:1545577778610</bytes>\r
+      </wsp:enviarPublicacoes>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://wspub.pj.saj.softplan.com.br/PublicacaoWS/enviarPublicacoes" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="52b726d3-bc7d-4a1e-a6dc-6b7b87f3e755" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="enviarPublicacoesString TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="6a47db0a-417e-4240-bcea-e2d84cac2660" name="enviarPublicacoesString"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PublicacaoWSServiceSoapBinding</con:interface><con:operation>enviarPublicacoesString</con:operation><con:request name="enviarPublicacoesString" id="eebf64a5-0e4c-473d-a7a4-be6023c0302e"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://itajai.sajcloud.com.br/wspubWeb/services/PublicacaoWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsp="http://wspub.pj.saj.softplan.com.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wsp:enviarPublicacoesString>\r
+         <!--Optional:-->\r
+         <string64>?</string64>\r
+      </wsp:enviarPublicacoesString>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="http://wspub.pj.saj.softplan.com.br/PublicacaoWS/enviarPublicacoesString" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="e5683424-ded0-436a-ae5e-bc735f1c0112" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="finalizaEnvioDiario TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="b267e9f0-4540-4b4b-9a21-33155266b1a9" name="finalizaEnvioDiario"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>PublicacaoWSServiceSoapBinding</con:interface><con:operation>finalizaEnvioDiario</con:operation><con:request name="finalizaEnvioDiario" id="93553300-3ca2-48a4-9ef1-c33ffeac7eab"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://itajai.sajcloud.com.br/wspubWeb/services/PublicacaoWS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsp="http://wspub.pj.saj.softplan.com.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <wsp:finalizaEnvioDiario/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://wspub.pj.saj.softplan.com.br/PublicacaoWS/finalizaEnvioDiario"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

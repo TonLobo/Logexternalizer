@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="e21c923b-cbd8-4ac0-99e8-1ecf7e4d31a9" activeEnvironment="Default" name="PJE TJBA - 1° Grau" resourceRoot="" soapui-version="5.7.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="545f7944-cd5c-4fad-a194-1d35a2a6ecbb" wsaVersion="NONE" name="IntercomunicacaoServiceSoapBinding" type="wsdl" bindingName="{http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/}IntercomunicacaoServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="https://pje.tjba.jus.br/pje-web/intercomunicacao?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://pje.tjba.jus.br/pje-web/intercomunicacao?wsdl"><con:part><con:url>https://pje.tjba.jus.br/pje-web/intercomunicacao?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="IntercomunicacaoService" targetNamespace="http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema targetNamespace="http://www.cnj.jus.br/tipos-servico-intercomunicacao-2.2.2" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:ns1="http://www.cnj.jus.br/intercomunicacao-2.2.2">
+      <xs:import namespace="http://www.cnj.jus.br/intercomunicacao-2.2.2"/>
+      <xs:import namespace="http://www.w3.org/2005/05/xmlmime"/>
+      <xs:complexType name="tipoConsultarAlteracao">
+        <xs:sequence>
+          <xs:element form="qualified" name="idConsultante" type="xs:string"/>
+          <xs:element form="qualified" name="senhaConsultante" type="xs:string"/>
+          <xs:element form="qualified" name="numeroProcesso" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tipoConsultarAlteracaoResposta">
+        <xs:sequence>
+          <xs:element form="qualified" name="sucesso" type="xs:boolean"/>
+          <xs:element form="qualified" name="mensagem" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="hashCabecalho" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="hashMovimentacoes" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="hashDocumentos" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tipoConfirmarRecebimento">
+        <xs:sequence>
+          <xs:element form="qualified" name="idRecebedor" type="xs:string"/>
+          <xs:element form="qualified" name="senhaRecebedor" type="xs:string"/>
+          <xs:element form="qualified" name="protocolo" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tipoConfirmarRecebimentoResposta">
+        <xs:sequence>
+          <xs:element form="qualified" name="sucesso" type="xs:boolean"/>
+          <xs:element form="qualified" name="mensagem" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tipoConsultarAvisosPendentes">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="idRepresentado" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="idConsultante" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="senhaConsultante" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="dataReferencia" type="ns1:tipoDataHora"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tipoConsultarAvisosPendentesResposta">
+        <xs:sequence>
+          <xs:element form="qualified" name="sucesso" type="xs:boolean"/>
+          <xs:element form="qualified" name="mensagem" type="xs:string"/>
+          <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="aviso" nillable="true" type="ns1:tipoAvisoComunicacaoPendente"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tipoConsultarProcesso">
+        <xs:sequence>
+          <xs:element form="qualified" name="idConsultante" type="xs:string"/>
+          <xs:element form="qualified" name="senhaConsultante" type="xs:string"/>
+          <xs:element form="qualified" name="numeroProcesso" type="ns1:tipoNumeroUnico"/>
+          <xs:element form="qualified" minOccurs="0" name="dataReferencia" type="ns1:tipoDataHora"/>
+          <xs:element form="qualified" minOccurs="0" name="movimentos" type="xs:boolean"/>
+          <xs:element form="qualified" minOccurs="0" name="incluirCabecalho" type="xs:boolean"/>
+          <xs:element form="qualified" minOccurs="0" name="incluirDocumentos" type="xs:boolean"/>
+          <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="documento" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tipoConsultarProcessoResposta">
+        <xs:sequence>
+          <xs:element form="qualified" name="sucesso" type="xs:boolean"/>
+          <xs:element form="qualified" name="mensagem" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="processo" type="ns1:tipoProcessoJudicial"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tipoConsultarTeorComunicacao">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="idConsultante" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="senhaConsultante" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="numeroProcesso" type="ns1:tipoNumeroUnico"/>
+          <xs:element form="qualified" minOccurs="0" name="identificadorAviso" type="ns1:identificadorComunicacao"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tipoConsultarTeorComunicacaoResposta">
+        <xs:sequence>
+          <xs:element form="qualified" name="sucesso" type="xs:boolean"/>
+          <xs:element form="qualified" name="mensagem" type="xs:string"/>
+          <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="comunicacao" nillable="true" type="ns1:tipoComunicacaoProcessual"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tipoEntregarManifestacaoProcessual">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="idManifestante" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="senhaManifestante" type="xs:string"/>
+          <xs:element form="qualified" minOccurs="0" name="numeroProcesso" type="ns1:tipoNumeroUnico"/>
+          <xs:element form="qualified" minOccurs="0" name="dadosBasicos" type="ns1:tipoCabecalhoProcesso"/>
+          <xs:element form="qualified" maxOccurs="unbounded" name="documento" type="ns1:tipoDocumento"/>
+          <xs:element form="qualified" name="dataEnvio" type="ns1:tipoDataHora"/>
+          <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="parametros" nillable="true" type="ns1:tipoParametro"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tipoEntregarManifestacaoProcessualResposta">
+        <xs:sequence>
+          <xs:element form="qualified" name="sucesso" type="xs:boolean"/>
+          <xs:element form="qualified" name="mensagem" type="xs:string"/>
+          <xs:element form="qualified" name="protocoloRecebimento" type="xs:string"/>
+          <xs:element form="qualified" name="dataOperacao" type="ns1:tipoDataHora"/>
+          <xs:element form="qualified" minOccurs="0" name="recibo" type="xs:base64Binary" xmime:expectedContentTypes="application/octet-stream"/>
+          <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="parametro" nillable="true" type="ns1:tipoParametro"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema targetNamespace="http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://www.cnj.jus.br/tipos-servico-intercomunicacao-2.2.2" xmlns:ns1="http://www.cnj.jus.br/intercomunicacao-2.2.2">
+      <xs:import namespace="http://www.cnj.jus.br/intercomunicacao-2.2.2"/>
+      <xs:import namespace="http://www.cnj.jus.br/tipos-servico-intercomunicacao-2.2.2"/>
+      <xs:element name="confirmarRecebimento" type="ns2:tipoConfirmarRecebimento"/>
+      <xs:element name="confirmarRecebimentoResposta" type="ns2:tipoConfirmarRecebimentoResposta"/>
+      <xs:element name="consultarAlteracao" type="ns2:tipoConsultarAlteracao"/>
+      <xs:element name="consultarAlteracaoResposta" type="ns2:tipoConsultarAlteracaoResposta"/>
+      <xs:element name="consultarAvisosPendentes" type="ns2:tipoConsultarAvisosPendentes"/>
+      <xs:element name="consultarAvisosPendentesResposta" type="ns2:tipoConsultarAvisosPendentesResposta"/>
+      <xs:element name="consultarProcesso" type="ns2:tipoConsultarProcesso"/>
+      <xs:element name="consultarProcessoResposta" type="ns2:tipoConsultarProcessoResposta"/>
+      <xs:element name="consultarTeorComunicacao" type="ns2:tipoConsultarTeorComunicacao"/>
+      <xs:element name="consultarTeorComunicacaoResposta" type="ns2:tipoConsultarTeorComunicacaoResposta"/>
+      <xs:element name="entregarManifestacaoProcessual" type="ns2:tipoEntregarManifestacaoProcessual"/>
+      <xs:element name="entregarManifestacaoProcessualResposta" type="ns2:tipoEntregarManifestacaoProcessualResposta"/>
+    </xs:schema>
+    <xs:schema targetNamespace="http://www.cnj.jus.br/mni/cda" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.cnj.jus.br/mni/cda">
+      <xs:element name="tipoDividaAtiva">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element form="qualified" maxOccurs="unbounded" name="certidao" type="tns:tipoCertidao"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="valorDivida">
+        <xs:sequence/>
+        <xs:attribute name="valor" type="xs:string" use="required"/>
+        <xs:attribute name="dataApuracao" type="xs:date" use="required"/>
+        <xs:attribute name="dataInicioIncidencia" type="xs:date"/>
+        <xs:attribute name="rubrica" type="xs:string" use="required"/>
+        <xs:attribute name="tipoValor" type="xs:string" use="required"/>
+      </xs:complexType>
+      <xs:complexType name="tipoCertidao">
+        <xs:sequence>
+          <xs:element form="qualified" maxOccurs="unbounded" name="devedorPrincipal" type="tns:tipoDevedorPrincipal"/>
+          <xs:element form="qualified" maxOccurs="unbounded" minOccurs="0" name="devedorAlternativo" nillable="true" type="tns:tipoDevedorAlternativo"/>
+          <xs:element form="qualified" maxOccurs="unbounded" name="valor" type="tns:valorDivida"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tipoDevedorPrincipal">
+        <xs:sequence/>
+        <xs:attribute name="inscricaoMF" type="xs:string" use="required"/>
+      </xs:complexType>
+      <xs:complexType name="tipoDevedorAlternativo">
+        <xs:sequence/>
+        <xs:attribute name="inscricaoMF" type="xs:string" use="required"/>
+        <xs:attribute name="tipo" type="xs:string" use="required"/>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://www.cnj.jus.br/intercomunicacao-2.2.2" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:tns="http://www.cnj.jus.br/intercomunicacao-2.2.2">
+      <xs:import namespace="http://www.w3.org/2005/05/xmlmime"/>
+      <xs:element name="intercomunicacao" type="tns:tipoIntercomunicacao"/>
+      <xs:simpleType name="tipoDataHora">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:complexType name="tipoAvisoComunicacaoPendente">
+        <xs:sequence>
+          <xs:element name="destinatario" type="tns:tipoParte"/>
+          <xs:element name="processo" type="tns:tipoCabecalhoProcesso"/>
+          <xs:element name="dataDisponibilizacao" type="tns:tipoDataHora"/>
+        </xs:sequence>
+        <xs:attribute name="idAviso" type="tns:identificadorComunicacao" use="required"/>
+        <xs:attribute name="tipoComunicacao" type="tns:tipoComunicacao"/>
+      </xs:complexType>
+      <xs:complexType name="tipoParte">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="pessoa" type="tns:tipoPessoa"/>
+          <xs:element minOccurs="0" name="interessePublico" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="advogado" nillable="true" type="tns:tipoRepresentanteProcessual"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="pessoaProcessualRelacionada" nillable="true" type="tns:tipoParte"/>
+        </xs:sequence>
+        <xs:attribute name="assistenciaJudiciaria" type="xs:boolean"/>
+        <xs:attribute name="intimacaoPendente" type="xs:int"/>
+        <xs:attribute name="relacionamentoProcessual" type="tns:modalidadeRelacionamentoProcessual"/>
+      </xs:complexType>
+      <xs:complexType name="tipoPessoa">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="outroNome" nillable="true" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="documento" nillable="true" type="tns:tipoDocumentoIdentificacao"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="endereco" nillable="true" type="tns:tipoEndereco"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="pessoaRelacionada" nillable="true" type="tns:tipoRelacionamentoPessoal"/>
+          <xs:element minOccurs="0" name="pessoaVinculada" type="tns:tipoPessoa"/>
+        </xs:sequence>
+        <xs:attribute name="nome" type="xs:string" use="required"/>
+        <xs:attribute name="sexo" type="tns:modalidadeGeneroPessoa" use="required"/>
+        <xs:attribute name="nomeGenitor" type="xs:string"/>
+        <xs:attribute name="nomeGenitora" type="xs:string"/>
+        <xs:attribute name="dataNascimento" type="tns:tipoData"/>
+        <xs:attribute name="dataObito" type="tns:tipoData"/>
+        <xs:attribute name="numeroDocumentoPrincipal" type="tns:tipoCadastroIdentificador"/>
+        <xs:attribute name="tipoPessoa" type="tns:tipoQualificacaoPessoa" use="required"/>
+        <xs:attribute name="cidadeNatural" type="xs:string"/>
+        <xs:attribute name="estadoNatural" type="xs:string"/>
+        <xs:attribute name="nacionalidade" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="tipoDocumentoIdentificacao">
+        <xs:sequence/>
+        <xs:attribute name="codigoDocumento" type="xs:string" use="required"/>
+        <xs:attribute name="emissorDocumento" type="xs:string" use="required"/>
+        <xs:attribute name="tipoDocumento" type="tns:modalidadeDocumentoIdentificador" use="required"/>
+        <xs:attribute name="nome" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="tipoEndereco">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="logradouro" type="xs:string"/>
+          <xs:element minOccurs="0" name="numero" type="xs:string"/>
+          <xs:element minOccurs="0" name="complemento" type="xs:string"/>
+          <xs:element minOccurs="0" name="bairro" type="xs:string"/>
+          <xs:element minOccurs="0" name="cidade" type="xs:string"/>
+          <xs:element minOccurs="0" name="estado" type="xs:string"/>
+          <xs:element minOccurs="0" name="pais" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="cep" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="tipoRelacionamentoPessoal">
+        <xs:sequence>
+          <xs:element name="pessoa" type="tns:tipoPessoa"/>
+        </xs:sequence>
+        <xs:attribute name="modalidadeRelacionamento" type="tns:modalidadesRelacionamentoPessoal"/>
+      </xs:complexType>
+      <xs:simpleType name="tipoData">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="tipoCadastroIdentificador">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:complexType name="tipoRepresentanteProcessual">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="endereco" nillable="true" type="tns:tipoEndereco"/>
+        </xs:sequence>
+        <xs:attribute name="nome" type="xs:string" use="required"/>
+        <xs:attribute name="inscricao" type="tns:tipoCadastroOAB"/>
+        <xs:attribute name="numeroDocumentoPrincipal" type="xs:string"/>
+        <xs:attribute name="intimacao" type="xs:boolean" use="required"/>
+        <xs:attribute name="tipoRepresentante" type="tns:modalidadeRepresentanteProcessual" use="required"/>
+      </xs:complexType>
+      <xs:simpleType name="tipoCadastroOAB">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:complexType name="tipoCabecalhoProcesso">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="polo" type="tns:tipoPoloProcessual"/>
+          <xs:element maxOccurs="unbounded" name="assunto" type="tns:tipoAssuntoProcessual"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="magistradoAtuante" nillable="true" type="tns:tipoCadastroIdentificador"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="processoVinculado" nillable="true" type="tns:tipoVinculacaoProcessual"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="prioridade" nillable="true" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="outroParametro" nillable="true" type="tns:tipoParametro"/>
+          <xs:element minOccurs="0" name="valorCausa" type="xs:double"/>
+          <xs:element name="orgaoJulgador" type="tns:tipoOrgaoJulgador"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="outrosnumeros" nillable="true" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="numero" type="tns:tipoNumeroUnico" use="required"/>
+        <xs:attribute name="competencia" type="xs:int"/>
+        <xs:attribute name="classeProcessual" type="xs:int" use="required"/>
+        <xs:attribute name="codigoLocalidade" type="xs:string" use="required"/>
+        <xs:attribute name="nivelSigilo" type="xs:int" use="required"/>
+        <xs:attribute name="intervencaoMP" type="xs:boolean"/>
+        <xs:attribute name="tamanhoProcesso" type="xs:int"/>
+        <xs:attribute name="dataAjuizamento" type="tns:tipoDataHora"/>
+      </xs:complexType>
+      <xs:complexType name="tipoPoloProcessual">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="parte" type="tns:tipoParte"/>
+        </xs:sequence>
+        <xs:attribute name="polo" type="tns:modalidadePoloProcessual"/>
+      </xs:complexType>
+      <xs:complexType name="tipoAssuntoProcessual">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codigoNacional" type="xs:int"/>
+          <xs:element minOccurs="0" name="assuntoLocal" type="tns:tipoAssuntoLocal"/>
+        </xs:sequence>
+        <xs:attribute name="principal" type="xs:boolean"/>
+      </xs:complexType>
+      <xs:complexType name="tipoAssuntoLocal">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="assuntoLocalPai" type="tns:tipoAssuntoLocal"/>
+        </xs:sequence>
+        <xs:attribute name="codigoAssunto" type="xs:int" use="required"/>
+        <xs:attribute name="codigoPaiNacional" type="xs:int" use="required"/>
+        <xs:attribute name="descricao" type="xs:string" use="required"/>
+      </xs:complexType>
+      <xs:complexType name="tipoVinculacaoProcessual">
+        <xs:sequence/>
+        <xs:attribute name="numeroProcesso" type="tns:tipoNumeroUnico" use="required"/>
+        <xs:attribute name="vinculo" type="tns:modalidadeVinculacaoProcesso" use="required"/>
+      </xs:complexType>
+      <xs:simpleType name="tipoNumeroUnico">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:complexType name="tipoParametro">
+        <xs:sequence/>
+        <xs:attribute name="nome" type="xs:string"/>
+        <xs:attribute name="valor" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="tipoOrgaoJulgador">
+        <xs:sequence/>
+        <xs:attribute name="codigoOrgao" type="xs:string" use="required"/>
+        <xs:attribute name="nomeOrgao" type="xs:string" use="required"/>
+        <xs:attribute name="instancia" type="xs:string" use="required"/>
+        <xs:attribute name="codigoMunicipioIBGE" type="xs:int" use="required"/>
+      </xs:complexType>
+      <xs:simpleType name="identificadorComunicacao">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:simpleType name="tipoComunicacao">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:complexType name="tipoProcessoJudicial">
+        <xs:sequence>
+          <xs:element name="dadosBasicos" type="tns:tipoCabecalhoProcesso"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="movimento" nillable="true" type="tns:tipoMovimentoProcessual"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="documento" nillable="true" type="tns:tipoDocumento"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tipoMovimentoProcessual">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="complemento" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="movimentoNacional" type="tns:tipoMovimentoNacional"/>
+          <xs:element minOccurs="0" name="movimentoLocal" type="tns:tipoMovimentoLocal"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="idDocumentoVinculado" nillable="true" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="dataHora" type="tns:tipoDataHora" use="required"/>
+        <xs:attribute name="nivelSigilo" type="xs:int"/>
+        <xs:attribute name="identificadorMovimento" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="tipoMovimentoNacional">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="complemento" nillable="true" type="tns:tipoComplemento"/>
+        </xs:sequence>
+        <xs:attribute name="codigoNacional" type="xs:int" use="required"/>
+      </xs:complexType>
+      <xs:simpleType name="tipoComplemento">
+        <xs:restriction base="xs:string"/>
+      </xs:simpleType>
+      <xs:complexType name="tipoMovimentoLocal">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="movimentoLocalPai" type="tns:tipoMovimentoLocal"/>
+        </xs:sequence>
+        <xs:attribute name="codigoMovimento" type="xs:int" use="required"/>
+        <xs:attribute name="codigoPaiNacional" type="xs:int" use="required"/>
+        <xs:attribute name="descricao" type="xs:string" use="required"/>
+      </xs:complexType>
+      <xs:complexType name="tipoDocumento">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="conteudo" type="xs:base64Binary" xmime:expectedContentTypes="application/octet-stream"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="assinatura" nillable="true" type="tns:tipoAssinatura"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="outroParametro" nillable="true" type="tns:tipoParametro"/>
+          <xs:any namespace="##other" processContents="lax"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="documentoVinculado" nillable="true" type="tns:tipoDocumento"/>
+        </xs:sequence>
+        <xs:attribute name="idDocumento" type="xs:string"/>
+        <xs:attribute name="idDocumentoVinculado" type="xs:string"/>
+        <xs:attribute name="tipoDocumento" type="xs:string" use="required"/>
+        <xs:attribute name="dataHora" type="tns:tipoDataHora"/>
+        <xs:attribute name="mimetype" type="xs:string"/>
+        <xs:attribute name="nivelSigilo" type="xs:int"/>
+        <xs:attribute name="movimento" type="xs:int"/>
+        <xs:attribute name="hash" type="xs:string"/>
+        <xs:attribute name="descricao" type="xs:string"/>
+        <xs:attribute name="tipoDocumentoLocal" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="tipoAssinatura">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="signatarioLogin" nillable="true" type="tns:tipoSignatarioSimples"/>
+        </xs:sequence>
+        <xs:attribute name="assinatura" type="xs:string"/>
+        <xs:attribute name="dataAssinatura" type="tns:tipoDataHora"/>
+        <xs:attribute name="cadeiaCertificado" type="xs:string"/>
+        <xs:attribute name="algoritmoHash" type="xs:string"/>
+        <xs:attribute name="codificacaoCertificado" type="xs:string"/>
+      </xs:complexType>
+      <xs:complexType name="tipoSignatarioSimples">
+        <xs:sequence/>
+        <xs:attribute name="identificador" type="xs:string"/>
+        <xs:attribute name="dataHora" type="tns:tipoDataHora"/>
+      </xs:complexType>
+      <xs:complexType name="tipoComunicacaoProcessual">
+        <xs:sequence>
+          <xs:element name="destinatario" type="tns:tipoParte"/>
+          <xs:element name="processo" type="xs:string"/>
+          <xs:element minOccurs="0" name="teor" type="xs:string"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="documento" nillable="true" type="tns:tipoDocumento"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="parametro" nillable="true" type="xs:string"/>
+          <xs:any namespace="##other" processContents="lax"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="tns:identificadorComunicacao" use="required"/>
+        <xs:attribute name="tipoComunicacao" type="tns:tipoComunicacao"/>
+        <xs:attribute name="tipoPrazo" type="tns:tipoPrazo"/>
+        <xs:attribute name="dataReferencia" type="tns:tipoDataHora"/>
+        <xs:attribute name="prazo" type="xs:int"/>
+        <xs:attribute name="nivelSigilo" type="xs:int"/>
+      </xs:complexType>
+      <xs:complexType name="tipoIntercomunicacao">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="processojudicial" nillable="true" type="tns:tipoProcessoJudicial"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="avisocomunicacao" nillable="true" type="tns:tipoAvisoComunicacaoPendente"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="comunicacaoprocessual" nillable="true" type="tns:tipoComunicacaoProcessual"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="documento" nillable="true" type="tns:tipoDocumento"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:simpleType name="modalidadeDocumentoIdentificador">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CI"/>
+          <xs:enumeration value="CNH"/>
+          <xs:enumeration value="TE"/>
+          <xs:enumeration value="CN"/>
+          <xs:enumeration value="CC"/>
+          <xs:enumeration value="PAS"/>
+          <xs:enumeration value="CT"/>
+          <xs:enumeration value="RIC"/>
+          <xs:enumeration value="CMF"/>
+          <xs:enumeration value="PIS_PASEP"/>
+          <xs:enumeration value="CEI"/>
+          <xs:enumeration value="NIT"/>
+          <xs:enumeration value="CP"/>
+          <xs:enumeration value="IF"/>
+          <xs:enumeration value="OAB"/>
+          <xs:enumeration value="RJC"/>
+          <xs:enumeration value="RGE"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="modalidadesRelacionamentoPessoal">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="P"/>
+          <xs:enumeration value="AP"/>
+          <xs:enumeration value="SP"/>
+          <xs:enumeration value="T"/>
+          <xs:enumeration value="C"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="modalidadeGeneroPessoa">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="M"/>
+          <xs:enumeration value="F"/>
+          <xs:enumeration value="D"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="tipoQualificacaoPessoa">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="fisica"/>
+          <xs:enumeration value="juridica"/>
+          <xs:enumeration value="autoridade"/>
+          <xs:enumeration value="orgaorepresentacao"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="modalidadeRepresentanteProcessual">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="A"/>
+          <xs:enumeration value="E"/>
+          <xs:enumeration value="M"/>
+          <xs:enumeration value="D"/>
+          <xs:enumeration value="P"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="modalidadeRelacionamentoProcessual">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CP"/>
+          <xs:enumeration value="RP"/>
+          <xs:enumeration value="TF"/>
+          <xs:enumeration value="AT"/>
+          <xs:enumeration value="AS"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="modalidadePoloProcessual">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="AT"/>
+          <xs:enumeration value="PA"/>
+          <xs:enumeration value="TC"/>
+          <xs:enumeration value="FL"/>
+          <xs:enumeration value="TJ"/>
+          <xs:enumeration value="AD"/>
+          <xs:enumeration value="VI"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="modalidadeVinculacaoProcesso">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="CX"/>
+          <xs:enumeration value="CT"/>
+          <xs:enumeration value="DP"/>
+          <xs:enumeration value="AR"/>
+          <xs:enumeration value="CD"/>
+          <xs:enumeration value="OR"/>
+          <xs:enumeration value="RR"/>
+          <xs:enumeration value="RG"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:simpleType name="tipoPrazo">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="HOR"/>
+          <xs:enumeration value="DIA"/>
+          <xs:enumeration value="MES"/>
+          <xs:enumeration value="ANO"/>
+          <xs:enumeration value="DATA_CERTA"/>
+          <xs:enumeration value="SEMPRAZO"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="consultarAvisosPendentesResponse">
+    <wsdl:part element="tns:consultarAvisosPendentesResposta" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarAlteracaoResponse">
+    <wsdl:part element="tns:consultarAlteracaoResposta" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="confirmarRecebimentoResponse">
+    <wsdl:part element="tns:confirmarRecebimentoResposta" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarAlteracao">
+    <wsdl:part element="tns:consultarAlteracao" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="entregarManifestacaoProcessualResponse">
+    <wsdl:part element="tns:entregarManifestacaoProcessualResposta" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarProcessoResponse">
+    <wsdl:part element="tns:consultarProcessoResposta" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarTeorComunicacaoResponse">
+    <wsdl:part element="tns:consultarTeorComunicacaoResposta" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="confirmarRecebimento">
+    <wsdl:part element="tns:confirmarRecebimento" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarAvisosPendentes">
+    <wsdl:part element="tns:consultarAvisosPendentes" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarProcesso">
+    <wsdl:part element="tns:consultarProcesso" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarTeorComunicacao">
+    <wsdl:part element="tns:consultarTeorComunicacao" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="entregarManifestacaoProcessual">
+    <wsdl:part element="tns:entregarManifestacaoProcessual" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="servico-intercomunicacao-2.2.2">
+    <wsdl:operation name="consultarAlteracao">
+      <wsdl:input message="tns:consultarAlteracao" name="consultarAlteracao"></wsdl:input>
+      <wsdl:output message="tns:consultarAlteracaoResponse" name="consultarAlteracaoResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="confirmarRecebimento">
+      <wsdl:input message="tns:confirmarRecebimento" name="confirmarRecebimento"></wsdl:input>
+      <wsdl:output message="tns:confirmarRecebimentoResponse" name="confirmarRecebimentoResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarAvisosPendentes">
+      <wsdl:input message="tns:consultarAvisosPendentes" name="consultarAvisosPendentes"></wsdl:input>
+      <wsdl:output message="tns:consultarAvisosPendentesResponse" name="consultarAvisosPendentesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarProcesso">
+      <wsdl:input message="tns:consultarProcesso" name="consultarProcesso"></wsdl:input>
+      <wsdl:output message="tns:consultarProcessoResponse" name="consultarProcessoResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTeorComunicacao">
+      <wsdl:input message="tns:consultarTeorComunicacao" name="consultarTeorComunicacao"></wsdl:input>
+      <wsdl:output message="tns:consultarTeorComunicacaoResponse" name="consultarTeorComunicacaoResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="entregarManifestacaoProcessual">
+      <wsdl:input message="tns:entregarManifestacaoProcessual" name="entregarManifestacaoProcessual"></wsdl:input>
+      <wsdl:output message="tns:entregarManifestacaoProcessualResponse" name="entregarManifestacaoProcessualResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IntercomunicacaoServiceSoapBinding" type="tns:servico-intercomunicacao-2.2.2">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="consultarAlteracao">
+      <soap:operation soapAction="http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/consultarAlteracao" style="document"/>
+      <wsdl:input name="consultarAlteracao">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultarAlteracaoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="confirmarRecebimento">
+      <soap:operation soapAction="http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/confirmarRecebimento" style="document"/>
+      <wsdl:input name="confirmarRecebimento">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="confirmarRecebimentoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarAvisosPendentes">
+      <soap:operation soapAction="http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/consultarAvisosPendentes" style="document"/>
+      <wsdl:input name="consultarAvisosPendentes">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultarAvisosPendentesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarProcesso">
+      <soap:operation soapAction="http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/consultarProcesso" style="document"/>
+      <wsdl:input name="consultarProcesso">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultarProcessoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="consultarTeorComunicacao">
+      <soap:operation soapAction="http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/consultarTeorComunicacao" style="document"/>
+      <wsdl:input name="consultarTeorComunicacao">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultarTeorComunicacaoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="entregarManifestacaoProcessual">
+      <soap:operation soapAction="http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/entregarManifestacaoProcessual" style="document"/>
+      <wsdl:input name="entregarManifestacaoProcessual">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="entregarManifestacaoProcessualResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IntercomunicacaoService">
+    <wsdl:port binding="tns:IntercomunicacaoServiceSoapBinding" name="IntercomunicacaoSoapImplPort">
+      <soap:address location="https://pje1g-debug-prod.tjba.jus.br/pje/intercomunicacao"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://pje1g-debug-prod.tjba.jus.br/pje/intercomunicacao</con:endpoint></con:endpoints><con:operation id="17e1ca88-7705-4552-845b-10d769ac64aa" isOneWay="false" action="http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/confirmarRecebimento" name="confirmarRecebimento" bindingOperationName="confirmarRecebimento" type="Request-Response" outputName="confirmarRecebimentoResponse" inputName="confirmarRecebimento" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="68fb7743-2997-497a-900b-ccb1a99437af" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://pje1g-debug-prod.tjba.jus.br/pje/intercomunicacao</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/" xmlns:tip="http://www.cnj.jus.br/tipos-servico-intercomunicacao-2.2.2">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:confirmarRecebimento>\r
+         <tip:idRecebedor>?</tip:idRecebedor>\r
+         <tip:senhaRecebedor>?</tip:senhaRecebedor>\r
+         <tip:protocolo>?</tip:protocolo>\r
+      </ser:confirmarRecebimento>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/confirmarRecebimento"/></con:call></con:operation><con:operation id="f624ce38-c3b2-4f68-a69b-71c34a082788" isOneWay="false" action="http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/consultarAlteracao" name="consultarAlteracao" bindingOperationName="consultarAlteracao" type="Request-Response" outputName="consultarAlteracaoResponse" inputName="consultarAlteracao" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0a217bba-e24c-440d-b910-ed6045974719" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://pje1g-debug-prod.tjba.jus.br/pje/intercomunicacao</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/" xmlns:tip="http://www.cnj.jus.br/tipos-servico-intercomunicacao-2.2.2">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:consultarAlteracao>\r
+         <tip:idConsultante>?</tip:idConsultante>\r
+         <tip:senhaConsultante>?</tip:senhaConsultante>\r
+         <tip:numeroProcesso>?</tip:numeroProcesso>\r
+      </ser:consultarAlteracao>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/consultarAlteracao"/></con:call></con:operation><con:operation id="98664019-9524-45f3-8e03-2b3adb153a41" isOneWay="false" action="http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/consultarAvisosPendentes" name="consultarAvisosPendentes" bindingOperationName="consultarAvisosPendentes" type="Request-Response" outputName="consultarAvisosPendentesResponse" inputName="consultarAvisosPendentes" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="cd0ff877-dc71-4a61-9d1e-effe30054dc6" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://pje1g-debug-prod.tjba.jus.br/pje/intercomunicacao</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/" xmlns:tip="http://www.cnj.jus.br/tipos-servico-intercomunicacao-2.2.2">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:consultarAvisosPendentes>\r
+         <!--Optional:-->\r
+         <tip:idRepresentado>?</tip:idRepresentado>\r
+         <!--Optional:-->\r
+         <tip:idConsultante>?</tip:idConsultante>\r
+         <!--Optional:-->\r
+         <tip:senhaConsultante>?</tip:senhaConsultante>\r
+         <!--Optional:-->\r
+         <tip:dataReferencia>?</tip:dataReferencia>\r
+      </ser:consultarAvisosPendentes>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/consultarAvisosPendentes"/></con:call></con:operation><con:operation id="569eed80-6c53-42b9-b487-13d66bce7550" isOneWay="false" action="http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/consultarProcesso" name="consultarProcesso" bindingOperationName="consultarProcesso" type="Request-Response" outputName="consultarProcessoResponse" inputName="consultarProcesso" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="21ae3bc8-09ac-4e1b-a027-703580426e39" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://pje1g-debug-prod.tjba.jus.br/pje/intercomunicacao</con:endpoint><con:request><![CDATA[<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<SOAP-ENV:Body xmlns:NS1="http://www.cnj.jus.br/tipos-servico-intercomunicacao-2.2.2">
+<consultarProcesso xmlns="http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/">
+<idConsultante xmlns="http://www.cnj.jus.br/tipos-servico-intercomunicacao-2.2.2">00752961527/121401</idConsultante>
+<senhaConsultante xmlns="http://www.cnj.jus.br/tipos-servico-intercomunicacao-2.2.2">Progersi1234</senhaConsultante>
+<numeroProcesso xmlns="http://www.cnj.jus.br/tipos-servico-intercomunicacao-2.2.2">07136338020158050039</numeroProcesso>
+<documento xmlns="http://www.cnj.jus.br/tipos-servico-intercomunicacao-2.2.2">83224674</documento>
+</consultarProcesso>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/consultarProcesso"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="c6388ba6-4bb0-4d58-86c2-25b210bebe52" isOneWay="false" action="http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/consultarTeorComunicacao" name="consultarTeorComunicacao" bindingOperationName="consultarTeorComunicacao" type="Request-Response" outputName="consultarTeorComunicacaoResponse" inputName="consultarTeorComunicacao" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7543d539-0e59-4c89-9c96-b747fe070b37" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://pje1g-debug-prod.tjba.jus.br/pje/intercomunicacao</con:endpoint><con:request><![CDATA[<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<SOAP-ENV:Body>
+<consultarTeorComunicacao xmlns="http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/">
+<idConsultante xmlns="http://www.cnj.jus.br/tipos-servico-intercomunicacao-2.2.2">00752961527/121401</idConsultante>
+<senhaConsultante xmlns="http://www.cnj.jus.br/tipos-servico-intercomunicacao-2.2.2">Progersi1234</senhaConsultante>
+<identificadorAviso xmlns="http://www.cnj.jus.br/tipos-servico-intercomunicacao-2.2.2">33266135</identificadorAviso>
+</consultarTeorComunicacao>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/consultarTeorComunicacao"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="f83850eb-a10b-447f-9796-1c4570dff5e9" isOneWay="false" action="http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/entregarManifestacaoProcessual" name="entregarManifestacaoProcessual" bindingOperationName="entregarManifestacaoProcessual" type="Request-Response" outputName="entregarManifestacaoProcessualResponse" inputName="entregarManifestacaoProcessual" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="bdb6113e-386a-4ad6-a842-62960cec66cd" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://pje1g-debug-prod.tjba.jus.br/pje/intercomunicacao</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/" xmlns:tip="http://www.cnj.jus.br/tipos-servico-intercomunicacao-2.2.2" xmlns:int="http://www.cnj.jus.br/intercomunicacao-2.2.2">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ser:entregarManifestacaoProcessual>\r
+         <!--Optional:-->\r
+         <tip:idManifestante>?</tip:idManifestante>\r
+         <!--Optional:-->\r
+         <tip:senhaManifestante>?</tip:senhaManifestante>\r
+         <!--Optional:-->\r
+         <tip:numeroProcesso>?</tip:numeroProcesso>\r
+         <!--Optional:-->\r
+         <tip:dadosBasicos numero="?" competencia="?" classeProcessual="?" codigoLocalidade="?" nivelSigilo="?" intervencaoMP="?" tamanhoProcesso="?" dataAjuizamento="?">\r
+            <!--1 or more repetitions:-->\r
+            <int:polo polo="?">\r
+               <!--1 or more repetitions:-->\r
+               <int:parte assistenciaJudiciaria="?" intimacaoPendente="?" relacionamentoProcessual="?">\r
+                  <!--Optional:-->\r
+                  <int:pessoa nome="?" sexo="?" nomeGenitor="?" nomeGenitora="?" dataNascimento="?" dataObito="?" numeroDocumentoPrincipal="?" tipoPessoa="?" cidadeNatural="?" estadoNatural="?" nacionalidade="?">\r
+                     <!--Zero or more repetitions:-->\r
+                     <int:outroNome>?</int:outroNome>\r
+                     <!--Zero or more repetitions:-->\r
+                     <int:documento codigoDocumento="?" emissorDocumento="?" tipoDocumento="?" nome="?"/>\r
+                     <!--Zero or more repetitions:-->\r
+                     <int:endereco cep="?">\r
+                        <!--Optional:-->\r
+                        <int:logradouro>?</int:logradouro>\r
+                        <!--Optional:-->\r
+                        <int:numero>?</int:numero>\r
+                        <!--Optional:-->\r
+                        <int:complemento>?</int:complemento>\r
+                        <!--Optional:-->\r
+                        <int:bairro>?</int:bairro>\r
+                        <!--Optional:-->\r
+                        <int:cidade>?</int:cidade>\r
+                        <!--Optional:-->\r
+                        <int:estado>?</int:estado>\r
+                        <!--Optional:-->\r
+                        <int:pais>?</int:pais>\r
+                     </int:endereco>\r
+                     <!--Zero or more repetitions:-->\r
+                     <int:pessoaRelacionada modalidadeRelacionamento="?">\r
+                        <int:pessoa/>\r
+                     </int:pessoaRelacionada>\r
+                     <!--Optional:-->\r
+                     <int:pessoaVinculada/>\r
+                  </int:pessoa>\r
+                  <!--Optional:-->\r
+                  <int:interessePublico>?</int:interessePublico>\r
+                  <!--Zero or more repetitions:-->\r
+                  <int:advogado nome="?" inscricao="?" numeroDocumentoPrincipal="?" intimacao="?" tipoRepresentante="?">\r
+                     <!--Zero or more repetitions:-->\r
+                     <int:endereco cep="?">\r
+                        <!--Optional:-->\r
+                        <int:logradouro>?</int:logradouro>\r
+                        <!--Optional:-->\r
+                        <int:numero>?</int:numero>\r
+                        <!--Optional:-->\r
+                        <int:complemento>?</int:complemento>\r
+                        <!--Optional:-->\r
+                        <int:bairro>?</int:bairro>\r
+                        <!--Optional:-->\r
+                        <int:cidade>?</int:cidade>\r
+                        <!--Optional:-->\r
+                        <int:estado>?</int:estado>\r
+                        <!--Optional:-->\r
+                        <int:pais>?</int:pais>\r
+                     </int:endereco>\r
+                  </int:advogado>\r
+                  <!--Zero or more repetitions:-->\r
+                  <int:pessoaProcessualRelacionada/>\r
+               </int:parte>\r
+            </int:polo>\r
+            <!--1 or more repetitions:-->\r
+            <int:assunto principal="?">\r
+               <!--Optional:-->\r
+               <int:codigoNacional>?</int:codigoNacional>\r
+               <!--Optional:-->\r
+               <int:assuntoLocal codigoAssunto="?" codigoPaiNacional="?" descricao="?">\r
+                  <!--Optional:-->\r
+                  <int:assuntoLocalPai/>\r
+               </int:assuntoLocal>\r
+            </int:assunto>\r
+            <!--Zero or more repetitions:-->\r
+            <int:magistradoAtuante>?</int:magistradoAtuante>\r
+            <!--Zero or more repetitions:-->\r
+            <int:processoVinculado numeroProcesso="?" vinculo="?"/>\r
+            <!--Zero or more repetitions:-->\r
+            <int:prioridade>?</int:prioridade>\r
+            <!--Zero or more repetitions:-->\r
+            <int:outroParametro nome="?" valor="?"/>\r
+            <!--Optional:-->\r
+            <int:valorCausa>?</int:valorCausa>\r
+            <int:orgaoJulgador codigoOrgao="?" nomeOrgao="?" instancia="?" codigoMunicipioIBGE="?"/>\r
+            <!--Zero or more repetitions:-->\r
+            <int:outrosnumeros>?</int:outrosnumeros>\r
+         </tip:dadosBasicos>\r
+         <!--1 or more repetitions:-->\r
+         <tip:documento idDocumento="?" idDocumentoVinculado="?" tipoDocumento="?" dataHora="?" mimetype="?" nivelSigilo="?" movimento="?" hash="?" descricao="?" tipoDocumentoLocal="?">\r
+            <!--Optional:-->\r
+            <int:conteudo>cid:1322591338879</int:conteudo>\r
+            <!--Zero or more repetitions:-->\r
+            <int:assinatura assinatura="?" dataAssinatura="?" cadeiaCertificado="?" algoritmoHash="?" codificacaoCertificado="?">\r
+               <!--Zero or more repetitions:-->\r
+               <int:signatarioLogin identificador="?" dataHora="?"/>\r
+            </int:assinatura>\r
+            <!--Zero or more repetitions:-->\r
+            <int:outroParametro nome="?" valor="?"/>\r
+            <!--You may enter ANY elements at this point-->\r
+            <!--Zero or more repetitions:-->\r
+            <int:documentoVinculado/>\r
+         </tip:documento>\r
+         <tip:dataEnvio>?</tip:dataEnvio>\r
+         <!--Zero or more repetitions:-->\r
+         <tip:parametros nome="?" valor="?"/>\r
+      </ser:entregarManifestacaoProcessual>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.cnj.jus.br/servico-intercomunicacao-2.2.2/entregarManifestacaoProcessual"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.streamlit/
+exports/
+saved_queries/
+*.zip

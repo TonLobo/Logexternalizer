@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="7dcec92b-888c-4d5f-b0d1-95efecbe55a9" activeEnvironment="Default" name="EPROC TJRJ" resourceRoot="" soapui-version="5.8.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="484826d1-8b10-486e-ad23-522c2e358b9f" wsaVersion="NONE" name="consultarTabelaBinding" type="wsdl" bindingName="{eproc}consultarTabelaBinding" soapVersion="1_1" anonymous="optional" definition="https://eproc1g-ws.tjrj.jus.br/eproc/wsdl.php?srv=consultarTabela" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://eproc1g-ws.tjrj.jus.br/eproc/wsdl.php?srv=consultarTabela"><con:part><con:url>https://eproc1g-ws.tjrj.jus.br/eproc/wsdl.php?srv=consultarTabela</con:url><con:content><![CDATA[<definitions name="consultarTabelaWS" targetNamespace="eproc" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="eproc">
+  <types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="eproc">
+      <xsd:complexType name="Lista">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Tabela">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="linha" type="tns:Lista"/>
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </types>
+  <message name="consultarDadosRequest">
+    <part name="nomeTabela" type="xsd:string"/>
+  </message>
+  <message name="consultarDadosResponse">
+    <part name="tabela" type="tns:Tabela"/>
+  </message>
+  <message name="listarTabelasRequest"></message>
+  <message name="listarTabelasResponse">
+    <part name="listaTabelas" type="tns:Lista"/>
+  </message>
+  <portType name="consultarTabelaPortType">
+    <operation name="consultarDados">
+      <input message="tns:consultarDadosRequest"/>
+      <output message="tns:consultarDadosResponse"/>
+    </operation>
+    <operation name="listarEstrutura">
+      <input message="tns:consultarDadosRequest"/>
+      <output message="tns:consultarDadosResponse"/>
+    </operation>
+    <operation name="listarTabelas">
+      <input message="tns:listarTabelasRequest"/>
+      <output message="tns:listarTabelasResponse"/>
+    </operation>
+  </portType>
+  <binding name="consultarTabelaBinding" type="tns:consultarTabelaPortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="listarTabelas">
+      <soap:operation soapAction="eproc/listarTabelas"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="eproc" use="literal"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="eproc" use="literal"/>
+      </output>
+    </operation>
+    <operation name="consultarDados">
+      <soap:operation soapAction="eproc/consultarDados"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="eproc" use="literal"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="eproc" use="literal"/>
+      </output>
+    </operation>
+    <operation name="listarEstrutura">
+      <soap:operation soapAction="eproc/listarEstrutura"/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="eproc" use="literal"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="eproc" use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <wsdl:service name="consultarTabelaService">
+    <wsdl:port name="consultarTabelaPortType" binding="tns:consultarTabelaBinding">
+      <soap:address location="https://eproc1g-ws.tjrj.jus.br/eproc/ws/controlador_ws.php?srv=consultarTabela"/>
+    </wsdl:port>
+  </wsdl:service>
+</definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://eproc1g-ws.tjrj.jus.br/eproc/ws/controlador_ws.php?srv=consultarTabela</con:endpoint></con:endpoints><con:operation id="1e1eb37a-f153-45b5-bf11-94875da1c5cb" isOneWay="false" action="eproc/consultarDados" name="consultarDados" bindingOperationName="consultarDados" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0425734c-6a84-4d9c-8065-aec65424d39c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://eproc1g-ws.tjrj.jus.br/eproc/ws/controlador_ws.php?srv=consultarTabela</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:epr="eproc">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <epr:consultarDados>\r
+         <nomeTabela>?</nomeTabela>\r
+      </epr:consultarDados>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="eproc/consultarDados"/></con:call></con:operation><con:operation id="9f4926c3-2107-4236-8fbf-e95eefeabe0f" isOneWay="false" action="eproc/listarEstrutura" name="listarEstrutura" bindingOperationName="listarEstrutura" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4f4f3d6e-d7e7-4ca2-8025-21ddcadbff00" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://eproc1g-ws.tjrj.jus.br/eproc/ws/controlador_ws.php?srv=consultarTabela</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:epr="eproc">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <epr:listarEstrutura>\r
+         <nomeTabela>?</nomeTabela>\r
+      </epr:listarEstrutura>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="eproc/listarEstrutura"/></con:call></con:operation><con:operation id="ebc241af-ac61-4e1b-9718-2d93481c7e56" isOneWay="false" action="eproc/listarTabelas" name="listarTabelas" bindingOperationName="listarTabelas" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f7256b33-3831-468d-84e3-28d76f63e222" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://eproc1g-ws.tjrj.jus.br/eproc/ws/controlador_ws.php?srv=consultarTabela</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:epr="eproc">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <epr:listarTabelas/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="eproc/listarTabelas"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

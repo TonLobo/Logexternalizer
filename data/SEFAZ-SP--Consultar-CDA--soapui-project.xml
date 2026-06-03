@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="93c3c0ab-1d96-40f2-8eb2-8b7ea27f52f0" activeEnvironment="Default" name="SEFAZ SP (Consultar CDA)" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="ab67dfe0-d8a3-4ff9-94a6-78a2f16003ab" wsaVersion="NONE" name="ConsultaCdaServiceServiceSoapBinding" type="wsdl" bindingName="{http://ws.ajuizamento.da.pge.prodesp.sp.gov.br/}ConsultaCdaServiceServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://10.199.11.6/dividaativa/ws/debito/ajuizamento/consultarCDA?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://10.199.11.6/dividaativa/ws/debito/ajuizamento/consultarCDA?wsdl"><con:part><con:url>http://10.199.11.6/dividaativa/ws/debito/ajuizamento/consultarCDA?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ConsultaCdaServiceService" targetNamespace="http://ws.ajuizamento.da.pge.prodesp.sp.gov.br/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ws.ajuizamento.da.pge.prodesp.sp.gov.br/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://ws.ajuizamento.da.pge.prodesp.sp.gov.br/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="consultarCDA" type="tns:consultarCDA"/>
+      <xs:element name="consultarCDAResponse" type="tns:consultarCDAResponse"/>
+      <xs:complexType name="consultarCDA">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="mensagemRequisicao" type="tns:mensagemRequisicaoConsultaCda"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="mensagemRequisicaoConsultaCda">
+        <xs:complexContent>
+          <xs:extension base="tns:mensagemRequisicao">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="chave" type="xs:string"/>
+              <xs:element minOccurs="0" name="cpf" type="xs:string"/>
+              <xs:element minOccurs="0" name="nome" type="xs:string"/>
+              <xs:element minOccurs="0" name="tipoConsulta" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="mensagemRequisicao">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="credencial" type="tns:credencial"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="credencial">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="deUsuario" type="xs:string"/>
+          <xs:element minOccurs="0" name="deSenha" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="consultarCDAResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:mensagemRetornoAjuizamento"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="mensagemRetornoAjuizamento">
+        <xs:complexContent>
+          <xs:extension base="tns:mensagemRetorno">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="cdRetorno" type="xs:string"/>
+              <xs:element minOccurs="0" name="deRetorno" type="xs:string"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="mensagemRetorno">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codigoRetorno" type="xs:string"/>
+          <xs:element minOccurs="0" name="descricaoRetorno" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="consultarCDA">
+    <wsdl:part element="tns:consultarCDA" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="consultarCDAResponse">
+    <wsdl:part element="tns:consultarCDAResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ConsultaCdaService">
+    <wsdl:operation name="consultarCDA">
+      <wsdl:input message="tns:consultarCDA" name="consultarCDA"></wsdl:input>
+      <wsdl:output message="tns:consultarCDAResponse" name="consultarCDAResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConsultaCdaServiceServiceSoapBinding" type="tns:ConsultaCdaService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="consultarCDA">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="consultarCDA">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="consultarCDAResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConsultaCdaServiceService">
+    <wsdl:port binding="tns:ConsultaCdaServiceServiceSoapBinding" name="ConsultaCdaServicePort">
+      <soap:address location="http://10.199.11.6:80/dividaativa/ws/debito/ajuizamento/consultarCDA"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://10.199.11.6:80/dividaativa/ws/debito/ajuizamento/consultarCDA</con:endpoint></con:endpoints><con:operation id="c2d7f559-0aab-4391-bc11-9f62c4c3c718" isOneWay="false" action="" name="consultarCDA" bindingOperationName="consultarCDA" type="Request-Response" outputName="consultarCDAResponse" inputName="consultarCDA" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9cb99a94-0c45-473d-8897-1c7afde3cd61" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://10.199.11.6:80/dividaativa/ws/debito/ajuizamento/consultarCDA</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ws="http://ws.ajuizamento.da.pge.prodesp.sp.gov.br/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <ws:consultarCDA>\r
+         <!--Optional:-->\r
+         <mensagemRequisicao>\r
+            <!--Optional:-->\r
+            <credencial>\r
+               <!--Optional:-->\r
+               <deUsuario>SEFAZSP</deUsuario>\r
+               <!--Optional:-->\r
+               <deSenha>2011</deSenha>\r
+            </credencial>\r
+            <!--Optional:-->\r
+            <chave>123</chave>\r
+            <!--Optional:-->\r
+            <cpf>026.101.600-89</cpf>\r
+            <!--Optional:-->\r
+            <nome>José</nome>\r
+            <!--Optional:-->\r
+            <tipoConsulta>1</tipoConsulta>\r
+         </mensagemRequisicao>\r
+      </ws:consultarCDA>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ws.ajuizamento.da.pge.prodesp.sp.gov.br/ConsultaCdaService/consultarCDA"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
