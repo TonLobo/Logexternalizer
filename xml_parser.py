@@ -1,175 +1,139 @@
 """
-Utilitários para parse e extração de informações de XMLs SoapUI e logexternalizer.
+Parse e busca em XMLs SOAP do logexternalizer (MNI / HUB).
 """
 import re
-from datetime import datetime
 from typing import Optional
 from lxml import etree
-from bs4 import BeautifulSoup
 
 
-SOAPUI_NS = "http://eviware.com/soapui/config"
-
-
-def parse_soapui_project(xml_content: str, filename: str = "") -> dict:
-    """Extrai metadados de um projeto SoapUI XML."""
+def pretty_print_xml(xml_content: str) -> str:
+    """Formata XML com indentação. Trata MTOM/multipart retornando o fragmento XML."""
+    content = _extract_xml_from_mtom(xml_content)
     try:
-        root = etree.fromstring(xml_content.encode("utf-8") if isinstance(xml_content, str) else xml_content)
+        root = etree.fromstring(content.encode("utf-8") if isinstance(content, str) else content)
+        return etree.tostring(root, pretty_print=True, encoding="unicode")
     except etree.XMLSyntaxError:
-        return {}
-
-    ns = {"con": SOAPUI_NS}
-
-    def attr(name):
-        return root.get(name, "")
-
-    name = attr("name") or filename.replace("-soapui-project.xml", "")
-    soapui_version = attr("soapui-version")
-    project_id = attr("id")
-
-    # Coleta interfaces (endpoints WSDL/REST)
-    interfaces = []
-    for iface in root.findall("con:interface", ns):
-        iface_name = iface.get("name", "")
-        definition = iface.get("definition", "")
-        iface_type = iface.get("type", "")
-        interfaces.append({"name": iface_name, "definition": definition, "type": iface_type})
-
-    # Tenta extrair data do conteúdo
-    date = _extract_date_from_content(xml_content)
-
-    return {
-        "project_name": name,
-        "project_id": project_id,
-        "soapui_version": soapui_version,
-        "interfaces": interfaces,
-        "interface_count": len(interfaces),
-        "endpoints": [i["definition"] for i in interfaces if i["definition"]],
-        "date": date,
-        "filename": filename,
-        "raw_xml": xml_content,
-    }
-
-
-def parse_log_entry(xml_content: str) -> dict:
-    """Extrai dados de uma entrada de log XML do logexternalizer."""
-    try:
-        root = etree.fromstring(xml_content.encode("utf-8") if isinstance(xml_content, str) else xml_content)
-    except etree.XMLSyntaxError:
-        return {}
-
-    def get_text(tag: str) -> str:
-        el = root.find(".//" + tag)
-        if el is None:
-            # tenta sem namespace
-            for child in root.iter():
-                if child.tag.split("}")[-1] == tag:
-                    return (child.text or "").strip()
-        return (el.text or "").strip() if el is not None else ""
-
-    date = _extract_date_from_content(xml_content)
-
-    return {
-        "date": date,
-        "raw_xml": xml_content,
-    }
+        return content
 
 
 def search_in_xml(xml_content: str, query: str) -> list[dict]:
     """
-    Busca um termo dentro do XML e retorna os contextos onde foi encontrado.
-    Retorna lista de {tag, path, value, context}.
+    Busca termo dentro do XML. Retorna [{tag, path, value, context}].
     """
     if not query:
         return []
-
     query_lower = query.lower()
+    content = _extract_xml_from_mtom(xml_content)
     results = []
 
     try:
-        root = etree.fromstring(xml_content.encode("utf-8") if isinstance(xml_content, str) else xml_content)
+        root = etree.fromstring(content.encode("utf-8") if isinstance(content, str) else content)
     except etree.XMLSyntaxError:
-        # fallback: busca de texto puro
-        lines = xml_content.splitlines()
+        lines = content.splitlines()
         for i, line in enumerate(lines):
             if query_lower in line.lower():
+                start = max(0, i - 2)
+                end = min(len(lines), i + 3)
                 results.append({
                     "tag": f"linha {i+1}",
                     "path": "",
                     "value": line.strip(),
-                    "context": _get_line_context(lines, i),
+                    "context": "\n".join(lines[start:end]),
                 })
         return results
 
     for el in root.iter():
-        tag = el.tag.split("}")[-1] if "}" in el.tag else el.tag
+        tag = _local(el.tag)
         text = (el.text or "").strip()
-        if query_lower in text.lower():
+        if text and query_lower in text.lower():
             results.append({
                 "tag": tag,
-                "path": _get_xpath(el),
-                "value": text[:300],
-                "context": text[:500],
+                "path": _xpath(el),
+                "value": text[:400],
+                "context": text[:600],
             })
         for attr_name, attr_val in el.attrib.items():
             if query_lower in attr_val.lower():
                 results.append({
-                    "tag": f"{tag}[@{attr_name}]",
-                    "path": _get_xpath(el),
-                    "value": attr_val[:300],
-                    "context": f"@{attr_name}={attr_val[:300]}",
+                    "tag": f"{tag}[@{_local(attr_name)}]",
+                    "path": _xpath(el),
+                    "value": attr_val[:400],
+                    "context": f"@{_local(attr_name)}={attr_val[:400]}",
                 })
-
     return results
 
 
-def pretty_print_xml(xml_content: str) -> str:
-    """Formata o XML com indentação legível."""
+def extract_soap_summary(xml_content: str) -> dict:
+    """
+    Extrai metadados chave de um envelope SOAP MNI:
+    operacao, numeroProcesso, idConsultante, orgao, tipo (request/response).
+    """
+    content = _extract_xml_from_mtom(xml_content)
+    summary = {}
     try:
-        root = etree.fromstring(xml_content.encode("utf-8") if isinstance(xml_content, str) else xml_content)
-        return etree.tostring(root, pretty_print=True, encoding="unicode")
+        root = etree.fromstring(content.encode("utf-8") if isinstance(content, str) else content)
     except etree.XMLSyntaxError:
-        return xml_content
+        return summary
+
+    # Operação = primeira tag dentro do Body
+    body = _find_local(root, "Body")
+    if body is not None:
+        children = list(body)
+        if children:
+            summary["operacao"] = _local(children[0].tag)
+
+    # Campos comuns MNI
+    for tag in ["numeroProcesso", "idConsultante", "orgaoCooperado",
+                "codigoErro", "descricaoErro", "dataHora"]:
+        el = _find_local(root, tag)
+        if el is not None and el.text:
+            summary[tag] = el.text.strip()[:200]
+
+    return summary
 
 
-def _extract_date_from_content(content: str) -> Optional[datetime]:
-    """Tenta extrair uma data do conteúdo XML."""
-    patterns = [
-        r"\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}",
-        r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}",
-        r"\d{2}/\d{2}/\d{4} \d{2}:\d{2}:\d{2}",
-        r"\d{2}/\d{2}/\d{4}",
-        r"\d{4}-\d{2}-\d{2}",
-    ]
-    formats = [
-        "%Y-%m-%dT%H:%M:%S",
-        "%Y-%m-%d %H:%M:%S",
-        "%d/%m/%Y %H:%M:%S",
-        "%d/%m/%Y",
-        "%Y-%m-%d",
-    ]
-    for pattern, fmt in zip(patterns, formats):
-        match = re.search(pattern, content)
-        if match:
-            try:
-                return datetime.strptime(match.group(), fmt)
-            except ValueError:
-                continue
+# ── helpers internos ────────────────────────────────────────────────────
+
+def _extract_xml_from_mtom(content: str) -> str:
+    """Se for resposta MTOM/multipart, extrai o fragmento XML principal."""
+    if content.startswith("--uuid") or content.startswith("--MIMEBoundary"):
+        # Pega o bloco que contém o XML SOAP
+        parts = re.split(r"--(?:uuid|MIMEBoundary)[^\r\n]*", content)
+        for part in parts:
+            stripped = part.strip()
+            # Remove headers MIME
+            if "\r\n\r\n" in stripped:
+                _, body = stripped.split("\r\n\r\n", 1)
+            elif "\n\n" in stripped:
+                _, body = stripped.split("\n\n", 1)
+            else:
+                body = stripped
+            body = body.strip()
+            if body.startswith("<") and ("Envelope" in body or "Body" in body):
+                return body
+        # Fallback: primeiro bloco com <
+        for part in parts:
+            idx = part.find("<")
+            if idx >= 0:
+                return part[idx:]
+    return content
+
+
+def _local(tag: str) -> str:
+    return tag.split("}")[-1] if "}" in tag else tag
+
+
+def _find_local(root, local_name: str):
+    for el in root.iter():
+        if _local(el.tag) == local_name:
+            return el
     return None
 
 
-def _get_xpath(element) -> str:
-    """Retorna um XPath simplificado para o elemento."""
+def _xpath(element) -> str:
     parts = []
     el = element
     while el is not None:
-        tag = el.tag.split("}")[-1] if "}" in el.tag else el.tag
-        parts.append(tag)
+        parts.append(_local(el.tag))
         el = el.getparent()
     return "/" + "/".join(reversed(parts))
-
-
-def _get_line_context(lines: list, index: int, window: int = 2) -> str:
-    start = max(0, index - window)
-    end = min(len(lines), index + window + 1)
-    return "\n".join(lines[start:end])

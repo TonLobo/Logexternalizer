@@ -3,4 +3,12 @@ __pycache__/
 .streamlit/
 exports/
 saved_queries/
-*.zip
+data/
+distribuicao/
+build/
+dist/
+*.spec
+config.json
+
+# Permite o ZIP de atualização rastreado pelo git
+!pj-consultador-xml.zip

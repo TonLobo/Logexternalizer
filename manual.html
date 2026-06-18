@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Manual de Uso — Logs Integração SAJ</title>
+  <style>
+    :root {
+      --bg: #0f1117;
+      --surface: #1e2130;
+      --surface2: #252840;
+      --border: #2e3250;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --hub: #3b82f6;
+      --hub-light: #bfdbfe;
+      --mni: #f59e0b;
+      --mni-light: #fde68a;
+      --saved: #22c55e;
+      --saved-light: #bbf7d0;
+      --accent: #818cf8;
+      --warning: #f59e0b;
+      --code-bg: #12151f;
+      --tag-req: #1d4ed8;
+      --tag-req-t: #bfdbfe;
+      --tag-res: #065f46;
+      --tag-res-t: #a7f3d0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── Capa ── */
+    .cover {
+      background: linear-gradient(135deg, #111827 0%, #1e1b4b 60%, #0f172a 100%);
+      padding: 80px 48px 64px;
+      border-bottom: 1px solid var(--border);
+    }
+    .cover-badge {
+      display: inline-block;
+      background: rgba(99,102,241,.2);
+      color: var(--accent);
+      border: 1px solid rgba(99,102,241,.4);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .cover h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; }
+    .cover h1 span { color: var(--accent); }
+    .cover .subtitle {
+      margin-top: 12px; font-size: 1.1rem; color: var(--muted);
+    }
+    .cover .meta {
+      margin-top: 32px; display: flex; gap: 32px; flex-wrap: wrap;
+    }
+    .cover .meta-item { font-size: .85rem; color: var(--muted); }
+    .cover .meta-item strong { color: var(--text); display: block; font-size: .95rem; }
+
+    /* ── Layout ── */
+    .layout { display: flex; min-height: 100vh; }
+    nav {
+      width: 260px;
+      flex-shrink: 0;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      background: #111827;
+      border-right: 1px solid var(--border);
+      padding: 32px 0;
+    }
+    nav .nav-title {
+      padding: 0 20px 12px;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    nav a {
+      display: block;
+      padding: 8px 20px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: .88rem;
+      border-left: 3px solid transparent;
+      transition: all .15s;
+    }
+    nav a:hover { color: var(--text); background: rgba(255,255,255,.04); }
+    nav a.active { color: var(--accent); border-left-color: var(--accent); background: rgba(99,102,241,.08); }
+    nav .nav-section {
+      padding: 16px 20px 4px;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--border);
+      margin-top: 8px;
+    }
+
+    main { flex: 1; max-width: 900px; padding: 56px 48px; }
+
+    /* ── Seções ── */
+    section { margin-bottom: 64px; scroll-margin-top: 24px; }
+    h2 {
+      font-size: 1.6rem; font-weight: 700; margin-bottom: 8px;
+      padding-bottom: 12px; border-bottom: 1px solid var(--border);
+    }
+    h3 { font-size: 1.1rem; font-weight: 600; margin: 32px 0 12px; color: var(--text); }
+    h4 { font-size: .95rem; font-weight: 600; margin: 20px 0 8px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+    p { color: var(--muted); margin-bottom: 12px; }
+    p strong { color: var(--text); }
+    ul, ol { margin: 8px 0 16px 20px; color: var(--muted); }
+    li { margin-bottom: 6px; }
+    li strong { color: var(--text); }
+
+    /* ── Badges de seção ── */
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 3px 12px; border-radius: 14px; font-size: .8rem; font-weight: 600;
+    }
+    .badge-hub  { background: rgba(59,130,246,.15); color: var(--hub-light); border: 1px solid rgba(59,130,246,.3); }
+    .badge-mni  { background: rgba(245,158,11,.15); color: var(--mni-light);  border: 1px solid rgba(245,158,11,.3); }
+    .badge-saved{ background: rgba(34,197,94,.15);  color: var(--saved-light);border: 1px solid rgba(34,197,94,.3);  }
+
+    /* ── Cards ── */
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; padding: 20px 24px; margin-bottom: 16px;
+    }
+    .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+    @media(max-width:700px){ .card-grid { grid-template-columns: 1fr; } }
+    .card h4 { margin: 0 0 8px; font-size: .9rem; }
+    .card p  { margin: 0; font-size: .88rem; }
+
+    /* ── Steps ── */
+    .steps { list-style: none; margin: 0 0 20px; padding: 0; }
+    .steps li {
+      display: flex; gap: 16px; padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .steps li:last-child { border-bottom: none; }
+    .step-num {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: rgba(99,102,241,.2);
+      color: var(--accent);
+      font-size: .8rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .step-body { flex: 1; }
+    .step-body strong { color: var(--text); display: block; margin-bottom: 2px; }
+    .step-body p { margin: 0; font-size: .88rem; }
+
+    /* ── Code / info boxes ── */
+    code {
+      background: var(--code-bg); color: #a5b4fc;
+      padding: 2px 7px; border-radius: 4px; font-size: .85em;
+      font-family: 'Cascadia Code', Consolas, monospace;
+    }
+    .info-box {
+      border-left: 3px solid var(--accent);
+      background: rgba(99,102,241,.07);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px; margin: 16px 0; font-size: .9rem; color: var(--muted);
+    }
+    .warn-box {
+      border-left: 3px solid var(--warning);
+      background: rgba(245,158,11,.07);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px; margin: 16px 0; font-size: .9rem; color: var(--muted);
+    }
+    .tip-box {
+      border-left: 3px solid var(--saved);
+      background: rgba(34,197,94,.07);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px; margin: 16px 0; font-size: .9rem; color: var(--muted);
+    }
+
+    /* ── Tags request/response ── */
+    .tag { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: .75rem; font-weight: 600; }
+    .tag-req { background: var(--tag-req); color: var(--tag-req-t); }
+    .tag-res { background: var(--tag-res); color: var(--tag-res-t); }
+
+    /* ── Tabela de atalhos ── */
+    table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; }
+    th {
+      text-align: left; padding: 10px 16px;
+      background: var(--surface2); color: var(--muted);
+      font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em;
+    }
+    td { padding: 10px 16px; border-bottom: 1px solid var(--border); font-size: .88rem; color: var(--muted); }
+    td strong { color: var(--text); }
+    tr:last-child td { border-bottom: none; }
+
+    /* ── Fluxograma simples ── */
+    .flow {
+      display: flex; align-items: center; flex-wrap: wrap;
+      gap: 0; margin: 20px 0;
+    }
+    .flow-box {
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 8px; padding: 10px 16px;
+      font-size: .85rem; color: var(--text); font-weight: 600;
+    }
+    .flow-arrow {
+      padding: 0 10px; color: var(--muted); font-size: 1.2rem;
+    }
+
+    /* ── Rodapé ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 48px;
+      color: var(--muted);
+      font-size: .82rem;
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════ CAPA ═══════════════════════ -->
+<div class="cover">
+  <div class="cover-badge">📋 Manual de Uso</div>
+  <h1>Logs Integração <span>SAJ</span></h1>
+  <p class="subtitle">Consulta, análise e exportação de logs de integração via logexternalizer</p>
+  <div class="meta">
+    <div class="meta-item"><strong>Versão</strong>1.0</div>
+    <div class="meta-item"><strong>Sistema</strong>pj-consultador-xml</div>
+    <div class="meta-item"><strong>Stack</strong>Python · Streamlit</div>
+    <div class="meta-item"><strong>Porta padrão</strong>http://localhost:8501</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ LAYOUT ═══════════════════════ -->
+<div class="layout">
+
+  <!-- Navegação lateral -->
+  <nav>
+    <div class="nav-title">Navegação</div>
+    <a href="#visao-geral">Visão Geral</a>
+    <a href="#requisitos">Requisitos</a>
+    <a href="#iniciar">Como Iniciar</a>
+
+    <div class="nav-section">Seções</div>
+    <a href="#hub">🔷 Logs-HUB</a>
+    <a href="#mni">🔶 Logs-MNI</a>
+    <a href="#salvas">💾 Consultas Salvas</a>
+
+    <div class="nav-section">Recursos</div>
+    <a href="#filtros">Filtros e Busca</a>
+    <a href="#pareamento">Pareamento Automático</a>
+    <a href="#exportacao">Exportação</a>
+    <a href="#persistencia">Persistência</a>
+
+    <div class="nav-section">Referência</div>
+    <a href="#glossario">Glossário</a>
+    <a href="#erros">Erros Comuns</a>
+  </nav>
+
+  <!-- Conteúdo principal -->
+  <main>
+
+    <!-- ── Visão Geral ── -->
+    <section id="visao-geral">
+      <h2>Visão Geral</h2>
+      <p>O <strong>Logs Integração SAJ</strong> é uma aplicação web local para consulta, análise e exportação dos XMLs de integração judicial gerados pelo <strong>logexternalizer SAJ</strong>. Ele substitui a necessidade de acessar o servidor diretamente pelo navegador ou pelo SoapUI.</p>
+
+      <div class="card-grid">
+        <div class="card">
+          <h4>🔷 Logs-HUB</h4>
+          <p>Consulta de mensagens SOAP trocadas pelo HUB de integração. Organizado por PGMP → Operação → Data.</p>
+        </div>
+        <div class="card">
+          <h4>🔶 Logs-MNI</h4>
+          <p>Consulta de XMLs MNI (comunicação direta). Organizado por PGMP → Data.</p>
+        </div>
+        <div class="card">
+          <h4>💾 Consultas Salvas</h4>
+          <p>Repositório de consultas marcadas para referência futura, filtráveis e exportáveis em JSON.</p>
+        </div>
+        <div class="card">
+          <h4>📤 Exportação</h4>
+          <p>Cada arquivo pode ser exportado em XML formatado, PDF ou CSV. Pares completos podem ser exportados em ZIP ou PDF combinado.</p>
+        </div>
+      </div>
+
+      <div class="info-box">
+        <strong>Rede SAJ obrigatória:</strong> o servidor de logs roda em <code>172.50.1.164:9999</code>, acessível somente dentro da rede corporativa SAJ ou via VPN. Sem acesso, a aplicação exibirá mensagem de erro explicativa.
+      </div>
+    </section>
+
+    <!-- ── Requisitos ── -->
+    <section id="requisitos">
+      <h2>Requisitos</h2>
+      <table>
+        <thead><tr><th>Componente</th><th>Versão mínima</th><th>Observação</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Python</strong></td><td>3.10+</td><td>Recomendado 3.12</td></tr>
+          <tr><td><strong>Streamlit</strong></td><td>1.35+</td><td>Instalar via <code>requirements.txt</code></td></tr>
+          <tr><td><strong>Rede SAJ / VPN</strong></td><td>—</td><td>Acesso ao IP <code>172.50.1.164</code></td></tr>
+          <tr><td><strong>Fontes Windows</strong></td><td>—</td><td><code>arial.ttf</code> e <code>consola.ttf</code> para PDF</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ── Como Iniciar ── -->
+    <section id="iniciar">
+      <h2>Como Iniciar</h2>
+
+      <h3>Opção 1 — arquivo BAT (recomendado)</h3>
+      <p>Dê duplo clique em <code>iniciar.bat</code> na pasta do projeto. O terminal abrirá e o app estará disponível em <code>http://localhost:8501</code>.</p>
+
+      <h3>Opção 2 — terminal</h3>
+      <div class="info-box"><code>cd D:\Projetos\pj-consultador-xml</code><br><code>python -m streamlit run app.py</code></div>
+
+      <div class="warn-box">
+        <strong>Primeira execução:</strong> pode levar alguns segundos para baixar a lista de PGMPs. Se a tela ficar em "Carregando..." por mais de 30 segundos, verifique a conexão com a rede SAJ.
+      </div>
+    </section>
+
+    <!-- ── HUB ── -->
+    <section id="hub">
+      <h2>🔷 Logs-HUB <span class="badge badge-hub">HUB</span></h2>
+      <p>Acessa os logs de chamadas SOAP realizadas pelo HUB de integração. Os arquivos são armazenados no caminho <code>s3-hub/{hash}/{operacao}/{data}/{arquivo}.xml</code>.</p>
+
+      <h3>Fluxo de navegação</h3>
+      <div class="flow">
+        <div class="flow-box">PGMP</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">Operação</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">Data</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">Arquivo</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">Visualizar / Exportar</div>
+      </div>
+
+      <ul class="steps">
+        <li>
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <strong>Selecione o PGMP</strong>
+            <p>Lista carregada automaticamente do servidor. A última seleção é restaurada ao reabrir.</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <strong>Selecione a Operação</strong>
+            <p>Exibe apenas as operações disponíveis para o PGMP escolhido (ex: <code>consultarProcesso</code>, <code>distribuirPeticaoInicial</code>).</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <strong>Selecione a Data</strong>
+            <p>Datas disponíveis para a operação, em ordem decrescente (mais recente primeiro).</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <strong>Consulte a tabela de arquivos</strong>
+            <p>Use os filtros de nome, tipo (<span class="tag tag-req">request</span> / <span class="tag tag-res">response</span>) e ordenação. Clique em uma linha para selecioná-la.</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <strong>Carregue e visualize o XML</strong>
+            <p>Confirme o arquivo em "Visualizar e Exportar" e clique em <strong>📥 Carregar arquivo + par</strong>.</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ── MNI ── -->
+    <section id="mni">
+      <h2>🔶 Logs-MNI <span class="badge badge-mni">MNI</span></h2>
+      <p>Acessa os XMLs de comunicação MNI (Modelo Nacional de Interoperabilidade). Os arquivos seguem o padrão <code>{HH-MM-SS-mmm}_{tipo}_{uuid}.xml</code>.</p>
+
+      <h3>Fluxo de navegação</h3>
+      <div class="flow">
+        <div class="flow-box">PGMP</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">Data</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">Arquivo</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-box">Visualizar / Exportar</div>
+      </div>
+
+      <p>O funcionamento é idêntico ao HUB. A diferença é que <strong>não há seleção de Operação</strong> — os arquivos de todas as operações ficam juntos na pasta da data.</p>
+
+      <div class="tip-box">
+        O campo <strong>UUID</strong> é visível na tabela, facilitando identificar pares manualmente quando o pareamento automático não encontra correspondência exata.
+      </div>
+    </section>
+
+    <!-- ── Consultas Salvas ── -->
+    <section id="salvas">
+      <h2>💾 Consultas Salvas <span class="badge badge-saved">Salvas</span></h2>
+      <p>Armazena localmente metadados de arquivos importantes para referência futura.</p>
+
+      <h3>Como salvar uma consulta</h3>
+      <ol>
+        <li>Carregue um arquivo (botão <strong>📥 Carregar arquivo + par</strong>).</li>
+        <li>Na seção "Exportar par completo", clique em <strong>💾 Salvar consulta</strong>.</li>
+        <li>A consulta é gravada em <code>saved_queries/</code> com timestamp automático.</li>
+      </ol>
+
+      <h3>Visualizar consultas salvas</h3>
+      <p>Acesse a seção <strong>💾 Consultas Salvas</strong> no menu lateral. Use o campo de filtro para buscar por PGMP, operação ou número de processo.</p>
+
+      <h3>Exportar todas as consultas</h3>
+      <p>Clique em <strong>⬇️ Exportar todas (JSON)</strong> para baixar um arquivo JSON com todas as consultas salvas.</p>
+    </section>
+
+    <!-- ── Filtros ── -->
+    <section id="filtros">
+      <h2>Filtros e Busca</h2>
+
+      <h3>Filtros da tabela</h3>
+      <table>
+        <thead><tr><th>Filtro</th><th>Função</th></tr></thead>
+        <tbody>
+          <tr><td><strong>🔎 Filtrar por nome</strong></td><td>Busca substring no nome do arquivo (nome, timestamp, UUID)</td></tr>
+          <tr><td><strong>Tipo</strong></td><td>Exibe apenas <span class="tag tag-req">request</span>, <span class="tag tag-res">response</span> ou ambos</td></tr>
+          <tr><td><strong>Ordenar</strong></td><td>Mais recente (padrão) ou mais antigo primeiro</td></tr>
+          <tr><td><strong>🗑️ Limpar filtros</strong></td><td>Reseta todos os campos de filtro e a busca por conteúdo</td></tr>
+        </tbody>
+      </table>
+
+      <h3>🔍 Busca por conteúdo dos XMLs</h3>
+      <p>Expanda o painel <strong>"Buscar dentro do conteúdo dos XMLs"</strong>. Digite um termo e clique em <strong>🔎 Buscar</strong>.</p>
+
+      <div class="info-box">
+        <strong>Como funciona:</strong> o sistema baixa todos os XMLs da data selecionada e pesquisa o termo em cada um. Os resultados mostram quantas ocorrências foram encontradas e um preview do conteúdo. Os XMLs baixados ficam em cache durante a sessão — buscas subsequentes na mesma data são instantâneas.
+      </div>
+
+      <p>Clicando em uma linha do resultado da busca, o arquivo correspondente fica selecionado automaticamente na seção de visualização.</p>
+
+      <h3>🔍 Busca interna no XML carregado</h3>
+      <p>Após carregar um arquivo, use o campo <strong>"🔍 Buscar nos XMLs"</strong>. Os resultados exibem a tag XML, o valor e o XPath para cada ocorrência encontrada nos dois arquivos (selecionado + par).</p>
+    </section>
+
+    <!-- ── Pareamento ── -->
+    <section id="pareamento">
+      <h2>Pareamento Automático</h2>
+      <p>Ao selecionar um arquivo, o sistema localiza automaticamente o <strong>arquivo oposto</strong> (request ↔ response).</p>
+
+      <h3>Algoritmo de pareamento (em ordem de prioridade)</h3>
+      <ul class="steps">
+        <li>
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <strong>Mesmo UUID</strong>
+            <p>Se o nome do arquivo contém um UUID padrão (<code>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</code>), o sistema busca o arquivo oposto com o UUID idêntico. É o método mais preciso.</p>
+          </div>
+        </li>
+        <li>
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <strong>Timestamp mais próximo (fallback)</strong>
+            <p>Se nenhum UUID for encontrado, o sistema usa o arquivo oposto com o timestamp mais próximo — desde que a diferença seja de <strong>até 120 segundos</strong>.</p>
+          </div>
+        </li>
+      </ul>
+
+      <p>O par identificado é exibido em destaque acima da busca interna:</p>
+      <div class="info-box">🔗 <strong>Response pareado</strong> (mesmo UUID): <code>14-30-05-123_response_abc123.xml</code></div>
+
+      <div class="warn-box">
+        Se nenhum par for encontrado dentro dos critérios acima, a aba do arquivo oposto exibirá "Arquivo não carregado ou não encontrado." Isso pode ocorrer para operações que não possuem response (ex: notificações) ou quando os UUIDs diferem entre request e response.
+      </div>
+    </section>
+
+    <!-- ── Exportação ── -->
+    <section id="exportacao">
+      <h2>Exportação</h2>
+
+      <h3>Por arquivo individual (abas Request / Response)</h3>
+      <table>
+        <thead><tr><th>Botão</th><th>Formato</th><th>Conteúdo</th></tr></thead>
+        <tbody>
+          <tr><td><strong>⬇️ XML formatado</strong></td><td>.xml</td><td>XML com indentação correta e encoding UTF-8</td></tr>
+          <tr><td><strong>⬇️ Gerar PDF → Baixar PDF</strong></td><td>.pdf</td><td>XML formatado em fonte monoespaçada, com cabeçalho e rodapé</td></tr>
+          <tr><td><strong>⬇️ CSV (resumo)</strong></td><td>.csv</td><td>Metadados do arquivo (PGMP, operação, data, campos SOAP extraídos)</td></tr>
+        </tbody>
+      </table>
+
+      <div class="tip-box">
+        O PDF é gerado <strong>sob demanda</strong>: clique em "Gerar PDF" e aguarde o spinner. Após a geração, o botão "Baixar PDF" aparece. Isso evita geração desnecessária a cada atualização da página.
+      </div>
+
+      <h3>Par completo</h3>
+      <table>
+        <thead><tr><th>Botão</th><th>Formato</th><th>Conteúdo</th></tr></thead>
+        <tbody>
+          <tr><td><strong>⬇️ ZIP (XML formatados)</strong></td><td>.zip</td><td>Request + Response em arquivos XML separados no mesmo ZIP</td></tr>
+          <tr><td><strong>⬇️ Gerar PDF (par completo)</strong></td><td>.pdf</td><td>PDF com duas páginas: Request na 1ª, Response na 2ª</td></tr>
+          <tr><td><strong>💾 Salvar consulta</strong></td><td>JSON interno</td><td>Grava metadados em <code>saved_queries/</code></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Data inteira</h3>
+      <p>Clique em <strong>📦 Exportar data inteira (ZIP)</strong> para baixar todos os XMLs da data selecionada em um único arquivo ZIP. Útil para análise offline ou arquivamento.</p>
+
+      <h3>Tabela de arquivos</h3>
+      <p>O botão <strong>⬇️ Exportar tabela (CSV)</strong> acima da tabela exporta a listagem de arquivos visível (após filtros) em CSV.</p>
+    </section>
+
+    <!-- ── Persistência ── -->
+    <section id="persistencia">
+      <h2>Persistência de Seleções</h2>
+      <p>As últimas seleções são salvas automaticamente em <code>config.json</code> na pasta do projeto. Ao reabrir o app, as seleções anteriores são restauradas.</p>
+
+      <table>
+        <thead><tr><th>Campo salvo</th><th>Seção</th></tr></thead>
+        <tbody>
+          <tr><td><strong>PGMP selecionado</strong></td><td>HUB e MNI</td></tr>
+          <tr><td><strong>Operação selecionada</strong></td><td>HUB</td></tr>
+          <tr><td><strong>Data selecionada</strong></td><td>HUB e MNI</td></tr>
+          <tr><td><strong>Último arquivo visualizado</strong></td><td>HUB e MNI</td></tr>
+        </tbody>
+      </table>
+
+      <div class="info-box">
+        Os filtros de busca (nome, tipo, ordenação, busca por conteúdo) <strong>não</strong> são persistidos — são limpos ao reiniciar. Apenas as seleções de navegação principal (PGMP, Operação, Data, Arquivo) são mantidas.
+      </div>
+    </section>
+
+    <!-- ── Glossário ── -->
+    <section id="glossario">
+      <h2>Glossário</h2>
+      <table>
+        <thead><tr><th>Termo</th><th>Descrição</th></tr></thead>
+        <tbody>
+          <tr><td><strong>PGMP</strong></td><td>Identificador do tribunal / órgão no SAJ</td></tr>
+          <tr><td><strong>HUB</strong></td><td>Barramento de integração SAJ que encaminha chamadas SOAP entre sistemas</td></tr>
+          <tr><td><strong>MNI</strong></td><td>Modelo Nacional de Interoperabilidade — protocolo XML para comunicação entre tribunais</td></tr>
+          <tr><td><strong>PVC</strong></td><td>Identificador interno de container do MNI no logexternalizer</td></tr>
+          <tr><td><strong>UUID</strong></td><td>Identificador único no formato <code>xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</code> presente no nome dos arquivos</td></tr>
+          <tr><td><strong>logexternalizer</strong></td><td>Serviço SAJ que expõe os logs de integração via HTTP</td></tr>
+          <tr><td><strong>MTOM</strong></td><td>Protocolo de anexo SOAP — alguns responses são multipart/MTOM; o app extrai automaticamente o XML interno</td></tr>
+          <tr><td><strong>Par (request/response)</strong></td><td>Dupla de arquivos que representa uma chamada completa: envio (request) + retorno (response)</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ── Erros Comuns ── -->
+    <section id="erros">
+      <h2>Erros Comuns</h2>
+
+      <h3>❌ Sem acesso ao servidor HUB / MNI</h3>
+      <div class="warn-box">
+        <strong>Causa:</strong> máquina fora da rede SAJ ou VPN desconectada.<br>
+        <strong>Solução:</strong> conecte-se à VPN SAJ e recarregue a página (<code>F5</code>).
+      </div>
+
+      <h3>⏳ Timeout ao buscar arquivos</h3>
+      <div class="warn-box">
+        <strong>Causa:</strong> o servidor pode estar lento ou a data selecionada possui muitos arquivos.<br>
+        <strong>Solução:</strong> aguarde o timeout (300s) ou tente uma data com menos volume.
+      </div>
+
+      <h3>XML exibido em branco ou com erro de parse</h3>
+      <div class="warn-box">
+        <strong>Causa:</strong> o arquivo pode estar corrompido ou ser do tipo MTOM (multipart).<br>
+        <strong>Solução:</strong> o app tenta extrair automaticamente o XML do MTOM. Se a visualização mostrar <code>&lt;!-- Erro --&gt;</code>, o arquivo pode estar vazio no servidor.
+      </div>
+
+      <h3>PDF não gera / erro de fonte</h3>
+      <div class="warn-box">
+        <strong>Causa:</strong> as fontes <code>arial.ttf</code> ou <code>consola.ttf</code> não foram encontradas em <code>C:\Windows\Fonts\</code>.<br>
+        <strong>Solução:</strong> verifique se as fontes existem no caminho. Em Windows padrão elas sempre estão presentes.
+      </div>
+
+      <h3>Tabela não sincroniza com o selectbox</h3>
+      <div class="tip-box">
+        Clique diretamente na <strong>linha</strong> da tabela (não no cabeçalho ou na borda). O Streamlit registra o clique e atualiza o selectbox na recarga automática da página.
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <span>Logs Integração SAJ — Manual de Uso v1.0</span>
+  <span>SAJ / Softplan · pj-consultador-xml</span>
+</footer>
+
+<script>
+  // Destaca link ativo no menu de acordo com a seção visível
+  const links = document.querySelectorAll('nav a');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const match = document.querySelector(`nav a[href="#${e.target.id}"]`);
+        if (match) match.classList.add('active');
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('section[id]').forEach(s => observer.observe(s));
+</script>
+</body>
+</html>
